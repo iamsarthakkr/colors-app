@@ -1,6 +1,7 @@
 "use client";
 
 import { IColor } from "@/types/palette";
+import React from "react";
 import { toast } from "react-toastify";
 
 type Props = {
@@ -19,13 +20,14 @@ const CopiedContainer = (props: Props) => {
 export const ColorBox = (props: Props) => {
 	const { color } = props;
 
-	const handleClick = () => {
+	const handleClick = React.useCallback(async () => {
+		await navigator.clipboard.writeText(color.color);
 		toast(<CopiedContainer color={color} />, {
-			position: 'bottom-left',
+			position: "bottom-left",
 			className: "!w-[200px] h-[100px]",
-			autoClose: 3000
-		})
-	};
+			autoClose: 3000,
+		});
+	}, [color]);
 
 	return (
 		<div style={{ background: color.color }} className="group relative flex" onClick={handleClick}>
