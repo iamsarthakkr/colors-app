@@ -1,13 +1,34 @@
+"use client";
+
 import { IColor } from "@/types/palette";
+import { toast } from "react-toastify";
 
 type Props = {
 	color: IColor;
 };
 
+const CopiedContainer = (props: Props) => {
+	return (
+		<div className="h-full w-full flex flex-col items-center justify-center gap-2">
+			<span className="text-lg font-semibold">Copied!</span>
+			<span className="text-lg font-semibold">{props.color.color}</span>
+		</div>
+	);
+};
+
 export const ColorBox = (props: Props) => {
 	const { color } = props;
+
+	const handleClick = () => {
+		toast(<CopiedContainer color={color} />, {
+			position: 'bottom-left',
+			className: "!w-[200px] h-[100px]",
+			autoClose: 3000
+		})
+	};
+
 	return (
-		<div style={{ background: color.color }} className="group relative flex">
+		<div style={{ background: color.color }} className="group relative flex" onClick={handleClick}>
 			<button className="hidden group-hover:block absolute w-[80px] h-[40px] bg-white/40 hover:bg-white/50 hover:cursor-pointer top-1/2 left-1/2 -translate-1/2">
 				Copy
 			</button>
