@@ -12,6 +12,21 @@
 	--font-mono: var(--font-geist-mono);
 }
 
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	min-height: 99vh;
+	height: 100vh;
+}
+
 body {
 	background: var(--background);
 	color: var(--foreground);
