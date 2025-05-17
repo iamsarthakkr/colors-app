@@ -2,7 +2,7 @@
 
 import React from "react";
 import { AppContext, AppContextActions, IAppContext, IAppContextActions } from "./appContext";
-import { seedColors } from "@/utils/seedColors";
+import  seedColors  from "@/utils/seedColors.json";
 import { IPalette } from "@/types/palette";
 import { generatePalette } from "@/utils/color";
 

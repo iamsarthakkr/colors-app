@@ -2,6 +2,7 @@
 export type IBaseColor = {
 	name: string;
 	color: string;
+	id: string;
 };
 
 export type IBasePalette = {
