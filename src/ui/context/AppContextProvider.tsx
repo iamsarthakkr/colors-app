@@ -14,6 +14,14 @@ export const AppContextProvider: React.FC<IProps> = (props) => {
 	const [palettes, setPalettes] = React.useState<IPalette[]>(() => {
 		return seedColors.map((base) => generatePalette(base));
 	});
+	
+	const getPalette: IAppContextActions["getPalette"] = React.useCallback(
+		(id) => {
+			const palette = palettes.find((palette) => palette.id === id);
+			return palette || null;
+		},
+		[palettes]
+	);
 
 	const context: IAppContext = React.useMemo(() => {
 		return {
@@ -22,8 +30,10 @@ export const AppContextProvider: React.FC<IProps> = (props) => {
 	}, [palettes]);
 
 	const contextActions: IAppContextActions = React.useMemo(() => {
-		return {};
-	}, []);
+		return {
+			getPalette
+		};
+	}, [getPalette]);
 
 	return (
 		<AppContext.Provider value={context}>

@@ -6,6 +6,7 @@ export type IAppContext = {
 };
 
 export type IAppContextActions = {
+	getPalette: (paletteId: string) => IPalette | null;
 };
 
 export const AppContext = React.createContext<IAppContext>(null as unknown as IAppContext);

@@ -1,9 +1,19 @@
-export type IColor = {
+/* For seed colors */
+export type IBaseColor = {
 	name: string;
 	color: string;
 };
 
-export type IColorShade = IColor & {
+export type IBasePalette = {
+	paletteName: string;
+	id: string;
+	emoji: string;
+	colors: IBaseColor[];
+};
+
+/* Main palette */
+export type IColorShade = {
+	name: string;
 	id: string;
 	hex: string;
 	rgb: string;
@@ -11,13 +21,16 @@ export type IColorShade = IColor & {
 	weight: number;
 };
 
-export type IBasePalette = {
+export type IColor = {
+	name: string;
+	color: string;
+	id: string;
+	shades: IColorShade[];
+};
+
+export type IPalette = {
 	paletteName: string;
 	id: string;
 	emoji: string;
 	colors: IColor[];
 };
-
-export type IPalette = IBasePalette & {
-	colors: IColorShade[][];
-}

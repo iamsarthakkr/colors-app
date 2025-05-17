@@ -1,15 +1,25 @@
-import { IPalette } from "@/types/palette";
+"use client";
+
+import React from "react";
+import { notFound } from "next/navigation";
 import { ColorBox } from "./ColorBox";
+import { useAppContextActions } from "../context/useContext";
 
 type Props = {
-	palette: IPalette;
+	paletteId: string;
 };
 
 export const Palette = (props: Props) => {
-	const { palette } = props;
+	const actions = useAppContextActions();
+	const { paletteId } = props;
+
+	const palette = React.useMemo(() => actions.getPalette(paletteId), [paletteId]);
+	if (!palette) {
+		notFound();
+	}
 
 	const colors = palette.colors.map((color) => {
-		return <ColorBox color={color} key={color.name} />;
+		return <ColorBox color={color} key={color.id} />;
 	});
 
 	return (

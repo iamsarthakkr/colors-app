@@ -1,5 +1,8 @@
-import chroma from "chroma-js"
-import { IBasePalette, IPalette, IColor, IColorShade } from "@/types/palette";
+import chroma from "chroma-js";
+import { IBasePalette, IPalette, IColor, IBaseColor } from "@/types/palette";
+
+// Default shades
+const shades = [50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950];
 
 export const generatePalette = (basePalette: IBasePalette): IPalette => {
 	const palette: IPalette = {
@@ -14,29 +17,30 @@ export const generatePalette = (basePalette: IBasePalette): IPalette => {
 	return palette;
 };
 
-const shades = [50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950];
-export const generateShades = (color: IColor, toGenerate: number[] = shades): IColorShade[] => {
-	
+export const generateShades = (color: IBaseColor, toGenerate: number[] = shades): IColor => {
 	const low = chroma(color.color).brighten(2);
 	const hi = chroma(color.color).darken(2);
-	
-	const scale = chroma.scale([low, color.color, hi]).mode("lrgb").domain(toGenerate);
-	
-	const shades: IColorShade[] = [];
 
-	for(const shade of toGenerate) {
-		const colorName = `${color.name} ${shade}`; 
+	const scale = chroma.scale([low, color.color, hi]).mode("lrgb").domain(toGenerate);
+
+	const palette: IColor = {
+		...color,
+		id: color.name.toLocaleLowerCase(),
+		shades: [],
+	};
+
+	for (const shade of toGenerate) {
+		const colorName = `${color.name} ${shade}`;
 		const colorShade = scale(shade);
-		shades.push({
+		palette.shades.push({
 			name: colorName,
-			color: color.color,
 			weight: shade,
-			id: colorName.toLocaleLowerCase().replaceAll(' ', '-'),
+			id: colorName.toLocaleLowerCase().replaceAll(" ", "-"),
 			hex: colorShade.hex(),
 			rgb: colorShade.css(),
-			rgba: colorShade.alpha(1).css()
-		})
+			rgba: colorShade.alpha(1).css(),
+		});
 	}
 
-	return shades;
+	return palette;
 };
