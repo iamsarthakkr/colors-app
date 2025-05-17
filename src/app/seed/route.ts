@@ -1,4 +1,4 @@
-import { formattSeeds } from "@/utils/seedFromatter";
+import { formattSeeds } from "@/utils/seedFormatter";
 import { NextResponse } from "next/server";
 
 export function GET() {

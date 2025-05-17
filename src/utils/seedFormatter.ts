@@ -1,7 +1,6 @@
-import { IBasePalette, IPalette } from "@/types/palette";
+import { IBasePalette } from "@/types/palette";
 import seedColors from "./seedColors.json";
 import fs from "fs";
-import path from "path";
 
 export const formattSeeds = () => {
 	const formatted: IBasePalette[] = seedColors.map((base) => {
