@@ -1,11 +1,11 @@
 import React from "react";
+import { IPalette } from "@/types/palette";
 
 export type IAppContext = {
-
+	palettes: IPalette[];
 };
 
 export type IAppContextActions = {
-
 };
 
 export const AppContext = React.createContext<IAppContext>(null as unknown as IAppContext);

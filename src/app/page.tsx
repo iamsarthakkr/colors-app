@@ -1,3 +1,5 @@
-export default function Home() {
-  return <h1 className="text-center text-2xl">Colors App</h1>;
+import { Home } from "@/ui/home";
+
+export default function HomePage() {
+	return <Home />
 }
