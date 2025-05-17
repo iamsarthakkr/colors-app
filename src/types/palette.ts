@@ -1,11 +1,11 @@
 /* For seed colors */
-export type IBaseColor = {
+export interface IBaseColor {
 	name: string;
 	color: string;
 	id: string;
 };
 
-export type IBasePalette = {
+export interface IBasePalette {
 	paletteName: string;
 	id: string;
 	emoji: string;
@@ -13,7 +13,7 @@ export type IBasePalette = {
 };
 
 /* Main palette */
-export type IColorShade = {
+export interface IColorShade  {
 	name: string;
 	id: string;
 	hex: string;
@@ -22,16 +22,10 @@ export type IColorShade = {
 	weight: number;
 };
 
-export type IColor = {
-	name: string;
-	color: string;
-	id: string;
+export interface IColor extends IBaseColor {
 	shades: IColorShade[];
 };
 
-export type IPalette = {
-	paletteName: string;
-	id: string;
-	emoji: string;
+export interface IPalette extends IBasePalette {
 	colors: IColor[];
 };

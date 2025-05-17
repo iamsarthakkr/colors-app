@@ -1,5 +1,5 @@
 import React from "react";
-import { IPalette } from "@/types/palette";
+import { IColor, IPalette } from "@/types/palette";
 
 export type IAppContext = {
 	palettes: IPalette[];
@@ -7,6 +7,7 @@ export type IAppContext = {
 
 export type IAppContextActions = {
 	getPalette: (paletteId: string) => IPalette | null;
+	getColor: (paletteId: string, colorId: string) => IColor | null;
 };
 
 export const AppContext = React.createContext<IAppContext>(null as unknown as IAppContext);
