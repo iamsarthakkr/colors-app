@@ -1,6 +1,6 @@
-import { IPalette } from "@/types/palette";
+import { IBasePalette } from "@/types/palette";
 
-export const seedColors: IPalette[] = [
+export const seedColors: IBasePalette[] = [
 	{
 		paletteName: "Material UI Colors",
 		id: "material-ui-colors",
