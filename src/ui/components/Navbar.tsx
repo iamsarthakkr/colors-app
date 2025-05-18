@@ -2,6 +2,19 @@
 
 import Link from "next/link";
 import React from "react";
+import { toast } from "react-toastify";
+
+type ChangedContainerProps = {
+	format: string;
+};
+
+const ChangedContainer = (props: ChangedContainerProps) => {
+	return (
+		<div className="h-full w-full flex flex-col items-center justify-center gap-2">
+			<span className="text-lg font-semibold">Format changed to {props.format}</span>
+		</div>
+	);
+};
 
 type Props = {
 	showShadeControls?: boolean;
@@ -25,6 +38,11 @@ export const Navbar = (props: Props) => {
 		(e: React.ChangeEvent<HTMLSelectElement>) => {
 			const value = e.target.value;
 			props.onColorFromatChange(value);
+			toast(<ChangedContainer format={value} />, {
+				position: "bottom-left",
+				className: "!w-[300px] h-[100px]",
+				autoClose: 2000,
+			});
 		},
 		[props]
 	);
