@@ -18,7 +18,7 @@ export const generatePalette = (basePalette: IBasePalette): IPalette => {
 };
 
 export const generateShades = (color: IBaseColor, toGenerate: number[] = shades): IColor => {
-	const low = chroma(color.color).brighten(3.2);
+	const low = chroma(color.color).brighten(2);
 	const hi = chroma(color.color).darken(2);
 
 	const scale = chroma.scale([low, color.color, hi]).mode("lrgb").domain(toGenerate);
