@@ -10,6 +10,7 @@ interface IProps {
 }
 
 export const AppContextProvider: React.FC<IProps> = (props) => {
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	const [palettes, _setPalettes] = React.useState<IPalette[]>(() => {
 		return seedColors.map((base) => generatePalette(base));
 	});
