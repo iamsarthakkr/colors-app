@@ -4,7 +4,7 @@ import Link from "next/link";
 import React from "react";
 
 type Props = {
-	showShadeControls: boolean;
+	showShadeControls?: boolean;
 	onColorLevelChange?: (level: number) => void;
 	colorLevel?: number;
 	colorFormat?: string;
