@@ -36,7 +36,7 @@ export const ColorBox = (props: ColorBoxProps) => {
 		await navigator.clipboard.writeText(color.color);
 		toast(<CopiedContainer color={color} />, {
 			position: "bottom-left",
-			className: "!w-[200px] h-[100px]",
+			className: "!w-[300px] h-[100px]",
 			autoClose: 3000,
 		});
 		setCopied(true);

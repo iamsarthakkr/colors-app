@@ -7,7 +7,7 @@ type Props = {
 	showShadeControls?: boolean;
 	onColorLevelChange?: (level: number) => void;
 	colorLevel?: number;
-	colorFormat?: string;
+	colorFormat: string;
 	onColorFromatChange: (format: string) => void;
 };
 
@@ -56,12 +56,12 @@ export const Navbar = (props: Props) => {
 			</div>
 			<select
 				onChange={handleColorFormatChange}
-				defaultValue="hex"
-				className="d-select text-white text-lg w-[150px]"
+				value={props.colorFormat}
+				className="d-select text-cyan-100 text-lg w-[250px] h-[60px] cursor-pointer"
 			>
-				<option>Hex</option>
-				<option>RGB</option>
-				<option>RGBA</option>
+				<option value={"hex"}>Hex : #ffffff</option>
+				<option value={"rgb"}>RGB: rgb(0 0 0)</option>
+				<option value={"rgba"}>RGBA: rgb(0 0 0 / 100)</option>
 			</select>
 		</header>
 	);

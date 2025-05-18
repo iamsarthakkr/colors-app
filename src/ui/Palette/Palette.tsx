@@ -6,6 +6,7 @@ import { IBaseColor } from "@/types/palette";
 import { ColorBox } from "./ColorBox";
 import { useAppContextActions } from "../context/useContext";
 import { Footer, Navbar } from "../components";
+import { formats, getColor } from "@/utils/color";
 
 type Props = {
 	paletteId: string;
@@ -13,11 +14,13 @@ type Props = {
 
 export const Palette = (props: Props) => {
 	const [colorLevel, setColorLevel] = React.useState(500);
+	const [colorFormat, setColorFormat] = React.useState(formats[0]);
+
 	const actions = useAppContextActions();
 	const router = useRouter();
 	const { paletteId } = props;
 
-	const onShowPalette = React.useCallback(
+	const handleShowPalette = React.useCallback(
 		(colorId: string) => {
 			router.push(`/palette/${paletteId}/${colorId}`);
 		},
@@ -29,10 +32,11 @@ export const Palette = (props: Props) => {
 	}, []);
 
 	const handleFormatChange = React.useCallback((format: string) => {
-		console.log({ format });
+		setColorFormat(format);
 	}, []);
 
 	const palette = React.useMemo(() => actions.getPalette(paletteId), [paletteId, actions]);
+
 	if (!palette) {
 		notFound();
 	}
@@ -42,11 +46,10 @@ export const Palette = (props: Props) => {
 		if (!shade) {
 			return color;
 		}
-		return {
-			name: shade.name,
-			color: shade.hex,
-			id: color.id,
-		};
+
+		const ret = getColor(shade, colorFormat);
+		ret.id = color.id; // for routing to base color instead of a specific shade
+		return ret;
 	});
 
 	return (
@@ -54,13 +57,13 @@ export const Palette = (props: Props) => {
 			<Navbar
 				showShadeControls
 				colorLevel={colorLevel}
-				colorFormat="hex"
+				colorFormat={colorFormat}
 				onColorLevelChange={handleLevelChange}
 				onColorFromatChange={handleFormatChange}
 			/>
 			<div className="w-full flex-1 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 auto-rows-fr">
 				{colors.map((color) => {
-					return <ColorBox showMore onShowPalette={onShowPalette} color={color} key={color.id} />;
+					return <ColorBox showMore onShowPalette={handleShowPalette} color={color} key={color.id} />;
 				})}
 			</div>
 			<Footer displayName={`${palette.paletteName} ${palette.emoji}`} />
