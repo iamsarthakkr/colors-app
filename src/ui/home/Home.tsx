@@ -29,6 +29,7 @@ export const Home = () => {
 			{/* header */}
 			<header className="w-full xl:w-[50%] h-[100px] mx-auto flex justify-between items-center ">
 				<h1 className="font-semibold tracking-[2px] text-[34px] text-cyan-800">COLORSUI</h1>
+				<span className="text-cyan-800 font-semibold tracking-wide hover:underline hover:text-cyan-900"><Link href={'/palette/new'}>Add Palette</Link></span>
 			</header>
 			{/* color boxes */}
 			<div className="w-full px-6 xl:w-[50%] h-[70%] xl:px-0 mx-auto flex justify-center">
