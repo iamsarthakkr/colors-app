@@ -1,6 +1,7 @@
 "use client";
 
 import { IBaseColor } from "@/types/palette";
+import { isDark } from "@/utils/color";
 import React from "react";
 import { toast } from "react-toastify";
 
@@ -27,6 +28,7 @@ export const ColorBox = (props: ColorBoxProps) => {
 	const [copied, setCopied] = React.useState(false);
 
 	const { color, onShowPalette, showMore } = props;
+	const dark = isDark(color.color);
 
 	const handleCopy = React.useCallback(async () => {
 		if (copied) {
@@ -45,12 +47,15 @@ export const ColorBox = (props: ColorBoxProps) => {
 		}, 3000);
 	}, [color, copied]);
 
-	const handleShowMore = React.useCallback((e: React.MouseEvent) => {
-		e.stopPropagation();
-		if(onShowPalette) {
-			onShowPalette(color.id);
-		}
-	}, [color, onShowPalette]);
+	const handleShowMore = React.useCallback(
+		(e: React.MouseEvent) => {
+			e.stopPropagation();
+			if (onShowPalette) {
+				onShowPalette(color.id);
+			}
+		},
+		[color, onShowPalette]
+	);
 
 	return (
 		<div style={{ background: color.color }} className="group relative flex" onClick={handleCopy}>
@@ -58,7 +63,11 @@ export const ColorBox = (props: ColorBoxProps) => {
 				Copy
 			</button>
 			<div className="px-1 py-0.5 w-full self-end justify-self-end flex justify-between">
-				<span className="uppercase text-sm min-w-[60px] h-[30px] font-semibold grid items-center">
+				<span
+					className={`uppercase text-sm min-w-[60px] h-[30px] font-semibold grid items-center ${
+						dark ? "text-white" : "text-black"
+					}`}
+				>
 					{color.name}
 				</span>
 				{showMore && (

@@ -55,3 +55,7 @@ export const getColor = (shade: IColorShade, format: string): IBaseColor => {
 		color,
 	};
 };
+
+export const isDark = (color: string): boolean => {
+	return chroma(color).luminance() < 0.15;
+};
