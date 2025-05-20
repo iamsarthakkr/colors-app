@@ -6,6 +6,7 @@ import { ColorBox } from "../Palette/ColorBox";
 import { useAppContextActions } from "../context/useContext";
 import { Footer, Navbar } from "../components";
 import { formats, getColor } from "@/utils/color";
+import Link from "next/link";
 
 type Props = {
 	paletteId: string;
@@ -29,14 +30,21 @@ export const ColorPalette = (props: Props) => {
 	}
 
 	const colors = color.shades.map((shade) => {
-		const color = getColor(shade, colorFormat); 
+		const color = getColor(shade, colorFormat);
 		return <ColorBox color={color} key={color.id} />;
 	});
 
 	return (
 		<main className="h-full w-full flex flex-col m-0 p-0">
 			<Navbar onColorFromatChange={handleFormatChange} colorFormat={colorFormat} />
-			<div className="w-full flex-1 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 auto-rows-fr">{colors}</div>
+			<div className="w-full flex-1 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 auto-rows-fr">
+				{colors}
+				<div className="bg-gray-100 flex justify-center items-center">
+					<span className="w-[80px] h-[40px] font-semibold flex items-center justify-center bg-black/20 hover:bg-black/30 hover:cursor-pointer">
+						<Link href={`/palette/${paletteId}`}>Back</Link>
+					</span>
+				</div>
+			</div>
 			<Footer displayName={`${palette.paletteName} ${palette.emoji}`} />
 		</main>
 	);
