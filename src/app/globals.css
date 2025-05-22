@@ -1,4 +1,6 @@
 @import "tailwindcss";
+@import '@rc-component/color-picker/assets/index.css';
+
 
 @plugin "daisyui" {
 	themes: light --default, dark --prefersdark;
