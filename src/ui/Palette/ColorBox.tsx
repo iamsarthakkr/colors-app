@@ -58,11 +58,11 @@ export const ColorBox = (props: ColorBoxProps) => {
 	);
 
 	return (
-		<div style={{ background: color.color }} className="group relative flex" onClick={handleCopy}>
-			<button className="hidden group-hover:block absolute w-[80px] h-[40px] bg-white/40 hover:bg-white/50 hover:cursor-pointer top-1/2 left-1/2 -translate-1/2">
+		<div style={{ background: color.color }} className="group/box relative flex" onClick={handleCopy}>
+			<button className="hidden group-hover/box:block absolute w-[80px] h-[40px] bg-white/40 hover:bg-white/50 hover:cursor-pointer top-1/2 left-1/2 -translate-1/2">
 				Copy
 			</button>
-			<div className="px-1 py-0.5 w-full self-end justify-self-end flex justify-between">
+			<div className="pl-1 pr-0 pt-0.5 pb-0 w-full self-end justify-self-end flex justify-between">
 				<span
 					className={`uppercase text-sm min-w-[60px] h-[30px] font-semibold grid items-center ${
 						dark ? "text-white" : "text-black"
@@ -73,7 +73,7 @@ export const ColorBox = (props: ColorBoxProps) => {
 				{showMore && (
 					<span
 						onClick={handleShowMore}
-						className="hidden group-hover:grid text-sm w-[60px] h-[30px] font-semibold items-center justify-center bg-white/40 hover:bg-white/50 hover:cursor-pointer"
+						className="hidden group-hover/box:grid text-sm w-[60px] h-[30px] font-semibold items-center justify-center bg-white/40 hover:bg-white/50 hover:cursor-pointer"
 					>
 						MORE
 					</span>
