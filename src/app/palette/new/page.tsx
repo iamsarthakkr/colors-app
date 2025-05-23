@@ -1,7 +1,7 @@
-import { NewForm } from "@/ui/NewForm";
+import { NewPalette } from "@/ui/NewPalette";
 
 const NewPalettePage = () => {
-	return <NewForm />;
+	return <NewPalette />;
 };
 
 export default NewPalettePage;

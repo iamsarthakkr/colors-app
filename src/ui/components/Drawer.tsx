@@ -22,7 +22,7 @@ const DrawerDrawer = (props: DrawerProps) => {
 	const { children, className = "", size = "medium" } = props;
 	return (
 		<section
-			className={`${SizeMap[size]} group-has-checked:w-0 overflow-hidden bg-white shadow-xl transition-all duration-100 relative`}
+			className={`${SizeMap[size]} group-has-checked:w-0 overflow-hidden bg-white shadow-xl transition-[width] duration-100 relative`}
 		>
 			<div className={`group-has-checked:hidden transition-[display] duration-200 ${className}`}>
 				{children}
@@ -37,7 +37,6 @@ const Drawermain = (props: BaseLayoutProps) => <>{props.children}</>;
 export const Drawer = (props: BaseLayoutProps) => {
 	const { children, className = "" } = props;
 	const childList = React.Children.toArray(children) as React.ReactElement[];
-	console.log(childList.map((c) => c));
 
 	const getSlot = React.useCallback(
 		(element: React.ElementType) => {
