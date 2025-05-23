@@ -70,7 +70,7 @@ export const NewPaletteForm = (props: Props) => {
 				<button className="d-btn d-btn-secondary">Random Color</button>
 			</div>
 			<form className="flex flex-col justify-center items-center">
-				<div role="alert" className={`text-sm mt-10 text-rose-700 ${colorError ? "visible-1" : "opacity-0"} h-5`}>
+				<div role="alert" className={`text-sm mt-10 text-rose-700 ${colorError ? "opacity-100" : "opacity-0"} h-5`}>
 					<span>{colorError}</span>
 				</div>
 				<SketchPicker
@@ -81,7 +81,7 @@ export const NewPaletteForm = (props: Props) => {
 					className="mb-10"
 					disableAlpha
 				/>
-				<div role="alert" className={`text-sm text-rose-700 ${nameError ? "visible-1" : "opacity-0"} h-5`}>
+				<div role="alert" className={`text-sm text-rose-700 ${nameError ? "opacity-100" : "opacity-0"} h-5`}>
 					<span>{nameError}</span>
 				</div>
 				<input
