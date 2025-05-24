@@ -45,9 +45,9 @@ export const SvgIcon = (props: SVGProps) => {
 	);
 };
 
-export const CreateSvgFromPath = (path: string, options: Partial<SVGProps> = {}): React.FC<SVGProps> => {
+export const CreateSvgFromPath = (path: string, defaultprops: Partial<SVGProps> = {}): React.FC<SVGProps> => {
 	const Component: React.FC<SVGProps> = (props) => {
-		const allProps: SVGProps = { ...props, ...options };
+		const allProps: SVGProps = { ...defaultprops, ...props };
 		return <SvgIcon path={path} {...allProps} />;
 	};
 	Component.displayName = `SvgIcon(${path})`;
