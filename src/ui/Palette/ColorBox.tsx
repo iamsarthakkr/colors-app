@@ -4,6 +4,7 @@ import { IBaseColor } from "@/types/palette";
 import { isDark } from "@/utils/color";
 import React from "react";
 import { toast } from "react-toastify";
+import { DeleteIcon } from "../icons";
 
 type CopiedContainerProps = {
 	color: IBaseColor;
@@ -22,12 +23,14 @@ type ColorBoxProps = {
 	color: IBaseColor;
 	showMore?: boolean;
 	onShowPalette?: (colorId: string) => void;
+	showDelete?: boolean;
+	onDelete?: (color: IBaseColor) => void;
 };
 
 export const ColorBox = (props: ColorBoxProps) => {
 	const [copied, setCopied] = React.useState(false);
 
-	const { color, onShowPalette, showMore } = props;
+	const { color, onShowPalette, showMore, showDelete, onDelete } = props;
 	const dark = isDark(color.color);
 
 	const handleCopy = React.useCallback(async () => {
@@ -57,6 +60,18 @@ export const ColorBox = (props: ColorBoxProps) => {
 		[color, onShowPalette]
 	);
 
+	const handleDelete = React.useCallback((e: React.MouseEvent) => {
+		e.stopPropagation();
+		if(onDelete) {
+			onDelete(color);
+		}
+	}, [color, onDelete]);
+	
+	const iconStyles = {
+		fill: dark ? "white" : "black",
+		stroke: dark ? "white" : "black",
+	}
+
 	return (
 		<div style={{ background: color.color }} className="group/box relative flex" onClick={handleCopy}>
 			<button className="hidden group-hover/box:block absolute w-[80px] h-[40px] bg-white/40 hover:bg-white/50 hover:cursor-pointer top-1/2 left-1/2 -translate-1/2">
@@ -76,6 +91,15 @@ export const ColorBox = (props: ColorBoxProps) => {
 						className="hidden group-hover/box:grid text-sm w-[60px] h-[30px] font-semibold items-center justify-center bg-white/40 hover:bg-white/50 hover:cursor-pointer"
 					>
 						MORE
+					</span>
+				)}
+				{showDelete && (
+					<span
+						onClick={handleDelete}
+						title="Delete color"
+						className="font-semibold flex items-center justify-center hover:cursor-pointer"
+					>
+						<DeleteIcon size="small" {...iconStyles} />
 					</span>
 				)}
 			</div>

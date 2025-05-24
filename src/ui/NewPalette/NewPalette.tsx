@@ -35,6 +35,13 @@ export const NewPalette = () => {
 		});
 	}, []);
 
+
+	const handleDeleteColor = React.useCallback((color: IBaseColor) => {
+		setColors((prev) => {
+			return prev.filter((c) => c.id !== color.id).map((c) => ({ ...c }));
+		});
+	}, []);
+
 	return (
 		<main className="h-full w-full">
 			<Drawer>
@@ -47,7 +54,7 @@ export const NewPalette = () => {
 				</Drawer.Drawer>
 				<Drawer.Header></Drawer.Header>
 				<Drawer.Main>
-					<Palette colors={colors} />
+					<Palette colors={colors} onDeleteColor={handleDeleteColor} />
 				</Drawer.Main>
 			</Drawer>
 		</main>
