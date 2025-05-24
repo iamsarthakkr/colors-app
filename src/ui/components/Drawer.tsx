@@ -65,9 +65,6 @@ export const Drawer = (props: BaseLayoutProps) => {
 		[childList]
 	);
 
-	const header = childList.find((child) => React.isValidElement(child) && child.type === Drawer.Drawer);
-	console.log({ header });
-
 	return (
 		<div className={`h-full w-full flex group ${className}`}>
 			<input type="checkbox" id="drawer-toggle" className="hidden" />
