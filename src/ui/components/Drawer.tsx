@@ -31,12 +31,32 @@ const DrawerDrawer = (props: DrawerProps) => {
 	);
 };
 
-const DrawerHeader = (props: BaseLayoutProps) => <>{props.children}</>;
-const Drawermain = (props: BaseLayoutProps) => <>{props.children}</>;
+const DrawerHeader = (props: BaseLayoutProps) => {
+	return (
+		<header className="h-15 grow-0 flex items-center shadow-sm relative">
+			<section className="ml-2 flex justify-center items-center">
+				<label
+					htmlFor="drawer-toggle"
+					title="Toggle sidebar"
+					className="inline-block cursor-pointer text-black rounded"
+				>
+					<HamburgerIcon />
+				</label>
+			</section>
+			<section className="ml-10 flex-1">
+				{props.children}
+			</section>
+		</header>
+	);
+};
+
+const DrawerMain = (props: BaseLayoutProps) => {
+	return <main className={`flex-1 ${props.className}`}>{props.children}</main>;
+};
 
 export const Drawer = (props: BaseLayoutProps) => {
 	const { children, className = "" } = props;
-	const childList = React.Children.toArray(children) as React.ReactElement[];
+	const childList = React.Children.toArray(children);
 
 	const getSlot = React.useCallback(
 		(element: React.ElementType) => {
@@ -54,17 +74,8 @@ export const Drawer = (props: BaseLayoutProps) => {
 			{/* Drawer */}
 			{getSlot(Drawer.Drawer)}
 			<section className="flex-1 flex flex-col">
-				<header className="h-15 grow-0 flex items-center">
-					<label
-						htmlFor="drawer-toggle"
-						title="Toggle sidebar"
-						className="inline-block cursor-pointer p-2 text-black rounded"
-					>
-						<HamburgerIcon />
-					</label>
-					{getSlot(Drawer.Header)}
-				</header>
-				<main className="flex-1">{getSlot(Drawer.Main)}</main>
+				{getSlot(Drawer.Header)}
+				{getSlot(Drawer.Main)}
 			</section>
 		</div>
 	);
@@ -72,4 +83,4 @@ export const Drawer = (props: BaseLayoutProps) => {
 
 Drawer.Drawer = DrawerDrawer;
 Drawer.Header = DrawerHeader;
-Drawer.Main = Drawermain;
+Drawer.Main = DrawerMain;
