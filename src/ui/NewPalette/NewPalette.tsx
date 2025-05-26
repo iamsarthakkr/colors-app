@@ -7,12 +7,15 @@ import { IBaseColor } from "@/types/palette";
 import { Palette } from "./Palette";
 import { Modal } from "../components/Modal";
 import { NewPaletteForm } from "./NewPaletteForm";
+import { useAppContext } from "../context/useContext";
 
 export const NewPalette = () => {
 	const [colors, setColors] = React.useState<IBaseColor[]>([]);
 	const [showNewPaletteForm, setShowNewPaletteForm] = React.useState(false);
 
-	const nameValidator = React.useCallback(
+	const { palettes } = useAppContext();
+
+	const colorNameValidator = React.useCallback(
 		(name: string) => {
 			if (name === "") {
 				return "Name can't be empty!";
@@ -37,6 +40,18 @@ export const NewPalette = () => {
 		},
 		[colors]
 	);
+
+	const paletteNameValidator = React.useCallback((paletteName: string) => {
+		if(!paletteName) {
+			return "Palette name is required!";
+		}
+		if(palettes.some(palette => palette.paletteName === paletteName)) {
+			return "Palette with same name already present!";
+		}
+
+		return "";
+
+	}, [palettes]);
 
 	const handleAddColor = React.useCallback((color: string, name: string) => {
 		setColors((prev) => {
@@ -69,15 +84,11 @@ export const NewPalette = () => {
 	return (
 		<main className="h-full w-full">
 			<Modal open={showNewPaletteForm} onClose={handleHideNewPaletteForm}>
-				<NewPaletteForm onCancel={handleHideNewPaletteForm} onSave={handleSaveNewPalette} />
+				<NewPaletteForm paletteNameValidator={paletteNameValidator} onCancel={handleHideNewPaletteForm} onSave={handleSaveNewPalette} />
 			</Modal>
 			<Drawer>
 				<Drawer.Drawer className="h-full">
-					<NewPaletteColorForm
-						onAddColor={handleAddColor}
-						nameValidator={nameValidator}
-						colorValidator={colorValidator}
-					/>
+					<NewPaletteColorForm onAddColor={handleAddColor} colorNameValidator={colorNameValidator} colorValidator={colorValidator} />
 				</Drawer.Drawer>
 				<Drawer.Header>
 					<div className="w-full flex justify-end px-5">

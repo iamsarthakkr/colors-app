@@ -4,6 +4,7 @@ import EmojiPicker, { EmojiClickData } from "emoji-picker-react";
 interface NewPaletteFormProps {
 	onCancel: () => void;
 	onSave: (name: string, emoji: string) => void;
+	paletteNameValidator: (paletteName: string) => string;
 }
 
 interface PaletteNameFormProps extends NewPaletteFormProps {
@@ -19,27 +20,43 @@ interface EmojiPickerFromProps {
 }
 
 const PaletteNameForm = (props: PaletteNameFormProps) => {
-	const { onCancel, onSave, paletteName, emoji, onPaletteNameChange, onChooseEmoji } = props;
+	const [nameError, setNameError] = React.useState("");
+	const { onCancel, onSave, paletteName, emoji, onPaletteNameChange, onChooseEmoji, paletteNameValidator } = props;
 
 	const handlePaletteNameChange = React.useCallback(
 		(e: React.ChangeEvent<HTMLInputElement>) => {
+			const val = e.target.value;
+			const err = paletteNameValidator(val);
+			setNameError(err);
 			onPaletteNameChange(e.target.value);
 		},
-		[onPaletteNameChange]
+		[onPaletteNameChange, paletteNameValidator]
 	);
+
+	const handleSavePalette = React.useCallback(() => {
+		const err = paletteNameValidator(paletteName);
+		setNameError(err);
+		if(err) {
+			return;
+		}
+		onSave();
+	}, [onSave, paletteName, paletteNameValidator]);
 
 	return (
 		<div>
 			<h2 className="font-semibold mb-10 text-xl tracking-wider text-cyan-700">New Palette</h2>
 			<p className="italic mb-6">Please chose a name for your palette. Make sure it is unique!</p>
 			<div className="relative">
+				<div role="alert" className={`text-sm text-rose-700 ${nameError ? "opacity-100" : "opacity-0"} h-5`}>
+					<span>{nameError}</span>
+				</div>{" "}
 				<input
 					placeholder={"Palette Name"}
-					className="block pl-6 pr-1 px-2 h-10 tracking-wider border-0 outline-0 w-full border-b-1 text-lg border-b-black/10 focus:border-b-1 focus:border-b-black"
+					className="block pl-6 pr-1 px-2 h-8 tracking-wider border-0 outline-0 w-full border-b-1 text-lg border-b-black/10 focus:border-b-1 focus:border-b-black"
 					value={paletteName}
 					onChange={handlePaletteNameChange}
 				/>
-				<span className="absolute top-2 left-0">{emoji}</span>
+				<span className="absolute bottom-2 left-0">{emoji}</span>
 			</div>
 			<div className="mt-3 flex gap-5">
 				<button className="d-btn d-btn-primary" onClick={onChooseEmoji}>
@@ -48,9 +65,9 @@ const PaletteNameForm = (props: PaletteNameFormProps) => {
 			</div>
 			<div className="flex justify-end mt-10 gap-2">
 				<button className="d-btn d-btn-primary" onClick={onCancel}>
-					Cancle
+					Cancel
 				</button>
-				<button className="d-btn d-btn-secondary" onClick={onSave}>
+				<button className="d-btn d-btn-secondary" onClick={handleSavePalette}>
 					Save
 				</button>
 			</div>
@@ -81,7 +98,7 @@ export const NewPaletteForm = (props: NewPaletteFormProps) => {
 	const [paletteEmoji, setPaletteEmoji] = React.useState("🎨");
 	const [showEmojiPicker, setShowEmojiPicker] = React.useState(false);
 
-	const { onCancel, onSave } = props;
+	const { onCancel, onSave, paletteNameValidator} = props;
 
 	const handleShowEmojiPicker = React.useCallback(() => {
 		setShowEmojiPicker(true);
@@ -106,6 +123,7 @@ export const NewPaletteForm = (props: NewPaletteFormProps) => {
 			onChooseEmoji={handleShowEmojiPicker}
 			onCancel={onCancel}
 			onSave={handleSavePalette}
+			paletteNameValidator={paletteNameValidator}
 		/>
 	);
 };

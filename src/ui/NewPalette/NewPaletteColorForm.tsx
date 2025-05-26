@@ -10,7 +10,7 @@ import { isDark } from "@/utils/color";
 
 type Props = {
 	onAddColor: (color: string, name: string) => void;
-	nameValidator: (name: string) => string;
+	colorNameValidator: (name: string) => string;
 	colorValidator: (color: string) => string;
 };
 
@@ -21,7 +21,7 @@ export const NewPaletteColorForm = (props: Props) => {
 	const [colorError, setColorError] = React.useState("");
 
 	const [buttonStyles, setButtonStyles] = React.useState<React.CSSProperties>({});
-	const { onAddColor, nameValidator, colorValidator } = props;
+	const { onAddColor, colorNameValidator, colorValidator } = props;
 
 	React.useEffect(() => {
 		const dark = isDark(color);
@@ -46,17 +46,17 @@ export const NewPaletteColorForm = (props: Props) => {
 		(event: React.ChangeEvent<HTMLInputElement>) => {
 			const value = event.target.value;
 			setName(value);
-			const err = nameValidator(value);
+			const err = colorNameValidator(value);
 			setNameError(err);
 		},
-		[nameValidator]
+		[colorNameValidator]
 	);
 
 	const handleAddColor = React.useCallback(
 		(event: React.MouseEvent<HTMLButtonElement>) => {
 			event.preventDefault();
 			const colorErr = colorValidator(color),
-				nameErr = nameValidator(name);
+				nameErr = colorNameValidator(name);
 			setNameError(nameErr);
 			setColorError(colorErr);
 			if (colorErr || nameErr) {
@@ -64,7 +64,7 @@ export const NewPaletteColorForm = (props: Props) => {
 			}
 			onAddColor(color, name);
 		},
-		[color, name, colorValidator, nameValidator, onAddColor]
+		[color, name, colorValidator, colorNameValidator, onAddColor]
 	);
 
 	return (
