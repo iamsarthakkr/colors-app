@@ -2,7 +2,7 @@
 
 import React from "react";
 import { IBaseColor } from "@/types/palette";
-import { ColorBox } from "../Palette/ColorBox";
+import { ColorBox } from "../ColorBox/ColorBox";
 
 type Props = {
 	colors: IBaseColor[];

@@ -2,11 +2,11 @@
 
 import React from "react";
 import { notFound } from "next/navigation";
-import { ColorBox } from "../Palette/ColorBox";
+import Link from "next/link";
 import { useAppContextActions } from "../context/useContext";
 import { Footer, Navbar } from "../components";
 import { formats, getColor } from "@/utils/color";
-import Link from "next/link";
+import { ColorBox } from "../ColorBox/ColorBox";
 
 type Props = {
 	paletteId: string;
@@ -31,7 +31,7 @@ export const ColorPalette = (props: Props) => {
 
 	const colors = color.shades.map((shade) => {
 		const color = getColor(shade, colorFormat);
-		return <ColorBox color={color} key={color.id} />;
+		return <ColorBox color={color} showCopy key={color.id} />;
 	});
 
 	return (

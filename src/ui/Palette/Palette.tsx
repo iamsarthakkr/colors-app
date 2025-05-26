@@ -3,10 +3,10 @@
 import React from "react";
 import { notFound, useRouter } from "next/navigation";
 import { IBaseColor } from "@/types/palette";
-import { ColorBox } from "./ColorBox";
 import { useAppContextActions } from "../context/useContext";
 import { Footer, Navbar } from "../components";
 import { formats, getColor } from "@/utils/color";
+import { ColorBox } from "../ColorBox/ColorBox";
 
 type Props = {
 	paletteId: string;
@@ -21,8 +21,8 @@ export const Palette = (props: Props) => {
 	const { paletteId } = props;
 
 	const handleShowPalette = React.useCallback(
-		(colorId: string) => {
-			router.push(`/palette/${paletteId}/${colorId}`);
+		(color: IBaseColor) => {
+			router.push(`/palette/${paletteId}/${color.id}`);
 		},
 		[paletteId, router]
 	);
@@ -63,7 +63,7 @@ export const Palette = (props: Props) => {
 			/>
 			<div className="w-full flex-1 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 auto-rows-fr">
 				{colors.map((color) => {
-					return <ColorBox showMore onShowPalette={handleShowPalette} color={color} key={color.id} />;
+					return <ColorBox showMore onShowMore={handleShowPalette} showCopy color={color} key={color.id} />;
 				})}
 			</div>
 			<Footer displayName={`${palette.paletteName} ${palette.emoji}`} />
