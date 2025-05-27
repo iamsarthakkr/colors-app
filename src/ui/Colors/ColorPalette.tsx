@@ -5,7 +5,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { useAppContextActions } from "../context/useContext";
 import { Footer, Navbar } from "../components";
-import { formats, getColor } from "@/utils/color";
+import { formats } from "@/utils/color";
 import { ColorBox } from "../ColorBox/ColorBox";
 
 type Props = {
@@ -19,7 +19,7 @@ export const ColorPalette = (props: Props) => {
 	const actions = useAppContextActions();
 	const { paletteId, colorId } = props;
 	const palette = React.useMemo(() => actions.getPalette(paletteId), [paletteId, actions]);
-	const color = React.useMemo(() => actions.getColor(paletteId, colorId), [paletteId, colorId, actions]);
+	const color = React.useMemo(() => actions.getEnrichedColor(paletteId, colorId), [paletteId, colorId, actions]);
 
 	const handleFormatChange = React.useCallback((format: string) => {
 		setColorFormat(format);
@@ -30,8 +30,7 @@ export const ColorPalette = (props: Props) => {
 	}
 
 	const colors = color.shades.map((shade) => {
-		const color = getColor(shade, colorFormat);
-		return <ColorBox color={color} showCopy key={color.id} />;
+		return <ColorBox format={colorFormat} color={shade} showCopy key={shade.id} />;
 	});
 
 	return (

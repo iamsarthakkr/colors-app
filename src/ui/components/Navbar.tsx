@@ -17,11 +17,11 @@ const ChangedContainer = (props: ChangedContainerProps) => {
 };
 
 type Props = {
-	showShadeControls?: boolean;
-	onColorLevelChange?: (level: number) => void;
-	colorLevel?: number;
 	colorFormat: string;
 	onColorFromatChange: (format: string) => void;
+	showShadeControls?: boolean;
+	colorLevel?: number;
+	onColorLevelChange?: (level: number) => void;
 };
 
 export const Navbar = (props: Props) => {

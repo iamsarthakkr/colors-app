@@ -1,13 +1,16 @@
 import React from "react";
-import { IColor, IPalette } from "@/types/palette";
+import { IBaseColor, IBasePalette, IColor, IPalette } from "@/types/palette";
 
 export type IAppContext = {
-	palettes: IPalette[];
+	palettes: IBasePalette[];
 };
 
 export type IAppContextActions = {
-	getPalette: (paletteId: string) => IPalette | null;
-	getColor: (paletteId: string, colorId: string) => IColor | null;
+	getPalette: (paletteId: string) => IBasePalette | null;
+	getEnrichedPalette: (paletteId: string) => IPalette | null;
+	getColor: (paletteId: string, colorId: string) => IBaseColor | null;
+	getEnrichedColor: (paletteId: string, colorId: string) => IColor | null;
+	addPalette: (paletteName: string, paletteEmoji: string, color: IBaseColor[]) => void;
 };
 
 export const AppContext = React.createContext<IAppContext>(null as unknown as IAppContext);

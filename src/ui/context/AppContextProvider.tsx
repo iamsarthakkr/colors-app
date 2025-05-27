@@ -2,36 +2,61 @@
 
 import React from "react";
 import seedColors from "@/utils/seedColors.json";
-import { IPalette } from "@/types/palette";
-import { generatePalette } from "@/utils/color";
+import { IBasePalette } from "@/types/palette";
+import { colorEnricher, paletteEnricher } from "@/utils/color";
 import { AppContext, AppContextActions, IAppContext, IAppContextActions } from "./appContext";
+import { getId } from "@/utils/palette";
+
 interface IProps {
 	children: React.ReactElement;
 }
 
 export const AppContextProvider: React.FC<IProps> = (props) => {
-	// eslint-disable-next-line @typescript-eslint/no-unused-vars
-	const [palettes, _setPalettes] = React.useState<IPalette[]>(() => {
-		return seedColors.map((base) => generatePalette(base));
-	});
+	const [palettes, setPalettes] = React.useState<IBasePalette[]>(seedColors);
 
 	const getPalette: IAppContextActions["getPalette"] = React.useCallback(
 		(id) => {
-			const palette = palettes.find((palette) => palette.id === id);
-			return palette || null;
+			return palettes.find((palette) => palette.id === id) || null;
 		},
 		[palettes]
+	);
+
+	const getEnrichedPalette: IAppContextActions["getEnrichedPalette"] = React.useCallback(
+		(id) => {
+			const palette = getPalette(id);
+			if (palette) {
+				return paletteEnricher(palette);
+			}
+			return null;
+		},
+		[getPalette]
 	);
 
 	const getColor: IAppContextActions["getColor"] = React.useCallback(
 		(paletteId, colorId) => {
-			const palette = palettes.find((palette) => palette.id === paletteId);
-			if (!palette) return null;
-			const color = palette.colors.find((c) => c.id === colorId);
-			return color || null;
+			return palettes.find((palette) => palette.id === paletteId)?.colors.find((c) => c.id === colorId) || null;
 		},
 		[palettes]
 	);
+
+	const getEnrichedColor: IAppContextActions["getEnrichedColor"] = React.useCallback(
+		(paletteId, colorId) => {
+			const color = getColor(paletteId, colorId);
+			return color ? colorEnricher(color) : null;
+		},
+		[getColor]
+	);
+	const addPalette: IAppContextActions["addPalette"] = React.useCallback((paletteName, emoji, colors) => {
+		const newPalette: IBasePalette = {
+			paletteName,
+			emoji,
+			colors,
+			id: getId(paletteName),
+		};
+		setPalettes((prev) => {
+			return prev.concat(newPalette);
+		});
+	}, []);
 
 	const context: IAppContext = React.useMemo(() => {
 		return {
@@ -42,9 +67,12 @@ export const AppContextProvider: React.FC<IProps> = (props) => {
 	const contextActions: IAppContextActions = React.useMemo(() => {
 		return {
 			getPalette,
-			getColor
+			getEnrichedPalette,
+			getColor,
+			getEnrichedColor,
+			addPalette,
 		};
-	}, [getPalette, getColor]);
+	}, [getPalette, getEnrichedPalette, getColor, getEnrichedColor, addPalette]);
 
 	return (
 		<AppContext.Provider value={context}>

@@ -18,6 +18,7 @@ type Props = {
 	showDelete?: boolean;
 	onDelete?: (color: IBaseColor) => void;
 	draggable?: boolean;
+	format?: string;
 };
 
 const Copy = ({ onCopy, color }: { onCopy: Props["onCopy"]; color: Props["color"] }) => {
@@ -97,7 +98,7 @@ const DragHandle = ({ color }: { color: IBaseColor }) => {
 };
 
 export const ColorBox = (props: Props) => {
-	const { color, onClick, showCopy, onCopy, showName = true, showMore, onShowMore, showDelete, onDelete, draggable } = props;
+	const { color, onClick, showCopy, onCopy, showName = true, showMore, onShowMore, showDelete, onDelete, draggable, format = "hex" } = props;
 	const { setNodeRef, transform, transition } = useSortable({ id: props.color.id });
 
 	const draggableStyle = draggable ? {
@@ -118,11 +119,11 @@ export const ColorBox = (props: Props) => {
 	const { copy } = useCopy(color);
 	
 	const handleCopy = React.useCallback((color: IBaseColor) => {
-		copy();
+		copy(format);
 		if(onCopy) {
 			onCopy(color);
 		}
-	}, [copy, onCopy]);
+	}, [copy, onCopy, format]);
 
 	return (
 		<div

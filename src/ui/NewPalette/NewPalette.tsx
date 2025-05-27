@@ -8,6 +8,7 @@ import { Palette } from "./Palette";
 import { Modal } from "../components/Modal";
 import { NewPaletteForm } from "./NewPaletteForm";
 import { useAppContext } from "../context/useContext";
+import { getId } from "@/utils/palette";
 
 export const NewPalette = () => {
 	const [colors, setColors] = React.useState<IBaseColor[]>([]);
@@ -17,10 +18,10 @@ export const NewPalette = () => {
 
 	const colorNameValidator = React.useCallback(
 		(name: string) => {
-			if (name === "") {
+			if (name.trim() === "") {
 				return "Name can't be empty!";
 			}
-			if (colors.some((color) => color.name === name)) {
+			if (colors.some((color) => getId(name) === color.id)) {
 				return "Color already in palette";
 			}
 			return "";
@@ -30,7 +31,7 @@ export const NewPalette = () => {
 
 	const colorValidator = React.useCallback(
 		(colorStr: string) => {
-			if (colorStr === "") {
+			if (colorStr.trim() === "") {
 				return "Color has to be valid!";
 			}
 			if (colors.some((color) => color.color === colorStr)) {
@@ -42,20 +43,19 @@ export const NewPalette = () => {
 	);
 
 	const paletteNameValidator = React.useCallback((paletteName: string) => {
-		if(!paletteName) {
+		if (paletteName.trim() === "") {
 			return "Palette name is required!";
 		}
-		if(palettes.some(palette => palette.paletteName === paletteName)) {
+		if (palettes.some((palette) => getId(paletteName) === palette.id)) {
 			return "Palette with same name already present!";
 		}
 
 		return "";
-
 	}, [palettes]);
 
 	const handleAddColor = React.useCallback((color: string, name: string) => {
 		setColors((prev) => {
-			return prev.map((c) => ({ ...c })).concat({ color, name, id: color.toLocaleLowerCase() });
+			return prev.map((c) => ({ ...c })).concat({ color, name, id: getId(name) });
 		});
 	}, []);
 
@@ -82,7 +82,7 @@ export const NewPalette = () => {
 			setShowNewPaletteForm(false);
 			console.log({ name, emoji });
 		},
-		[]
+		[colors]
 	);
 
 	return (

@@ -2,9 +2,9 @@
 
 import Link from "next/link";
 import { useAppContext } from "../context/useContext";
-import { IPalette } from "@/types/palette";
+import { IBasePalette } from "@/types/palette";
 
-const MiniPalette = (palette: IPalette) => {
+const MiniPalette = (palette: IBasePalette) => {
 	return (
 		<div className="h-full w-full flex flex-col">
 			<section className="flex-[80%] grid grid-cols-5 auto-cols-fr auto-rows-fr bg-gray-900">

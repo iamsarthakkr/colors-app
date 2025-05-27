@@ -2,10 +2,10 @@
 
 import React from "react";
 import { notFound, useRouter } from "next/navigation";
-import { IBaseColor } from "@/types/palette";
+import { IBaseColor, IColor } from "@/types/palette";
 import { useAppContextActions } from "../context/useContext";
 import { Footer, Navbar } from "../components";
-import { formats, getColor } from "@/utils/color";
+import { colorEnricher, formats } from "@/utils/color";
 import { ColorBox } from "../ColorBox/ColorBox";
 
 type Props = {
@@ -40,17 +40,23 @@ export const Palette = (props: Props) => {
 	if (!palette) {
 		notFound();
 	}
+	
+	const enrichedColors: IColor[] = React.useMemo(() => {
+		return palette.colors.map((color) => colorEnricher(color));
+	}, [palette.colors]);
 
-	const colors: IBaseColor[] = palette.colors.map((color) => {
-		const shade = color.shades.find((shade) => shade.weight === colorLevel);
-		if (!shade) {
-			return color;
-		}
+	const colors: IBaseColor[] = React.useMemo(() => {
+		return enrichedColors.map((color) => {
+			const shade = color.shades.find((shade) => shade.weight === colorLevel);
+			if (!shade) {
+				return color;
+			}
 
-		const ret = getColor(shade, colorFormat);
-		ret.id = color.id; // for routing to base color instead of a specific shade
-		return ret;
-	});
+			const ret = { ...shade };
+			ret.id = color.id; // for routing to base color instead of a specific shade
+			return ret;
+		});
+	}, [colorLevel, enrichedColors]);
 
 	return (
 		<main className="h-full w-full flex flex-col m-0 p-0">
@@ -63,7 +69,7 @@ export const Palette = (props: Props) => {
 			/>
 			<div className="w-full flex-1 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 auto-rows-fr">
 				{colors.map((color) => {
-					return <ColorBox showMore onShowMore={handleShowPalette} showCopy color={color} key={color.id} />;
+					return <ColorBox format={colorFormat} showMore onShowMore={handleShowPalette} showCopy color={color} key={color.id} />;
 				})}
 			</div>
 			<Footer displayName={`${palette.paletteName} ${palette.emoji}`} />

@@ -13,12 +13,7 @@ export interface IBasePalette {
 };
 
 /* Main palette */
-export interface IColorShade  {
-	name: string;
-	id: string;
-	hex: string;
-	rgb: string;
-	rgba: string;
+export interface IColorShade extends IBaseColor {
 	weight: number;
 };
 
