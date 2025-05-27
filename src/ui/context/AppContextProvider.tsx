@@ -12,7 +12,7 @@ interface IProps {
 }
 
 export const AppContextProvider: React.FC<IProps> = (props) => {
-	const [palettes, setPalettes] = React.useState<IBasePalette[]>(seedColors);
+	const [palettes, setPalettes] = React.useState<IBasePalette[]>([]);
 
 	const getPalette: IAppContextActions["getPalette"] = React.useCallback(
 		(id) => {
@@ -46,6 +46,7 @@ export const AppContextProvider: React.FC<IProps> = (props) => {
 		},
 		[getColor]
 	);
+
 	const addPalette: IAppContextActions["addPalette"] = React.useCallback((paletteName, emoji, colors) => {
 		const newPalette: IBasePalette = {
 			paletteName,
@@ -56,6 +57,21 @@ export const AppContextProvider: React.FC<IProps> = (props) => {
 		setPalettes((prev) => {
 			return prev.concat(newPalette);
 		});
+
+		if (typeof window !== "undefined") {
+			const savedStr = window.localStorage.getItem("savedPalettes") || "[]";
+			const savedPalettes = JSON.parse(savedStr) as IBasePalette[];
+			savedPalettes.push(newPalette);
+			window.localStorage.setItem("savedPalettes", JSON.stringify(savedPalettes));
+		}
+	}, []);
+
+	React.useEffect(() => {
+		  if (typeof window !== "undefined") {
+				const savedStr = window.localStorage.getItem("savedPalettes") || "[]";
+				const savedPalettes = JSON.parse(savedStr) as IBasePalette[];
+				setPalettes(seedColors.concat(savedPalettes));
+			}
 	}, []);
 
 	const context: IAppContext = React.useMemo(() => {

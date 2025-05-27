@@ -7,7 +7,7 @@ import { IBasePalette } from "@/types/palette";
 const MiniPalette = (palette: IBasePalette) => {
 	return (
 		<div className="h-full w-full flex flex-col">
-			<section className="flex-[80%] grid grid-cols-5 auto-cols-fr auto-rows-fr bg-gray-900">
+			<section className="flex-[80%] grid grid-cols-5 auto-cols-fr auto-rows-[25%] bg-gray-900">
 				{palette.colors.map((color) => {
 					return <div className="" style={{ backgroundColor: color.color }} key={color.id} />;
 				})}
@@ -32,8 +32,8 @@ export const Home = () => {
 				<span className="text-cyan-800 font-semibold tracking-wide hover:underline hover:text-cyan-900"><Link href={'/palette/new'}>Add Palette</Link></span>
 			</header>
 			{/* color boxes */}
-			<div className="w-full px-6 xl:w-[50%] h-[70%] xl:px-0 mx-auto flex justify-center">
-				<ul className="w-full grid grid-cols-3 auto-cols-fr auto-rows-fr gap-[40px]">
+			<div className="w-full px-6 h-[90%] xl:px-5 mx-auto xl:flex xl:justify-center overflow-scroll">
+				<ul className="w-[60%] grid grid-cols-3 auto-cols-fr auto-rows-[200px] gap-[40px]">
 					{palettes.map((palette) => {
 						return (
 							<li

@@ -3,18 +3,22 @@
 import React from "react";
 import { Drawer } from "../components/Drawer";
 import { NewPaletteColorForm } from "./NewPaletteColorForm";
+import { getId } from "@/utils/palette";
 import { IBaseColor } from "@/types/palette";
 import { Palette } from "./Palette";
 import { Modal } from "../components/Modal";
 import { NewPaletteForm } from "./NewPaletteForm";
-import { useAppContext } from "../context/useContext";
-import { getId } from "@/utils/palette";
+import { useAppContext, useAppContextActions } from "../context/useContext";
+import { toast } from "react-toastify";
+import { useRouter } from "next/navigation";
 
 export const NewPalette = () => {
 	const [colors, setColors] = React.useState<IBaseColor[]>([]);
 	const [showNewPaletteForm, setShowNewPaletteForm] = React.useState(false);
 
 	const { palettes } = useAppContext();
+	const actions = useAppContextActions();
+	const router = useRouter();
 
 	const colorNameValidator = React.useCallback(
 		(name: string) => {
@@ -42,16 +46,18 @@ export const NewPalette = () => {
 		[colors]
 	);
 
-	const paletteNameValidator = React.useCallback((paletteName: string) => {
-		if (paletteName.trim() === "") {
-			return "Palette name is required!";
-		}
-		if (palettes.some((palette) => getId(paletteName) === palette.id)) {
-			return "Palette with same name already present!";
-		}
-
-		return "";
-	}, [palettes]);
+	const paletteNameValidator = React.useCallback(
+		(paletteName: string) => {
+			if (paletteName.trim() === "") {
+				return "Palette name is required!";
+			}
+			if (palettes.some((palette) => getId(paletteName) === palette.id)) {
+				return "Palette with same name already present!";
+			}
+			return "";
+		},
+		[palettes]
+	);
 
 	const handleAddColor = React.useCallback((color: string, name: string) => {
 		setColors((prev) => {
@@ -78,11 +84,16 @@ export const NewPalette = () => {
 	}, []);
 
 	const handleSaveNewPalette = React.useCallback(
-		(name: string, emoji: string) => {
+		(paletteName: string, emoji: string) => {
 			setShowNewPaletteForm(false);
-			console.log({ name, emoji });
+			actions.addPalette(paletteName, emoji, colors);
+			toast("Palette saved successfully!", {
+				position: "bottom-left",
+				autoClose: 3000,
+			});
+			router.push("/");
 		},
-		[colors]
+		[actions, colors, router]
 	);
 
 	return (
