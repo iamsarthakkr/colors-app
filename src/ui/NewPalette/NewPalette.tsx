@@ -65,6 +65,10 @@ export const NewPalette = () => {
 		});
 	}, []);
 
+	const handleColorSort = React.useCallback((colors: IBaseColor[]) => {
+		setColors(colors);
+	}, []);
+
 	const handleShowNewPaletteForm = React.useCallback(() => {
 		setShowNewPaletteForm(true);
 	}, []);
@@ -98,7 +102,7 @@ export const NewPalette = () => {
 					</div>
 				</Drawer.Header>
 				<Drawer.Main>
-					<Palette colors={colors} onDeleteColor={handleDeleteColor} />
+					<Palette colors={colors} onDeleteColor={handleDeleteColor} onColorSort={handleColorSort} />
 				</Drawer.Main>
 			</Drawer>
 		</main>

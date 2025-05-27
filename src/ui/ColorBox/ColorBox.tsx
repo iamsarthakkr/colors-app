@@ -1,8 +1,10 @@
 import React from "react";
-import { DeleteIcon } from "../icons";
+import { useSortable } from "@dnd-kit/sortable";
+import { CSS } from "@dnd-kit/utilities";
 import { isDark } from "@/utils/color";
 import { IBaseColor } from "@/types/palette";
 import { useCopy } from "./useCopy";
+import { DeleteIcon, MoveIcon } from "../icons";
 
 type Props = {
 	children?: React.ReactNode;
@@ -15,6 +17,7 @@ type Props = {
 	onShowMore?: (color: IBaseColor) => void;
 	showDelete?: boolean;
 	onDelete?: (color: IBaseColor) => void;
+	draggable?: boolean;
 };
 
 const Copy = ({ onCopy, color }: { onCopy: Props["onCopy"]; color: Props["color"] }) => {
@@ -80,8 +83,31 @@ const Delete = ({ onDelete, color }: { onDelete: Props["onDelete"]; color: Props
 	);
 };
 
+const DragHandle = ({ color }: { color: IBaseColor }) => {
+	const { attributes, listeners } = useSortable({ id: color.id });
+	return (
+		<span
+			className="hidden w-8 h-8 group-hover/box:flex justify-center items-center font-bold cursor-pointer text-3xl absolute right-0 top-0"
+			{...attributes}
+			{...listeners}
+		>
+			<MoveIcon size="small"/>
+		</span>
+	);
+};
+
 export const ColorBox = (props: Props) => {
-	const { color, onClick, showCopy, onCopy, showName = true, showMore, onShowMore, showDelete, onDelete } = props;
+	const { color, onClick, showCopy, onCopy, showName = true, showMore, onShowMore, showDelete, onDelete, draggable } = props;
+	const { setNodeRef, transform, transition } = useSortable({ id: props.color.id });
+
+	const draggableStyle = draggable ? {
+		transform: CSS.Transform.toString(transform),
+		transition, 
+	} : {};
+
+	const baseStyles = {
+		background: color.color
+	}
 
 	const handleClick = React.useCallback(() => {
 		if (onClick) {
@@ -99,8 +125,14 @@ export const ColorBox = (props: Props) => {
 	}, [copy, onCopy]);
 
 	return (
-		<div style={{ background: color.color }} className="group/box relative flex" onClick={handleClick}>
+		<div
+			ref={draggable ? setNodeRef : null}
+			style={{ ...baseStyles, ...draggableStyle }}
+			className="group/box relative flex w-full h-full"
+			onClick={handleClick}
+		>
 			{showCopy && <Copy color={color} onCopy={handleCopy} />}
+			{draggable && <DragHandle color={color} />}
 			<div className="pl-1 pr-0 pt-0.5 pb-0 w-full self-end justify-self-end flex justify-between">
 				{showName && <Name color={color} />}
 				{showMore && <More color={color} onShowMore={onShowMore} />}
