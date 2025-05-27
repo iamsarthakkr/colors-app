@@ -4,14 +4,14 @@ import React from "react";
 import { DndContext, closestCenter, KeyboardSensor, PointerSensor, useSensor, useSensors, DragEndEvent } from "@dnd-kit/core";
 import { arrayMove, rectSortingStrategy, SortableContext, sortableKeyboardCoordinates } from "@dnd-kit/sortable";
 import { IBaseColor } from "@/types/palette";
-import { ColorBox } from "../ColorBox/ColorBox";
+import { Props as ColorBoxProps } from "../ColorBox/ColorBox";
+import { PaletteGrid } from "../Palette/PaletteGrid";
 
 type Props = {
 	colors: IBaseColor[];
 	onDeleteColor: (color: IBaseColor) => void;
 	onColorSort: (colors: IBaseColor[]) => void;
 };
-
 
 export const Palette = (props: Props) => {
 	const { colors, onDeleteColor, onColorSort } = props;
@@ -20,16 +20,15 @@ export const Palette = (props: Props) => {
 		useSensor(PointerSensor),
 		useSensor(KeyboardSensor, {
 			coordinateGetter: sortableKeyboardCoordinates,
-		}),
+		})
 	);
 
 	const handleDragEnd = (event: DragEndEvent) => {
 		const { active, over } = event;
 
 		if (over && active.id !== over.id) {
-			
 			console.log({ active, over });
-			
+
 			const oldIndex = colors.findIndex((color) => color.id === active.id);
 			const newIndex = colors.findIndex((color) => color.id === over.id);
 
@@ -37,14 +36,17 @@ export const Palette = (props: Props) => {
 		}
 	};
 
+	const colorBoxProps: Partial<ColorBoxProps> = {
+		draggable: true,
+		showCopy: true,
+		showDelete: true,
+		onDelete: onDeleteColor,
+	};
+
 	return (
 		<DndContext sensors={sensors} collisionDetection={closestCenter} onDragEnd={handleDragEnd}>
 			<SortableContext items={colors} strategy={rectSortingStrategy}>
-				<div className="h-full max-h-full w-full flex-1 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 auto-rows-[25%]">
-					{colors.map((color) => (
-						<ColorBox key={color.id} color={color} draggable showName showDelete onDelete={onDeleteColor} />
-					))}
-				</div>
+				<PaletteGrid colors={colors} colorBoxProps={colorBoxProps} />
 			</SortableContext>
 		</DndContext>
 	);

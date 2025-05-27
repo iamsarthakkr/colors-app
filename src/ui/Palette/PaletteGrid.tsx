@@ -1,11 +1,21 @@
+import { IBaseColor } from "@/types/palette";
 import { ColorBox } from "../ColorBox/ColorBox";
+import { Props as ColorBoxProps } from "../ColorBox/ColorBox";
 
-export const PaletteLevels = () => {
+type PaletteGridProps = {
+	colors: IBaseColor[];
+	colorBoxProps: Partial<ColorBoxProps>;
+	children?: React.ReactNode;
+};
+
+export const PaletteGrid = (props: PaletteGridProps) => {
+	const { colors, colorBoxProps, children } = props;
 	return (
-		<div className="w-full flex-1 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 auto-rows-fr">
+		<div className="h-full w-full flex-1 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 auto-rows-[25%]">
 			{colors.map((color) => {
-				return <ColorBox showMore onShowMore={handleShowPalette} showCopy color={color} key={color.id} />;
+				return <ColorBox {...colorBoxProps} color={color} key={color.id} />;
 			})}
+			{children}
 		</div>
 	);
 };

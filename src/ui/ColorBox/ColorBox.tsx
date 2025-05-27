@@ -6,7 +6,7 @@ import { IBaseColor } from "@/types/palette";
 import { useCopy } from "./useCopy";
 import { DeleteIcon, MoveIcon } from "../icons";
 
-type Props = {
+export type Props = {
 	children?: React.ReactNode;
 	onClick?: (color: IBaseColor) => void;
 	color: IBaseColor;

@@ -13,6 +13,7 @@ interface IProps {
 
 export const AppContextProvider: React.FC<IProps> = (props) => {
 	const [palettes, setPalettes] = React.useState<IBasePalette[]>([]);
+	const [loaded, setLoaded] = React.useState(false);
 
 	const getPalette: IAppContextActions["getPalette"] = React.useCallback(
 		(id) => {
@@ -71,6 +72,7 @@ export const AppContextProvider: React.FC<IProps> = (props) => {
 				const savedStr = window.localStorage.getItem("savedPalettes") || "[]";
 				const savedPalettes = JSON.parse(savedStr) as IBasePalette[];
 				setPalettes(seedColors.concat(savedPalettes));
+				setLoaded(true);
 			}
 	}, []);
 
@@ -92,7 +94,7 @@ export const AppContextProvider: React.FC<IProps> = (props) => {
 
 	return (
 		<AppContext.Provider value={context}>
-			<AppContextActions.Provider value={contextActions}>{props.children}</AppContextActions.Provider>
+			<AppContextActions.Provider value={contextActions}>{loaded ? props.children : null}</AppContextActions.Provider>
 		</AppContext.Provider>
 	);
 };

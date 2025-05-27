@@ -27,13 +27,13 @@ export const Home = () => {
 	return (
 		<main className="h-full w-full flex flex-col m-0 p-0 bg-blue-200">
 			{/* header */}
-			<header className="w-full xl:w-[50%] h-[100px] mx-auto flex justify-between items-center ">
+			<header className="w-[90%] md:w-[50%] h-[100px] mx-auto flex justify-between items-center ">
 				<h1 className="font-semibold tracking-[2px] text-[34px] text-cyan-800">COLORSUI</h1>
 				<span className="text-cyan-800 font-semibold tracking-wide hover:underline hover:text-cyan-900"><Link href={'/palette/new'}>Add Palette</Link></span>
 			</header>
 			{/* color boxes */}
-			<div className="w-full px-6 h-[90%] xl:px-5 mx-auto xl:flex xl:justify-center overflow-scroll">
-				<ul className="w-[60%] grid grid-cols-3 auto-cols-fr auto-rows-[200px] gap-[40px]">
+			<div className="w-full px-6 h-[90%] mx-auto flex justify-center overflow-scroll">
+				<ul className="w-[60%] grid grid-cols-1 md:grid-cols-3 auto-cols-fr auto-rows-[200px] gap-[40px]">
 					{palettes.map((palette) => {
 						return (
 							<li

@@ -6,7 +6,8 @@ import Link from "next/link";
 import { useAppContextActions } from "../context/useContext";
 import { Footer, Navbar } from "../components";
 import { formats } from "@/utils/color";
-import { ColorBox } from "../ColorBox/ColorBox";
+import { PaletteGrid } from "../Palette/PaletteGrid";
+import { Props as ColorBoxProps } from "../ColorBox/ColorBox";
 
 type Props = {
 	paletteId: string;
@@ -29,21 +30,21 @@ export const ColorPalette = (props: Props) => {
 		notFound();
 	}
 
-	const colors = color.shades.map((shade) => {
-		return <ColorBox format={colorFormat} color={shade} showCopy key={shade.id} />;
-	});
+	const colorBoxProps: Partial<ColorBoxProps> = {
+		format: colorFormat,
+		showCopy: true,
+	};
 
 	return (
 		<main className="h-full w-full flex flex-col m-0 p-0">
 			<Navbar onColorFromatChange={handleFormatChange} colorFormat={colorFormat} />
-			<div className="w-full flex-1 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 auto-rows-fr">
-				{colors}
+			<PaletteGrid colors={color.shades} colorBoxProps={colorBoxProps}>
 				<div className="bg-gray-100 flex justify-center items-center">
 					<span className="w-[80px] h-[40px] font-semibold flex items-center justify-center bg-black/20 hover:bg-black/30 hover:cursor-pointer">
 						<Link href={`/palette/${paletteId}`}>Back</Link>
 					</span>
 				</div>
-			</div>
+			</PaletteGrid>
 			<Footer displayName={`${palette.paletteName} ${palette.emoji}`} />
 		</main>
 	);

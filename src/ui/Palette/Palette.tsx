@@ -6,7 +6,8 @@ import { IBaseColor, IColor } from "@/types/palette";
 import { useAppContextActions } from "../context/useContext";
 import { Footer, Navbar } from "../components";
 import { colorEnricher, formats } from "@/utils/color";
-import { ColorBox } from "../ColorBox/ColorBox";
+import { Props as ColorBoxProps } from "../ColorBox/ColorBox";
+import { PaletteGrid } from "./PaletteGrid";
 
 type Props = {
 	paletteId: string;
@@ -57,6 +58,13 @@ export const Palette = (props: Props) => {
 			return ret;
 		});
 	}, [colorLevel, enrichedColors]);
+	
+	const colorBoxProps: Partial<ColorBoxProps> = {
+		format: colorFormat,
+		showMore: true,
+		onShowMore: handleShowPalette,
+		showCopy: true,
+	};
 
 	return (
 		<main className="h-full w-full flex flex-col m-0 p-0">
@@ -67,11 +75,7 @@ export const Palette = (props: Props) => {
 				onColorLevelChange={handleLevelChange}
 				onColorFromatChange={handleFormatChange}
 			/>
-			<div className="w-full flex-1 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 auto-rows-fr">
-				{colors.map((color) => {
-					return <ColorBox format={colorFormat} showMore onShowMore={handleShowPalette} showCopy color={color} key={color.id} />;
-				})}
-			</div>
+			<PaletteGrid colors={colors} colorBoxProps={colorBoxProps} />
 			<Footer displayName={`${palette.paletteName} ${palette.emoji}`} />
 		</main>
 	);
