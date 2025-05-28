@@ -73,7 +73,6 @@ export const NewPaletteColorForm = (props: Props) => {
 				Choose Color for your Palette
 			</h1>
 			<div className="flex gap-3">
-				<button className="d-btn d-btn-primary">Clear Palette</button>
 				<button className="d-btn d-btn-secondary">Random Color</button>
 			</div>
 			<form className="flex flex-col justify-center items-center">

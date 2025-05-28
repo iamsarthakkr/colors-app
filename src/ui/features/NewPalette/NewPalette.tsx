@@ -75,6 +75,14 @@ export const NewPalette = () => {
 		setColors(colors);
 	}, []);
 
+	const handleClearPalette = React.useCallback(() => {
+		setColors([]);
+		toast("Palette cleared!", {
+			position: "bottom-left",
+			autoClose: 3000,
+		});
+	}, []);
+
 	const handleShowNewPaletteForm = React.useCallback(() => {
 		setShowNewPaletteForm(true);
 	}, []);
@@ -106,7 +114,10 @@ export const NewPalette = () => {
 					<NewPaletteColorForm onAddColor={handleAddColor} colorNameValidator={colorNameValidator} colorValidator={colorValidator} />
 				</Drawer.Drawer>
 				<Drawer.Header>
-					<div className="w-full flex justify-end px-5">
+					<div className="w-full flex justify-end gap-2 px-5">
+						<button className="d-btn d-btn-primary" onClick={handleClearPalette}>
+							Clear Palette
+						</button>
 						<button className="d-btn d-btn-secondary" onClick={handleShowNewPaletteForm}>
 							Save Palette
 						</button>
