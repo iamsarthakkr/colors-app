@@ -1,13 +1,13 @@
 "use client";
 
 import React from "react";
-import { notFound } from "next/navigation";
 import Link from "next/link";
+import { notFound } from "next/navigation";
 import { useAppContextActions } from "../context/useContext";
 import { Footer, Navbar } from "../components";
 import { formats } from "@/utils/color";
 import { PaletteGrid } from "../Palette/PaletteGrid";
-import { Props as ColorBoxProps } from "../ColorBox/ColorBox";
+import { ColorBoxProps } from "../ColorBox";
 
 type Props = {
 	paletteId: string;

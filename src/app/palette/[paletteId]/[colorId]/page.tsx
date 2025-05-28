@@ -1,5 +1,5 @@
 import { RouteProps } from "@/types/routes";
-import { ColorPalette } from "@/ui/Colors/ColorPalette";
+import { ColorPalette } from "@/ui/ColorPalette";
 
 type Params = {
 	paletteId: string;

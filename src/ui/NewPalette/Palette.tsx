@@ -4,8 +4,8 @@ import React from "react";
 import { DndContext, closestCenter, KeyboardSensor, PointerSensor, useSensor, useSensors, DragEndEvent } from "@dnd-kit/core";
 import { arrayMove, rectSortingStrategy, SortableContext, sortableKeyboardCoordinates } from "@dnd-kit/sortable";
 import { IBaseColor } from "@/types/palette";
-import { Props as ColorBoxProps } from "../ColorBox/ColorBox";
 import { PaletteGrid } from "../Palette/PaletteGrid";
+import { ColorBoxProps } from "../ColorBox";
 
 type Props = {
 	colors: IBaseColor[];

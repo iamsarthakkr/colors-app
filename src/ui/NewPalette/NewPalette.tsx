@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Drawer } from "../components/Drawer";
+import { Drawer } from "../components";
 import { NewPaletteColorForm } from "./NewPaletteColorForm";
 import { getId } from "@/utils/palette";
 import { IBaseColor } from "@/types/palette";

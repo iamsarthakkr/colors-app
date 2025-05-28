@@ -6,8 +6,8 @@ import { IBaseColor, IColor } from "@/types/palette";
 import { useAppContextActions } from "../context/useContext";
 import { Footer, Navbar } from "../components";
 import { colorEnricher, formats } from "@/utils/color";
-import { Props as ColorBoxProps } from "../ColorBox/ColorBox";
 import { PaletteGrid } from "./PaletteGrid";
+import { ColorBoxProps } from "../ColorBox";
 
 type Props = {
 	paletteId: string;

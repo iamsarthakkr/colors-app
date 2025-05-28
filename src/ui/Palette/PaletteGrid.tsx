@@ -1,6 +1,5 @@
 import { IBaseColor } from "@/types/palette";
-import { ColorBox } from "../ColorBox/ColorBox";
-import { Props as ColorBoxProps } from "../ColorBox/ColorBox";
+import { ColorBox, ColorBoxProps } from "../ColorBox";
 
 type PaletteGridProps = {
 	colors: IBaseColor[];
