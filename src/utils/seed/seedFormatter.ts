@@ -1,5 +1,6 @@
 import { IBasePalette } from "@/types/palette";
-import seedColors from "./seedColors.json";
+import seedColors from "@/data/seedColors.json";
+import { getId } from "../common";
 import fs from "fs";
 
 export const formattSeeds = () => {
@@ -11,12 +12,12 @@ export const formattSeeds = () => {
 			colors: base.colors.map((color) => {
 				return {
 					...color,
-					id: color.name.toLocaleLowerCase(),
+					id: getId(color.name),
 				};
 			}),
 		};
 		return palette;
 	});
 
-	fs.writeFileSync("src/utils/.seedColors.json", JSON.stringify(formatted, null, 4), { encoding: "utf-8" });
+	fs.writeFileSync("src/data/.seedColors.json", JSON.stringify(formatted, null, 4), { encoding: "utf-8" });
 };

@@ -5,7 +5,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { useAppContextActions } from "../../context/useContext";
 import { Footer, Navbar } from "../../components";
-import { formats } from "@/utils/color";
+import { formats } from "@/utils/colors";
 import { PaletteGrid } from "../Palette/PaletteGrid";
 import { ColorBoxProps } from "../ColorBox";
 

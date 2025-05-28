@@ -3,7 +3,7 @@
 import React from "react";
 import { Drawer } from "../../components";
 import { NewPaletteColorForm } from "./NewPaletteColorForm";
-import { getId } from "@/utils/palette";
+import { getId } from "@/utils/common";
 import { IBaseColor } from "@/types/palette";
 import { Palette } from "./Palette";
 import { Modal } from "../../components/Modal";

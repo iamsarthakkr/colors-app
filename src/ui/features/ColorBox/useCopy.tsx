@@ -2,7 +2,7 @@ import React from "react";
 import { IBaseColor } from "@/types/palette";
 import { toast } from "react-toastify";
 import { CopiedContainer } from "./CopyContainer";
-import { getCopyString } from "@/utils/color";
+import { getCopyString } from "@/utils/colors";
 
 export const useCopy = (color: IBaseColor) => {
 	const [copied, setCopied] = React.useState(false);

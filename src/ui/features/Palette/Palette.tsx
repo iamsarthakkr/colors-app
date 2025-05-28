@@ -5,7 +5,7 @@ import { notFound, useRouter } from "next/navigation";
 import { IBaseColor, IColor } from "@/types/palette";
 import { useAppContextActions } from "../../context/useContext";
 import { Footer, Navbar } from "../../components";
-import { colorEnricher, formats } from "@/utils/color";
+import { colorEnricher, formats } from "@/utils/colors";
 import { PaletteGrid } from "./PaletteGrid";
 import { ColorBoxProps } from "../ColorBox";
 

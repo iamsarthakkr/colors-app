@@ -1,11 +1,11 @@
 "use client";
 
 import React from "react";
-import seedColors from "@/utils/seedColors.json";
+import seedColors from "@/data/seedColors.json";
 import { IBasePalette } from "@/types/palette";
-import { colorEnricher, paletteEnricher } from "@/utils/color";
+import { colorEnricher, paletteEnricher } from "@/utils/colors";
 import { AppContext, AppContextActions, IAppContext, IAppContextActions } from "./appContext";
-import { getId } from "@/utils/palette";
+import { getId } from "@/utils/common";
 
 interface IProps {
 	children: React.ReactElement;

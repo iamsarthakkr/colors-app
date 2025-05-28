@@ -1,7 +1,7 @@
 import React from "react";
 import { useSortable } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
-import { isDark } from "@/utils/color";
+import { isDark } from "@/utils/colors";
 import { IBaseColor } from "@/types/palette";
 import { useCopy } from "./useCopy";
 import { DeleteIcon, MoveIcon } from "../../icons";

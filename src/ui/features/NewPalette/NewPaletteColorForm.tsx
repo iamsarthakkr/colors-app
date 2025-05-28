@@ -5,7 +5,7 @@ import dynamic from "next/dynamic";
 import { ColorChangeHandler } from "react-color";
 const SketchPicker = dynamic(() => import("react-color").then((mod) => mod.SketchPicker), { ssr: false });
 
-import { isDark } from "@/utils/color";
+import { isDark } from "@/utils/colors";
 
 
 type Props = {
