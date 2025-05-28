@@ -41,7 +41,7 @@ export const ColorsPreset = (props: Props) => {
 								onClick={handleSelectColor}
 								color={color}
 								showName={false}
-								className={`w-[50px] h-[50px] hover:scale-115 transition-transform duration-75 ${
+								className={`!w-[50px] !h-[50px] hover:scale-115 transition-transform duration-75 ${
 									selectedColor?.id === color.id && "border-cyan-900 border-1 scale-115"
 								}`}
 							/>
