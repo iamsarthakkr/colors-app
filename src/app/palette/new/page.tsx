@@ -1,4 +1,4 @@
-import { NewPalette } from "@/ui/NewPalette";
+import { NewPalette } from "@/ui/features/NewPalette";
 
 const NewPalettePage = () => {
 	return <NewPalette />;

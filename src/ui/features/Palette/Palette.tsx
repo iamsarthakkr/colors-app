@@ -3,8 +3,8 @@
 import React from "react";
 import { notFound, useRouter } from "next/navigation";
 import { IBaseColor, IColor } from "@/types/palette";
-import { useAppContextActions } from "../context/useContext";
-import { Footer, Navbar } from "../components";
+import { useAppContextActions } from "../../context/useContext";
+import { Footer, Navbar } from "../../components";
 import { colorEnricher, formats } from "@/utils/color";
 import { PaletteGrid } from "./PaletteGrid";
 import { ColorBoxProps } from "../ColorBox";

@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useAppContext } from "../context/useContext";
+import { useAppContext } from "../../context/useContext";
 import { IBasePalette } from "@/types/palette";
 
 const MiniPalette = (palette: IBasePalette) => {

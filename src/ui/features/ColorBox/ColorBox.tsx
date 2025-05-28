@@ -4,7 +4,7 @@ import { CSS } from "@dnd-kit/utilities";
 import { isDark } from "@/utils/color";
 import { IBaseColor } from "@/types/palette";
 import { useCopy } from "./useCopy";
-import { DeleteIcon, MoveIcon } from "../icons";
+import { DeleteIcon, MoveIcon } from "../../icons";
 
 export type Props = {
 	children?: React.ReactNode;

@@ -1,14 +1,14 @@
 "use client";
 
 import React from "react";
-import { Drawer } from "../components";
+import { Drawer } from "../../components";
 import { NewPaletteColorForm } from "./NewPaletteColorForm";
 import { getId } from "@/utils/palette";
 import { IBaseColor } from "@/types/palette";
 import { Palette } from "./Palette";
-import { Modal } from "../components/Modal";
+import { Modal } from "../../components/Modal";
 import { NewPaletteForm } from "./NewPaletteForm";
-import { useAppContext, useAppContextActions } from "../context/useContext";
+import { useAppContext, useAppContextActions } from "../../context/useContext";
 import { toast } from "react-toastify";
 import { useRouter } from "next/navigation";
 
