@@ -1,1 +1,2 @@
-export { formattSeeds } from "./seedFormatter";
+export { generatePalettes } from "./seedPalettes";
+export { generateSeedColors } from "./seedColors";

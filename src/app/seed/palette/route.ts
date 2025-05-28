@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
-import { formattSeeds } from "@/utils/seed/seedFormatter";
+import { generatePalettes } from "@/utils/seed/seedPalettes";
 
 export function GET() {
-	formattSeeds();	
+	generatePalettes();
 	return NextResponse.json({message: "Formatted"});
 };

@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import seedColors from "@/data/seedColors.json";
+import seedPalettes from "@/data/seedPalettes.json";
 import { IBasePalette } from "@/types/palette";
 import { colorEnricher, paletteEnricher } from "@/utils/colors";
 import { AppContext, AppContextActions, IAppContext, IAppContextActions } from "./appContext";
@@ -71,7 +71,7 @@ export const AppContextProvider: React.FC<IProps> = (props) => {
 		  if (typeof window !== "undefined") {
 				const savedStr = window.localStorage.getItem("savedPalettes") || "[]";
 				const savedPalettes = JSON.parse(savedStr) as IBasePalette[];
-				setPalettes(seedColors.concat(savedPalettes));
+				setPalettes(seedPalettes.concat(savedPalettes));
 				setLoaded(true);
 			}
 	}, []);

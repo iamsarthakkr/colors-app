@@ -1,10 +1,10 @@
 import { IBasePalette } from "@/types/palette";
-import seedColors from "@/data/seedColors.json";
+import seedPalettes from "@/data/seedPalettes.json";
 import { getId } from "../common";
 import fs from "fs";
 
-export const formattSeeds = () => {
-	const formatted: IBasePalette[] = seedColors.map((base) => {
+export const generatePalettes = () => {
+	const formatted: IBasePalette[] = seedPalettes.map((base) => {
 		const palette: IBasePalette = {
 			paletteName: base.paletteName,
 			id: base.id,
@@ -19,5 +19,5 @@ export const formattSeeds = () => {
 		return palette;
 	});
 
-	fs.writeFileSync("src/data/.seedColors.json", JSON.stringify(formatted, null, 4), { encoding: "utf-8" });
+	fs.writeFileSync("src/data/.seedPalettes.json", JSON.stringify(formatted, null, 4), { encoding: "utf-8" });
 };
