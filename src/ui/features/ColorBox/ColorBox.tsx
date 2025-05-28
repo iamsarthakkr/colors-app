@@ -10,6 +10,7 @@ import { DeleteIcon, MoveIcon } from "../../icons";
 
 export type Props = {
 	children?: React.ReactNode;
+	className?: string;
 	onClick?: (color: IBaseColor) => void;
 	color: IBaseColor;
 	showCopy?: boolean;
@@ -100,7 +101,20 @@ const DragHandle = ({ color }: { color: IBaseColor }) => {
 };
 
 export const ColorBox = (props: Props) => {
-	const { color, onClick, showCopy, onCopy, showName = true, showMore, onShowMore, showDelete, onDelete, draggable, format = "hex" } = props;
+	const {
+		className = "",
+		color,
+		onClick,
+		showCopy,
+		onCopy,
+		showName = true,
+		showMore,
+		onShowMore,
+		showDelete,
+		onDelete,
+		draggable,
+		format = "hex",
+	} = props;
 	const { setNodeRef, transform, transition } = useSortable({ id: props.color.id });
 
 	const draggableStyle = draggable ? {
@@ -131,7 +145,7 @@ export const ColorBox = (props: Props) => {
 		<div
 			ref={draggable ? setNodeRef : null}
 			style={{ ...baseStyles, ...draggableStyle }}
-			className="group/box relative flex w-full h-full"
+			className={`group/box relative flex w-full h-full ${className}`}
 			onClick={handleClick}
 		>
 			{showCopy && <Copy color={color} onCopy={handleCopy} />}
