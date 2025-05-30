@@ -1,0 +1,3181 @@
+{
+    "Gray": [],
+    "Red": [
+        {
+            "color": "#af002a",
+            "name": "Alabama Crimson",
+            "id": "alabama-crimson"
+        },
+        {
+            "color": "#ff033e",
+            "name": "American Rose",
+            "id": "american-rose"
+        },
+        {
+            "color": "#cc0000",
+            "name": "Boston University Red",
+            "id": "boston-university-red"
+        },
+        {
+            "color": "#b10000",
+            "name": "Bright Red",
+            "id": "bright-red"
+        },
+        {
+            "color": "#ff7034",
+            "name": "Burning Orange",
+            "id": "burning-orange"
+        },
+        {
+            "color": "#e30022",
+            "name": "Cadmium Red",
+            "id": "cadmium-red"
+        },
+        {
+            "color": "#ff0800",
+            "name": "Candy Apple Red",
+            "id": "candy-apple-red"
+        },
+        {
+            "color": "#ff0038",
+            "name": "Carmine Red",
+            "id": "carmine-red"
+        },
+        {
+            "color": "#ff3800",
+            "name": "Coquelicot",
+            "id": "coquelicot"
+        },
+        {
+            "color": "#ff7f50",
+            "name": "Coral",
+            "id": "coral"
+        },
+        {
+            "color": "#ff4040",
+            "name": "Coral Red",
+            "id": "coral-red"
+        },
+        {
+            "color": "#ff7538",
+            "name": "Crayola Orange",
+            "id": "crayola-orange"
+        },
+        {
+            "color": "#a40000",
+            "name": "Dark Candy Apple Red",
+            "id": "dark-candy-apple-red"
+        },
+        {
+            "color": "#ff003f",
+            "name": "Electric Crimson",
+            "id": "electric-crimson"
+        },
+        {
+            "color": "#ff2800",
+            "name": "Ferrari Red",
+            "id": "ferrari-red"
+        },
+        {
+            "color": "#ff5470",
+            "name": "Fiery Rose",
+            "id": "fiery-rose"
+        },
+        {
+            "color": "#c90016",
+            "name": "Harvard Crimson",
+            "id": "harvard-crimson"
+        },
+        {
+            "color": "#ff4f00",
+            "name": "International Orange",
+            "id": "international-orange"
+        },
+        {
+            "color": "#e8000d",
+            "name": "KU Crimson",
+            "id": "ku-crimson"
+        },
+        {
+            "color": "#ff4466",
+            "name": "Magic Potion",
+            "id": "magic-potion"
+        },
+        {
+            "color": "#ae0c00",
+            "name": "Mordant Red",
+            "id": "mordant-red"
+        },
+        {
+            "color": "#f2003c",
+            "name": "Munsell Red",
+            "id": "munsell-red"
+        },
+        {
+            "color": "#ff4500",
+            "name": "Orange Red",
+            "id": "orange-red"
+        },
+        {
+            "color": "#ff6e4a",
+            "name": "Outrageous Orange",
+            "id": "outrageous-orange"
+        },
+        {
+            "color": "#ff6961",
+            "name": "Pastel Red",
+            "id": "pastel-red"
+        },
+        {
+            "color": "#ff5a36",
+            "name": "Portland Orange",
+            "id": "portland-orange"
+        },
+        {
+            "color": "#ff355e",
+            "name": "Radical Red",
+            "id": "radical-red"
+        },
+        {
+            "color": "#ff0000",
+            "name": "Red",
+            "id": "red"
+        },
+        {
+            "color": "#ff5349",
+            "name": "Red Orange",
+            "id": "red-orange"
+        },
+        {
+            "color": "#d40000",
+            "name": "Rosso Corsa",
+            "id": "rosso-corsa"
+        },
+        {
+            "color": "#ff0028",
+            "name": "Ruddy",
+            "id": "ruddy"
+        },
+        {
+            "color": "#ff2400",
+            "name": "Scarlet",
+            "id": "scarlet"
+        },
+        {
+            "color": "#ff3855",
+            "name": "Sizzling Red",
+            "id": "sizzling-red"
+        },
+        {
+            "color": "#ff6d3a",
+            "name": "Smashed Pumpkin",
+            "id": "smashed-pumpkin"
+        },
+        {
+            "color": "#e60026",
+            "name": "Spanish Red",
+            "id": "spanish-red"
+        },
+        {
+            "color": "#ff404c",
+            "name": "Sunburnt Cyclops",
+            "id": "sunburnt-cyclops"
+        },
+        {
+            "color": "#f94d00",
+            "name": "Tangelo",
+            "id": "tangelo"
+        },
+        {
+            "color": "#ff6347",
+            "name": "Tomato",
+            "id": "tomato"
+        },
+        {
+            "color": "#fa5b3d",
+            "name": "Orange Soda",
+            "id": "orange-soda"
+        },
+        {
+            "color": "#c7031e",
+            "name": "Monza",
+            "id": "monza"
+        },
+        {
+            "color": "#fe2712",
+            "name": "RYB Red",
+            "id": "ryb-red"
+        },
+        {
+            "color": "#c23b22",
+            "name": "Dark Pastel Red",
+            "id": "dark-pastel-red"
+        },
+        {
+            "color": "#fd0e35",
+            "name": "Tractor Red",
+            "id": "tractor-red"
+        },
+        {
+            "color": "#fe4164",
+            "name": "Neon Fuchsia",
+            "id": "neon-fuchsia"
+        },
+        {
+            "color": "#fe6f5e",
+            "name": "Bittersweet",
+            "id": "bittersweet"
+        },
+        {
+            "color": "#fd3a4a",
+            "name": "Red Salsa",
+            "id": "red-salsa"
+        },
+        {
+            "color": "#fe5a1d",
+            "name": "Giants Orange",
+            "id": "giants-orange"
+        },
+        {
+            "color": "#fd5240",
+            "name": "Ogre Odor",
+            "id": "ogre-odor"
+        },
+        {
+            "color": "#ea3c53",
+            "name": "Desire",
+            "id": "desire"
+        },
+        {
+            "color": "#fe2e2e",
+            "name": "Light Brilliant Red",
+            "id": "light-brilliant-red"
+        },
+        {
+            "color": "#f34723",
+            "name": "Pomegranate",
+            "id": "pomegranate"
+        },
+        {
+            "color": "#e25465",
+            "name": "Mandy",
+            "id": "mandy"
+        },
+        {
+            "color": "#ba0101",
+            "name": "Guardsman Red",
+            "id": "guardsman-red"
+        },
+        {
+            "color": "#991b07",
+            "name": "Totem Pole",
+            "id": "totem-pole"
+        },
+        {
+            "color": "#a02712",
+            "name": "Tabasco",
+            "id": "tabasco"
+        },
+        {
+            "color": "#da2c43",
+            "name": "Rusty Red",
+            "id": "rusty-red"
+        },
+        {
+            "color": "#fd5e53",
+            "name": "Sunset Orange",
+            "id": "sunset-orange"
+        },
+        {
+            "color": "#a81c07",
+            "name": "Rufous",
+            "id": "rufous"
+        },
+        {
+            "color": "#e2062c",
+            "name": "Medium Candy Apple Red",
+            "id": "medium-candy-apple-red"
+        },
+        {
+            "color": "#fb4f14",
+            "name": "Orioles Orange",
+            "id": "orioles-orange"
+        },
+        {
+            "color": "#e2725b",
+            "name": "Terra Cotta",
+            "id": "terra-cotta"
+        },
+        {
+            "color": "#b81104",
+            "name": "Milano Red",
+            "id": "milano-red"
+        },
+        {
+            "color": "#fb607f",
+            "name": "Brink Pink",
+            "id": "brink-pink"
+        },
+        {
+            "color": "#c80815",
+            "name": "Venetian Red",
+            "id": "venetian-red"
+        },
+        {
+            "color": "#f70d1a",
+            "name": "Vivid Red",
+            "id": "vivid-red"
+        },
+        {
+            "color": "#d9381e",
+            "name": "Vermilion",
+            "id": "vermilion"
+        },
+        {
+            "color": "#fb4d46",
+            "name": "Tart Orange",
+            "id": "tart-orange"
+        },
+        {
+            "color": "#f95a61",
+            "name": "Carnation",
+            "id": "carnation"
+        },
+        {
+            "color": "#cf1020",
+            "name": "Lava",
+            "id": "lava"
+        },
+        {
+            "color": "#9b111e",
+            "name": "Ruby Red",
+            "id": "ruby-red"
+        },
+        {
+            "color": "#f2552a",
+            "name": "Flamingo",
+            "id": "flamingo"
+        },
+        {
+            "color": "#ed2939",
+            "name": "Imperial Red",
+            "id": "imperial-red"
+        },
+        {
+            "color": "#da614e",
+            "name": "Jelly Bean",
+            "id": "jelly-bean"
+        },
+        {
+            "color": "#aa381e",
+            "name": "Chinese Red",
+            "id": "chinese-red"
+        },
+        {
+            "color": "#ed0a3f",
+            "name": "Red Ribbon",
+            "id": "red-ribbon"
+        },
+        {
+            "color": "#e32636",
+            "name": "Alizarin Crimson",
+            "id": "alizarin-crimson"
+        },
+        {
+            "color": "#831923",
+            "name": "Merlot",
+            "id": "merlot"
+        },
+        {
+            "color": "#c02b18",
+            "name": "Thunderbird",
+            "id": "thunderbird"
+        },
+        {
+            "color": "#882d17",
+            "name": "Sienna",
+            "id": "sienna"
+        },
+        {
+            "color": "#b20931",
+            "name": "Shiraz",
+            "id": "shiraz"
+        },
+        {
+            "color": "#c41e3a",
+            "name": "Cardinal",
+            "id": "cardinal"
+        },
+        {
+            "color": "#ef3038",
+            "name": "Deep Carmine Pink",
+            "id": "deep-carmine-pink"
+        },
+        {
+            "color": "#ba160c",
+            "name": "Engineering International Orange",
+            "id": "engineering-international-orange"
+        },
+        {
+            "color": "#dc143c",
+            "name": "Crimson",
+            "id": "crimson"
+        },
+        {
+            "color": "#cb410b",
+            "name": "Sinopia",
+            "id": "sinopia"
+        },
+        {
+            "color": "#ed1c24",
+            "name": "Pigment Red",
+            "id": "pigment-red"
+        },
+        {
+            "color": "#e66771",
+            "name": "Light Carmine Pink",
+            "id": "light-carmine-pink"
+        },
+        {
+            "color": "#9a3820",
+            "name": "Prairie Sand",
+            "id": "prairie-sand"
+        },
+        {
+            "color": "#ee204d",
+            "name": "Crayola Red",
+            "id": "crayola-red"
+        },
+        {
+            "color": "#e4717a",
+            "name": "Tango Pink",
+            "id": "tango-pink"
+        },
+        {
+            "color": "#a62f20",
+            "name": "Roof Terracotta",
+            "id": "roof-terracotta"
+        },
+        {
+            "color": "#9f381d",
+            "name": "Cognac",
+            "id": "cognac"
+        },
+        {
+            "color": "#d3212d",
+            "name": "Amaranth Red",
+            "id": "amaranth-red"
+        },
+        {
+            "color": "#841b2d",
+            "name": "Antique Ruby",
+            "id": "antique-ruby"
+        },
+        {
+            "color": "#e97451",
+            "name": "Burnt Sienna",
+            "id": "burnt-sienna"
+        },
+        {
+            "color": "#e52b50",
+            "name": "Amaranth",
+            "id": "amaranth"
+        },
+        {
+            "color": "#f37a48",
+            "name": "Mandarin",
+            "id": "mandarin"
+        },
+        {
+            "color": "#da5b38",
+            "name": "Flame Pea",
+            "id": "flame-pea"
+        },
+        {
+            "color": "#9f1d35",
+            "name": "Vivid Burgundy",
+            "id": "vivid-burgundy"
+        },
+        {
+            "color": "#dc4333",
+            "name": "Punch",
+            "id": "punch"
+        },
+        {
+            "color": "#eb4c42",
+            "name": "Carmine Pink",
+            "id": "carmine-pink"
+        },
+        {
+            "color": "#e34234",
+            "name": "Cinnabar",
+            "id": "cinnabar"
+        },
+        {
+            "color": "#ae2029",
+            "name": "Upsdell Red",
+            "id": "upsdell-red"
+        },
+        {
+            "color": "#c1440e",
+            "name": "Tia Maria",
+            "id": "tia-maria"
+        },
+        {
+            "color": "#ce2029",
+            "name": "Fire Engine Red",
+            "id": "fire-engine-red"
+        },
+        {
+            "color": "#c72c48",
+            "name": "French Raspberry",
+            "id": "french-raspberry"
+        },
+        {
+            "color": "#b7410e",
+            "name": "Rust",
+            "id": "rust"
+        },
+        {
+            "color": "#e63e62",
+            "name": "Paradise Pink",
+            "id": "paradise-pink"
+        },
+        {
+            "color": "#9e1316",
+            "name": "Spartan Crimson",
+            "id": "spartan-crimson"
+        },
+        {
+            "color": "#80341f",
+            "name": "Red Robin",
+            "id": "red-robin"
+        },
+        {
+            "color": "#d9603b",
+            "name": "Medium Vermilion",
+            "id": "medium-vermilion"
+        },
+        {
+            "color": "#e51a4c",
+            "name": "Spanish Crimson",
+            "id": "spanish-crimson"
+        },
+        {
+            "color": "#e03c31",
+            "name": "CG Red",
+            "id": "cg-red"
+        },
+        {
+            "color": "#d84437",
+            "name": "Valencia",
+            "id": "valencia"
+        },
+        {
+            "color": "#e9967a",
+            "name": "Dark Salmon",
+            "id": "dark-salmon"
+        },
+        {
+            "color": "#e25822",
+            "name": "Flame",
+            "id": "flame"
+        },
+        {
+            "color": "#a9203e",
+            "name": "Deep Carmine",
+            "id": "deep-carmine"
+        },
+        {
+            "color": "#991613",
+            "name": "Tamarillo",
+            "id": "tamarillo"
+        },
+        {
+            "color": "#e62020",
+            "name": "Lust",
+            "id": "lust"
+        },
+        {
+            "color": "#e56024",
+            "name": "Vivid Vermilion",
+            "id": "vivid-vermilion"
+        },
+        {
+            "color": "#c32148",
+            "name": "Bright Maroon",
+            "id": "bright-maroon"
+        },
+        {
+            "color": "#c0362c",
+            "name": "Golden Gate Bridge",
+            "id": "golden-gate-bridge"
+        },
+        {
+            "color": "#da6a41",
+            "name": "Red Damask",
+            "id": "red-damask"
+        },
+        {
+            "color": "#d73b3e",
+            "name": "Jasper",
+            "id": "jasper"
+        },
+        {
+            "color": "#c53151",
+            "name": "Dingy Dungeon",
+            "id": "dingy-dungeon"
+        },
+        {
+            "color": "#e12c2c",
+            "name": "Permanent Geranium Lake",
+            "id": "permanent-geranium-lake"
+        },
+        {
+            "color": "#b31b1b",
+            "name": "Carnelian",
+            "id": "carnelian"
+        },
+        {
+            "color": "#e16865",
+            "name": "Sunglo",
+            "id": "sunglo"
+        },
+        {
+            "color": "#9c2542",
+            "name": "Big Dip Oruby",
+            "id": "big-dip-oruby"
+        },
+        {
+            "color": "#de6360",
+            "name": "Roman",
+            "id": "roman"
+        },
+        {
+            "color": "#b32d29",
+            "name": "Tall Poppy",
+            "id": "tall-poppy"
+        },
+        {
+            "color": "#b22222",
+            "name": "Firebrick",
+            "id": "firebrick"
+        },
+        {
+            "color": "#922724",
+            "name": "Vivid Auburn",
+            "id": "vivid-auburn"
+        },
+        {
+            "color": "#924321",
+            "name": "Cumin",
+            "id": "cumin"
+        },
+        {
+            "color": "#901e1e",
+            "name": "Old Brick",
+            "id": "old-brick"
+        },
+        {
+            "color": "#da8a67",
+            "name": "Pale Copper",
+            "id": "pale-copper"
+        },
+        {
+            "color": "#a72525",
+            "name": "Mexican Red",
+            "id": "mexican-red"
+        },
+        {
+            "color": "#cc3333",
+            "name": "Persian Red",
+            "id": "persian-red"
+        }
+    ],
+    "Pink": [
+        {
+            "color": "#ff55a3",
+            "name": "Brilliant Rose",
+            "id": "brilliant-rose"
+        },
+        {
+            "color": "#be0032",
+            "name": "Crimson Glory",
+            "id": "crimson-glory"
+        },
+        {
+            "color": "#ff1493",
+            "name": "Deep Pink",
+            "id": "deep-pink"
+        },
+        {
+            "color": "#f400a1",
+            "name": "Fashion Fuchsia",
+            "id": "fashion-fuchsia"
+        },
+        {
+            "color": "#a2006d",
+            "name": "Flirt",
+            "id": "flirt"
+        },
+        {
+            "color": "#ff004f",
+            "name": "Folly",
+            "id": "folly"
+        },
+        {
+            "color": "#ff1dce",
+            "name": "Hot Magenta",
+            "id": "hot-magenta"
+        },
+        {
+            "color": "#ff5ccd",
+            "name": "Light Deep Pink",
+            "id": "light-deep-pink"
+        },
+        {
+            "color": "#ff00fd",
+            "name": "Metal Pink",
+            "id": "metal-pink"
+        },
+        {
+            "color": "#e4007c",
+            "name": "Mexican Pink",
+            "id": "mexican-pink"
+        },
+        {
+            "color": "#ff0090",
+            "name": "Process Magenta",
+            "id": "process-magenta"
+        },
+        {
+            "color": "#ff33cc",
+            "name": "Razzle Dazzle Rose",
+            "id": "razzle-dazzle-rose"
+        },
+        {
+            "color": "#e40078",
+            "name": "Red Purple",
+            "id": "red-purple"
+        },
+        {
+            "color": "#d70040",
+            "name": "Rich Carmine",
+            "id": "rich-carmine"
+        },
+        {
+            "color": "#ff007f",
+            "name": "Rose",
+            "id": "rose"
+        },
+        {
+            "color": "#d10056",
+            "name": "Rubine Red",
+            "id": "rubine-red"
+        },
+        {
+            "color": "#ff4681",
+            "name": "Sasquatch Socks",
+            "id": "sasquatch-socks"
+        },
+        {
+            "color": "#d10047",
+            "name": "Spanish Carmine",
+            "id": "spanish-carmine"
+        },
+        {
+            "color": "#d9004c",
+            "name": "UA Red",
+            "id": "ua-red"
+        },
+        {
+            "color": "#d3003f",
+            "name": "Utah Crimson",
+            "id": "utah-crimson"
+        },
+        {
+            "color": "#cc0033",
+            "name": "Vivid Crimson",
+            "id": "vivid-crimson"
+        },
+        {
+            "color": "#ff006c",
+            "name": "Vivid Raspberry",
+            "id": "vivid-raspberry"
+        },
+        {
+            "color": "#ff43a4",
+            "name": "Wild Strawberry",
+            "id": "wild-strawberry"
+        },
+        {
+            "color": "#ff007c",
+            "name": "Winter Sky",
+            "id": "winter-sky"
+        },
+        {
+            "color": "#e0218a",
+            "name": "Barbie Pink",
+            "id": "barbie-pink"
+        },
+        {
+            "color": "#fe28a2",
+            "name": "Persian Rose",
+            "id": "persian-rose"
+        },
+        {
+            "color": "#ab0563",
+            "name": "Lipstick",
+            "id": "lipstick"
+        },
+        {
+            "color": "#a50b5e",
+            "name": "Jazzberry Jam",
+            "id": "jazzberry-jam"
+        },
+        {
+            "color": "#fd3f92",
+            "name": "French Fuchsia",
+            "id": "french-fuchsia"
+        },
+        {
+            "color": "#fe4eda",
+            "name": "Purple Pizzazz",
+            "id": "purple-pizzazz"
+        },
+        {
+            "color": "#f9429e",
+            "name": "Rose Bonbon",
+            "id": "rose-bonbon"
+        },
+        {
+            "color": "#ca1f7b",
+            "name": "Magenta",
+            "id": "magenta"
+        },
+        {
+            "color": "#fc0fc0",
+            "name": "Shocking Pink",
+            "id": "shocking-pink"
+        },
+        {
+            "color": "#da1d81",
+            "name": "Vivid Cerise",
+            "id": "vivid-cerise"
+        },
+        {
+            "color": "#c40233",
+            "name": "NCS Red",
+            "id": "ncs-red"
+        },
+        {
+            "color": "#d74894",
+            "name": "Pantone Pink",
+            "id": "pantone-pink"
+        },
+        {
+            "color": "#fc5a8d",
+            "name": "Strawberry",
+            "id": "strawberry"
+        },
+        {
+            "color": "#871550",
+            "name": "Disco",
+            "id": "disco"
+        },
+        {
+            "color": "#cc338b",
+            "name": "Magenta Pink",
+            "id": "magenta-pink"
+        },
+        {
+            "color": "#da3287",
+            "name": "Deep Cerise",
+            "id": "deep-cerise"
+        },
+        {
+            "color": "#f75394",
+            "name": "Violet Red",
+            "id": "violet-red"
+        },
+        {
+            "color": "#c71585",
+            "name": "Red Violet",
+            "id": "red-violet"
+        },
+        {
+            "color": "#e30b5d",
+            "name": "Raspberry",
+            "id": "raspberry"
+        },
+        {
+            "color": "#e936a7",
+            "name": "Frostbite",
+            "id": "frostbite"
+        },
+        {
+            "color": "#e25098",
+            "name": "Raspberry Pink",
+            "id": "raspberry-pink"
+        },
+        {
+            "color": "#f64a8a",
+            "name": "French Rose",
+            "id": "french-rose"
+        },
+        {
+            "color": "#d70a53",
+            "name": "Debian Red",
+            "id": "debian-red"
+        },
+        {
+            "color": "#c30b4e",
+            "name": "Pictorial Carmine",
+            "id": "pictorial-carmine"
+        },
+        {
+            "color": "#f56fa1",
+            "name": "Cyclamen",
+            "id": "cyclamen"
+        },
+        {
+            "color": "#e0115f",
+            "name": "Ruby",
+            "id": "ruby"
+        },
+        {
+            "color": "#ec3b83",
+            "name": "Cerise Pink",
+            "id": "cerise-pink"
+        },
+        {
+            "color": "#d71868",
+            "name": "Dogwood Rose",
+            "id": "dogwood-rose"
+        },
+        {
+            "color": "#f56991",
+            "name": "Light Crimson",
+            "id": "light-crimson"
+        },
+        {
+            "color": "#ca2c92",
+            "name": "Royal Fuchsia",
+            "id": "royal-fuchsia"
+        },
+        {
+            "color": "#de6fa1",
+            "name": "Thulian Pink",
+            "id": "thulian-pink"
+        },
+        {
+            "color": "#e3256b",
+            "name": "Razzmatazz",
+            "id": "razzmatazz"
+        },
+        {
+            "color": "#cf3476",
+            "name": "Telemagenta",
+            "id": "telemagenta"
+        },
+        {
+            "color": "#d0417e",
+            "name": "Pantone Magenta",
+            "id": "pantone-magenta"
+        },
+        {
+            "color": "#c21e56",
+            "name": "Rose Red",
+            "id": "rose-red"
+        },
+        {
+            "color": "#de5285",
+            "name": "Fandango Pink",
+            "id": "fandango-pink"
+        },
+        {
+            "color": "#e75480",
+            "name": "Dark Pink",
+            "id": "dark-pink"
+        },
+        {
+            "color": "#d65282",
+            "name": "Mystic",
+            "id": "mystic"
+        },
+        {
+            "color": "#de3163",
+            "name": "Cerise",
+            "id": "cerise"
+        },
+        {
+            "color": "#e47698",
+            "name": "Deep Blush",
+            "id": "deep-blush"
+        },
+        {
+            "color": "#ac1e44",
+            "name": "French Wine",
+            "id": "french-wine"
+        },
+        {
+            "color": "#de5d83",
+            "name": "Blush",
+            "id": "blush"
+        },
+        {
+            "color": "#db5079",
+            "name": "Cranberry",
+            "id": "cranberry"
+        },
+        {
+            "color": "#d94972",
+            "name": "Cabaret",
+            "id": "cabaret"
+        },
+        {
+            "color": "#ab274f",
+            "name": "Amaranth Purple",
+            "id": "amaranth-purple"
+        }
+    ],
+    "Purple": [
+        {
+            "color": "#9400d3",
+            "name": "Dark Violet",
+            "id": "dark-violet"
+        },
+        {
+            "color": "#cc00cc",
+            "name": "Deep Magenta",
+            "id": "deep-magenta"
+        },
+        {
+            "color": "#bf00ff",
+            "name": "Electric Purple",
+            "id": "electric-purple"
+        },
+        {
+            "color": "#ff00ff",
+            "name": "Fuchsia",
+            "id": "fuchsia"
+        },
+        {
+            "color": "#aa00bb",
+            "name": "Heliotrope Magenta",
+            "id": "heliotrope-magenta"
+        },
+        {
+            "color": "#9f00c5",
+            "name": "Munsell Purple",
+            "id": "munsell-purple"
+        },
+        {
+            "color": "#df00ff",
+            "name": "Psychedelic Purple",
+            "id": "psychedelic-purple"
+        },
+        {
+            "color": "#cc00ff",
+            "name": "Vivid Orchid",
+            "id": "vivid-orchid"
+        },
+        {
+            "color": "#8601af",
+            "name": "RYB Violet",
+            "id": "ryb-violet"
+        },
+        {
+            "color": "#b80ce3",
+            "name": "Vivid Mulberry",
+            "id": "vivid-mulberry"
+        },
+        {
+            "color": "#731e8f",
+            "name": "Seance",
+            "id": "seance"
+        },
+        {
+            "color": "#991199",
+            "name": "Violet Eggplant",
+            "id": "violet-eggplant"
+        },
+        {
+            "color": "#9932cc",
+            "name": "Dark Orchid",
+            "id": "dark-orchid"
+        },
+        {
+            "color": "#cc33cc",
+            "name": "Steel Pink",
+            "id": "steel-pink"
+        }
+    ],
+    "Violet": [
+        {
+            "color": "#6f00ff",
+            "name": "Electric Indigo",
+            "id": "electric-indigo"
+        },
+        {
+            "color": "#8b00ff",
+            "name": "Electric Violet",
+            "id": "electric-violet"
+        },
+        {
+            "color": "#7f00ff",
+            "name": "Violet",
+            "id": "violet"
+        },
+        {
+            "color": "#9f00ff",
+            "name": "Vivid Violet",
+            "id": "vivid-violet"
+        },
+        {
+            "color": "#8a2be2",
+            "name": "Blue Violet",
+            "id": "blue-violet"
+        },
+        {
+            "color": "#8806ce",
+            "name": "French Violet",
+            "id": "french-violet"
+        },
+        {
+            "color": "#a020f0",
+            "name": "Veronica",
+            "id": "veronica"
+        }
+    ],
+    "Blue": [
+        {
+            "color": "#0048ba",
+            "name": "Absolute Zero",
+            "id": "absolute-zero"
+        },
+        {
+            "color": "#0076a3",
+            "name": "Allports",
+            "id": "allports"
+        },
+        {
+            "color": "#007fff",
+            "name": "Azure",
+            "id": "azure"
+        },
+        {
+            "color": "#0000ff",
+            "name": "Blue",
+            "id": "blue"
+        },
+        {
+            "color": "#0066ff",
+            "name": "Blue Ribbon",
+            "id": "blue-ribbon"
+        },
+        {
+            "color": "#0095b6",
+            "name": "Bondi Blue",
+            "id": "bondi-blue"
+        },
+        {
+            "color": "#0070ff",
+            "name": "Brandeis Blue",
+            "id": "brandeis-blue"
+        },
+        {
+            "color": "#3399ff",
+            "name": "Brilliant Azure",
+            "id": "brilliant-azure"
+        },
+        {
+            "color": "#007aa5",
+            "name": "CG Blue",
+            "id": "cg-blue"
+        },
+        {
+            "color": "#00bfff",
+            "name": "Capri",
+            "id": "capri"
+        },
+        {
+            "color": "#007ba7",
+            "name": "Cerulean",
+            "id": "cerulean"
+        },
+        {
+            "color": "#0047ab",
+            "name": "Cobalt Blue",
+            "id": "cobalt-blue"
+        },
+        {
+            "color": "#1e90ff",
+            "name": "Dodger Blue",
+            "id": "dodger-blue"
+        },
+        {
+            "color": "#00009c",
+            "name": "Duke Blue",
+            "id": "duke-blue"
+        },
+        {
+            "color": "#0056a7",
+            "name": "Endeavour",
+            "id": "endeavour"
+        },
+        {
+            "color": "#0072bb",
+            "name": "French Blue",
+            "id": "french-blue"
+        },
+        {
+            "color": "#006db0",
+            "name": "Honolulu Blue",
+            "id": "honolulu-blue"
+        },
+        {
+            "color": "#002fa7",
+            "name": "International Klein Blue",
+            "id": "international-klein-blue"
+        },
+        {
+            "color": "#007ec7",
+            "name": "Lochmara",
+            "id": "lochmara"
+        },
+        {
+            "color": "#0000cd",
+            "name": "Medium Blue",
+            "id": "medium-blue"
+        },
+        {
+            "color": "#0087bd",
+            "name": "NCS Blue",
+            "id": "ncs-blue"
+        },
+        {
+            "color": "#0077be",
+            "name": "Ocean Boat Blue",
+            "id": "ocean-boat-blue"
+        },
+        {
+            "color": "#0018a8",
+            "name": "Pantone Blue",
+            "id": "pantone-blue"
+        },
+        {
+            "color": "#00b7eb",
+            "name": "Process Cyan",
+            "id": "process-cyan"
+        },
+        {
+            "color": "#0038a8",
+            "name": "Royal Azure",
+            "id": "royal-azure"
+        },
+        {
+            "color": "#0067a5",
+            "name": "Sapphire Blue",
+            "id": "sapphire-blue"
+        },
+        {
+            "color": "#0066cc",
+            "name": "Science Blue",
+            "id": "science-blue"
+        },
+        {
+            "color": "#0070b8",
+            "name": "Spanish Blue",
+            "id": "spanish-blue"
+        },
+        {
+            "color": "#00aae4",
+            "name": "Spanish Sky Blue",
+            "id": "spanish-sky-blue"
+        },
+        {
+            "color": "#007bb8",
+            "name": "Star Command Blue",
+            "id": "star-command-blue"
+        },
+        {
+            "color": "#0073cf",
+            "name": "True Blue",
+            "id": "true-blue"
+        },
+        {
+            "color": "#0033aa",
+            "name": "UA Blue",
+            "id": "ua-blue"
+        },
+        {
+            "color": "#3f00ff",
+            "name": "Ultramarine",
+            "id": "ultramarine"
+        },
+        {
+            "color": "#00aaee",
+            "name": "Vivid Cerulean",
+            "id": "vivid-cerulean"
+        },
+        {
+            "color": "#00ccff",
+            "name": "Vivid Sky Blue",
+            "id": "vivid-sky-blue"
+        },
+        {
+            "color": "#0014a8",
+            "name": "Zaffre",
+            "id": "zaffre"
+        },
+        {
+            "color": "#0f2d9e",
+            "name": "Torea Bay",
+            "id": "torea-bay"
+        },
+        {
+            "color": "#4166f5",
+            "name": "Ultramarine Blue",
+            "id": "ultramarine-blue"
+        },
+        {
+            "color": "#0247fe",
+            "name": "RYB Blue",
+            "id": "ryb-blue"
+        },
+        {
+            "color": "#1f75fe",
+            "name": "Crayola Blue",
+            "id": "crayola-blue"
+        },
+        {
+            "color": "#2243b6",
+            "name": "Denim Blue",
+            "id": "denim-blue"
+        },
+        {
+            "color": "#091f92",
+            "name": "Indigo Dye",
+            "id": "indigo-dye"
+        },
+        {
+            "color": "#1034a6",
+            "name": "Egyptian Blue",
+            "id": "egyptian-blue"
+        },
+        {
+            "color": "#1c39bb",
+            "name": "Persian Blue",
+            "id": "persian-blue"
+        },
+        {
+            "color": "#4f86f7",
+            "name": "Blueberry",
+            "id": "blueberry"
+        },
+        {
+            "color": "#4169e1",
+            "name": "Royal Blue",
+            "id": "royal-blue"
+        },
+        {
+            "color": "#0fc0fc",
+            "name": "Spiro Disco Ball",
+            "id": "spiro-disco-ball"
+        },
+        {
+            "color": "#5218fa",
+            "name": "Han Purple",
+            "id": "han-purple"
+        },
+        {
+            "color": "#214fc6",
+            "name": "New Car",
+            "id": "new-car"
+        },
+        {
+            "color": "#2a52be",
+            "name": "Cerulean Blue",
+            "id": "cerulean-blue"
+        },
+        {
+            "color": "#273be2",
+            "name": "Palatinate Blue",
+            "id": "palatinate-blue"
+        },
+        {
+            "color": "#1c1cf0",
+            "name": "Bluebonnet",
+            "id": "bluebonnet"
+        },
+        {
+            "color": "#0f52ba",
+            "name": "Sapphire",
+            "id": "sapphire"
+        },
+        {
+            "color": "#6495ed",
+            "name": "Cornflower Blue",
+            "id": "cornflower-blue"
+        },
+        {
+            "color": "#0892d0",
+            "name": "Rich Electric Blue",
+            "id": "rich-electric-blue"
+        },
+        {
+            "color": "#1450aa",
+            "name": "Tory Blue",
+            "id": "tory-blue"
+        },
+        {
+            "color": "#1560bd",
+            "name": "Denim",
+            "id": "denim"
+        },
+        {
+            "color": "#0f4d92",
+            "name": "Yale Blue",
+            "id": "yale-blue"
+        },
+        {
+            "color": "#1164b4",
+            "name": "Green Blue",
+            "id": "green-blue"
+        },
+        {
+            "color": "#5b92e5",
+            "name": "United Nations Blue",
+            "id": "united-nations-blue"
+        },
+        {
+            "color": "#1974d2",
+            "name": "Bright Navy Blue",
+            "id": "bright-navy-blue"
+        },
+        {
+            "color": "#318ce7",
+            "name": "Bleu De France",
+            "id": "bleu-de-france"
+        },
+        {
+            "color": "#1959a8",
+            "name": "Fun Blue",
+            "id": "fun-blue"
+        },
+        {
+            "color": "#286acd",
+            "name": "Mariner",
+            "id": "mariner"
+        },
+        {
+            "color": "#7b68ee",
+            "name": "Medium Slate Blue",
+            "id": "medium-slate-blue"
+        },
+        {
+            "color": "#5dadec",
+            "name": "Blue Jeans",
+            "id": "blue-jeans"
+        },
+        {
+            "color": "#20208d",
+            "name": "Jacksons Purple",
+            "id": "jacksons-purple"
+        },
+        {
+            "color": "#0d98ba",
+            "name": "Blue Green",
+            "id": "blue-green"
+        },
+        {
+            "color": "#2c0e8c",
+            "name": "Blue Gem",
+            "id": "blue-gem"
+        },
+        {
+            "color": "#5590d9",
+            "name": "Havelock Blue",
+            "id": "havelock-blue"
+        },
+        {
+            "color": "#6ca0dc",
+            "name": "Little Boy Blue",
+            "id": "little-boy-blue"
+        },
+        {
+            "color": "#45b1e8",
+            "name": "Picton Blue",
+            "id": "picton-blue"
+        },
+        {
+            "color": "#188bc2",
+            "name": "Cyan Cornflower Blue",
+            "id": "cyan-cornflower-blue"
+        },
+        {
+            "color": "#1b659d",
+            "name": "Matisse",
+            "id": "matisse"
+        },
+        {
+            "color": "#7cb9e8",
+            "name": "Aero",
+            "id": "aero"
+        },
+        {
+            "color": "#6050dc",
+            "name": "Majorelle Blue",
+            "id": "majorelle-blue"
+        },
+        {
+            "color": "#26619c",
+            "name": "Lapis Lazuli",
+            "id": "lapis-lazuli"
+        },
+        {
+            "color": "#9457eb",
+            "name": "Lavender Indigo",
+            "id": "lavender-indigo"
+        },
+        {
+            "color": "#1dacd6",
+            "name": "Bright Cerulean",
+            "id": "bright-cerulean"
+        },
+        {
+            "color": "#2596d1",
+            "name": "Curious Blue",
+            "id": "curious-blue"
+        },
+        {
+            "color": "#1ca9c9",
+            "name": "Pacific Blue",
+            "id": "pacific-blue"
+        },
+        {
+            "color": "#21abcd",
+            "name": "Ball Blue",
+            "id": "ball-blue"
+        },
+        {
+            "color": "#4f2398",
+            "name": "Daisy Bush",
+            "id": "daisy-bush"
+        }
+    ],
+    "Cyan": [
+        {
+            "color": "#00ffff",
+            "name": "Cyan",
+            "id": "cyan"
+        },
+        {
+            "color": "#00ced1",
+            "name": "Dark Turquoise",
+            "id": "dark-turquoise"
+        },
+        {
+            "color": "#0093af",
+            "name": "Munsell Blue",
+            "id": "munsell-blue"
+        },
+        {
+            "color": "#00a693",
+            "name": "Persian Green",
+            "id": "persian-green"
+        },
+        {
+            "color": "#00cccc",
+            "name": "Robin Egg Blue",
+            "id": "robin-egg-blue"
+        },
+        {
+            "color": "#00ffef",
+            "name": "Turquoise Blue",
+            "id": "turquoise-blue"
+        },
+        {
+            "color": "#1fc2c2",
+            "name": "Java",
+            "id": "java"
+        },
+        {
+            "color": "#0abab5",
+            "name": "Tiffany Blue",
+            "id": "tiffany-blue"
+        },
+        {
+            "color": "#08e8de",
+            "name": "Bright Turquoise",
+            "id": "bright-turquoise"
+        },
+        {
+            "color": "#0c8990",
+            "name": "Blue Chill",
+            "id": "blue-chill"
+        },
+        {
+            "color": "#06a189",
+            "name": "Niagara",
+            "id": "niagara"
+        },
+        {
+            "color": "#20b2aa",
+            "name": "Light Sea Green",
+            "id": "light-sea-green"
+        },
+        {
+            "color": "#71d9e2",
+            "name": "Aquamarine Blue",
+            "id": "aquamarine-blue"
+        },
+        {
+            "color": "#40e0d0",
+            "name": "Turquoise",
+            "id": "turquoise"
+        },
+        {
+            "color": "#2ebfd4",
+            "name": "Scooter",
+            "id": "scooter"
+        },
+        {
+            "color": "#1e9ab0",
+            "name": "Eastern Blue",
+            "id": "eastern-blue"
+        },
+        {
+            "color": "#64ccdb",
+            "name": "Viking",
+            "id": "viking"
+        }
+    ],
+    "Green": [
+        {
+            "color": "#66ff00",
+            "name": "Bright Green",
+            "id": "bright-green"
+        },
+        {
+            "color": "#00cc99",
+            "name": "Caribbean Green",
+            "id": "caribbean-green"
+        },
+        {
+            "color": "#4aff00",
+            "name": "Chlorophyll Green",
+            "id": "chlorophyll-green"
+        },
+        {
+            "color": "#00ab66",
+            "name": "GO Green",
+            "id": "go-green"
+        },
+        {
+            "color": "#00ff00",
+            "name": "Green",
+            "id": "green"
+        },
+        {
+            "color": "#adff2f",
+            "name": "Green Yellow",
+            "id": "green-yellow"
+        },
+        {
+            "color": "#3fff00",
+            "name": "Harlequin",
+            "id": "harlequin"
+        },
+        {
+            "color": "#00a86b",
+            "name": "Jade",
+            "id": "jade"
+        },
+        {
+            "color": "#7cfc00",
+            "name": "Lawn Green",
+            "id": "lawn-green"
+        },
+        {
+            "color": "#00fa9a",
+            "name": "Medium Spring Green",
+            "id": "medium-spring-green"
+        },
+        {
+            "color": "#00a877",
+            "name": "Munsell Green",
+            "id": "munsell-green"
+        },
+        {
+            "color": "#009f6b",
+            "name": "NCS Green",
+            "id": "ncs-green"
+        },
+        {
+            "color": "#39ff14",
+            "name": "Neon Green",
+            "id": "neon-green"
+        },
+        {
+            "color": "#00ad43",
+            "name": "Pantone Green",
+            "id": "pantone-green"
+        },
+        {
+            "color": "#009b7d",
+            "name": "Paolo Veronese Green",
+            "id": "paolo-veronese-green"
+        },
+        {
+            "color": "#00a550",
+            "name": "Pigment Green",
+            "id": "pigment-green"
+        },
+        {
+            "color": "#009e60",
+            "name": "Shamrock Green",
+            "id": "shamrock-green"
+        },
+        {
+            "color": "#a7fc00",
+            "name": "Spring Bud",
+            "id": "spring-bud"
+        },
+        {
+            "color": "#87ff2a",
+            "name": "Spring Frost",
+            "id": "spring-frost"
+        },
+        {
+            "color": "#00ff7f",
+            "name": "Spring Green",
+            "id": "spring-green"
+        },
+        {
+            "color": "#00cc33",
+            "name": "Vivid Malachite",
+            "id": "vivid-malachite"
+        },
+        {
+            "color": "#7fff00",
+            "name": "Web Chartreuse",
+            "id": "web-chartreuse"
+        },
+        {
+            "color": "#03c03c",
+            "name": "Dark Pastel Green",
+            "id": "dark-pastel-green"
+        },
+        {
+            "color": "#01a368",
+            "name": "Green Haze",
+            "id": "green-haze"
+        },
+        {
+            "color": "#9efd38",
+            "name": "French Lime",
+            "id": "french-lime"
+        },
+        {
+            "color": "#84de02",
+            "name": "Alien Armpit",
+            "id": "alien-armpit"
+        },
+        {
+            "color": "#0bda51",
+            "name": "Malachite",
+            "id": "malachite"
+        },
+        {
+            "color": "#32cd32",
+            "name": "Lime Green",
+            "id": "lime-green"
+        },
+        {
+            "color": "#228b22",
+            "name": "Forest Green",
+            "id": "forest-green"
+        },
+        {
+            "color": "#77dd77",
+            "name": "Pastel Green",
+            "id": "pastel-green"
+        },
+        {
+            "color": "#64e986",
+            "name": "Very Light Malachite Green",
+            "id": "very-light-malachite-green"
+        },
+        {
+            "color": "#069b81",
+            "name": "Gossamer",
+            "id": "gossamer"
+        },
+        {
+            "color": "#299617",
+            "name": "Slimy Green",
+            "id": "slimy-green"
+        },
+        {
+            "color": "#a7f432",
+            "name": "Green Lizard",
+            "id": "green-lizard"
+        },
+        {
+            "color": "#46cb18",
+            "name": "Harlequin Green",
+            "id": "harlequin-green"
+        },
+        {
+            "color": "#4cbb17",
+            "name": "Kelly Green",
+            "id": "kelly-green"
+        },
+        {
+            "color": "#368716",
+            "name": "La Palma",
+            "id": "la-palma"
+        },
+        {
+            "color": "#3cd070",
+            "name": "UFO Green",
+            "id": "ufo-green"
+        },
+        {
+            "color": "#67a712",
+            "name": "Christi",
+            "id": "christi"
+        },
+        {
+            "color": "#76bd17",
+            "name": "Lima",
+            "id": "lima"
+        },
+        {
+            "color": "#b2ec5d",
+            "name": "Inchworm",
+            "id": "inchworm"
+        },
+        {
+            "color": "#1cac78",
+            "name": "Crayola Green",
+            "id": "crayola-green"
+        },
+        {
+            "color": "#549019",
+            "name": "Vida Loca",
+            "id": "vida-loca"
+        },
+        {
+            "color": "#66ddaa",
+            "name": "Medium Aquamarine",
+            "id": "medium-aquamarine"
+        },
+        {
+            "color": "#44d7a8",
+            "name": "Eucalyptus",
+            "id": "eucalyptus"
+        },
+        {
+            "color": "#33cc99",
+            "name": "Shamrock",
+            "id": "shamrock"
+        },
+        {
+            "color": "#acdd4d",
+            "name": "Conifer",
+            "id": "conifer"
+        },
+        {
+            "color": "#29ab87",
+            "name": "Jungle Green",
+            "id": "jungle-green"
+        },
+        {
+            "color": "#97cd2d",
+            "name": "Atlantis",
+            "id": "atlantis"
+        }
+    ],
+    "Yellow": [
+        {
+            "color": "#8db600",
+            "name": "Apple Green",
+            "id": "apple-green"
+        },
+        {
+            "color": "#d0ff14",
+            "name": "Arctic Lime",
+            "id": "arctic-lime"
+        },
+        {
+            "color": "#fdee00",
+            "name": "Aureolin",
+            "id": "aureolin"
+        },
+        {
+            "color": "#ffec13",
+            "name": "Broom",
+            "id": "broom"
+        },
+        {
+            "color": "#fff600",
+            "name": "Cadmium Yellow",
+            "id": "cadmium-yellow"
+        },
+        {
+            "color": "#ffef00",
+            "name": "Canary Yellow",
+            "id": "canary-yellow"
+        },
+        {
+            "color": "#dfff00",
+            "name": "Chartreuse",
+            "id": "chartreuse"
+        },
+        {
+            "color": "#ffff31",
+            "name": "Daffodil",
+            "id": "daffodil"
+        },
+        {
+            "color": "#ccff00",
+            "name": "Electric Lime",
+            "id": "electric-lime"
+        },
+        {
+            "color": "#ffff33",
+            "name": "Electric Yellow",
+            "id": "electric-yellow"
+        },
+        {
+            "color": "#fff14f",
+            "name": "Gorse",
+            "id": "gorse"
+        },
+        {
+            "color": "#fff700",
+            "name": "Lemon",
+            "id": "lemon"
+        },
+        {
+            "color": "#fdff00",
+            "name": "Lemon Glacier",
+            "id": "lemon-glacier"
+        },
+        {
+            "color": "#e3ff00",
+            "name": "Lemon Lime",
+            "id": "lemon-lime"
+        },
+        {
+            "color": "#fff44f",
+            "name": "Lemon Yellow",
+            "id": "lemon-yellow"
+        },
+        {
+            "color": "#bfff00",
+            "name": "Lime",
+            "id": "lime"
+        },
+        {
+            "color": "#e6e200",
+            "name": "Peridot",
+            "id": "peridot"
+        },
+        {
+            "color": "#8fd400",
+            "name": "Sheen Green",
+            "id": "sheen-green"
+        },
+        {
+            "color": "#eee600",
+            "name": "Titanium Yellow",
+            "id": "titanium-yellow"
+        },
+        {
+            "color": "#fae600",
+            "name": "Turbo",
+            "id": "turbo"
+        },
+        {
+            "color": "#ffe302",
+            "name": "Vivid Yellow",
+            "id": "vivid-yellow"
+        },
+        {
+            "color": "#ceff00",
+            "name": "Volt",
+            "id": "volt"
+        },
+        {
+            "color": "#ffff00",
+            "name": "Yellow",
+            "id": "yellow"
+        },
+        {
+            "color": "#fff000",
+            "name": "Yellow Rose",
+            "id": "yellow-rose"
+        },
+        {
+            "color": "#bbd009",
+            "name": "Rio Grande",
+            "id": "rio-grande"
+        },
+        {
+            "color": "#7c881a",
+            "name": "Trendy Green",
+            "id": "trendy-green"
+        },
+        {
+            "color": "#cae00d",
+            "name": "Bitter Lemon",
+            "id": "bitter-lemon"
+        },
+        {
+            "color": "#fefe33",
+            "name": "RYB Yellow",
+            "id": "ryb-yellow"
+        },
+        {
+            "color": "#778120",
+            "name": "Pacifika",
+            "id": "pacifika"
+        },
+        {
+            "color": "#f3fb62",
+            "name": "Canary",
+            "id": "canary"
+        },
+        {
+            "color": "#d1e231",
+            "name": "Pear",
+            "id": "pear"
+        },
+        {
+            "color": "#f5fb3d",
+            "name": "Golden Fizz",
+            "id": "golden-fizz"
+        },
+        {
+            "color": "#b0bf1a",
+            "name": "Acid Green",
+            "id": "acid-green"
+        },
+        {
+            "color": "#b3c110",
+            "name": "La Rioja",
+            "id": "la-rioja"
+        },
+        {
+            "color": "#6f9d02",
+            "name": "Limeade",
+            "id": "limeade"
+        },
+        {
+            "color": "#bede0d",
+            "name": "Fuego",
+            "id": "fuego"
+        },
+        {
+            "color": "#fcf75e",
+            "name": "Icterine",
+            "id": "icterine"
+        },
+        {
+            "color": "#fafa37",
+            "name": "Maximum Yellow",
+            "id": "maximum-yellow"
+        },
+        {
+            "color": "#c6e610",
+            "name": "Las Palmas",
+            "id": "las-palmas"
+        },
+        {
+            "color": "#9dc209",
+            "name": "Limerick",
+            "id": "limerick"
+        },
+        {
+            "color": "#a1c50a",
+            "name": "Citrus",
+            "id": "citrus"
+        },
+        {
+            "color": "#a6d608",
+            "name": "Vivid Lime Green",
+            "id": "vivid-lime-green"
+        },
+        {
+            "color": "#ecf245",
+            "name": "Starship",
+            "id": "starship"
+        },
+        {
+            "color": "#fbec5d",
+            "name": "Maize",
+            "id": "maize"
+        },
+        {
+            "color": "#a5cb0c",
+            "name": "Bahia",
+            "id": "bahia"
+        },
+        {
+            "color": "#9fa91f",
+            "name": "Citron",
+            "id": "citron"
+        },
+        {
+            "color": "#bfc921",
+            "name": "Key Lime Pie",
+            "id": "key-lime-pie"
+        },
+        {
+            "color": "#e4d00a",
+            "name": "Citrine",
+            "id": "citrine"
+        },
+        {
+            "color": "#b0e313",
+            "name": "Inch Worm",
+            "id": "inch-worm"
+        },
+        {
+            "color": "#dde26a",
+            "name": "Booger Buster",
+            "id": "booger-buster"
+        },
+        {
+            "color": "#f0e130",
+            "name": "Dandelion",
+            "id": "dandelion"
+        },
+        {
+            "color": "#ded717",
+            "name": "Barberry",
+            "id": "barberry"
+        },
+        {
+            "color": "#d4cd16",
+            "name": "Bird Flower",
+            "id": "bird-flower"
+        },
+        {
+            "color": "#bdda57",
+            "name": "June Bud",
+            "id": "june-bud"
+        },
+        {
+            "color": "#e4d422",
+            "name": "Sunflower",
+            "id": "sunflower"
+        },
+        {
+            "color": "#dcd747",
+            "name": "Wattle",
+            "id": "wattle"
+        },
+        {
+            "color": "#af9f1c",
+            "name": "Lucky",
+            "id": "lucky"
+        },
+        {
+            "color": "#e4d96f",
+            "name": "Straw",
+            "id": "straw"
+        },
+        {
+            "color": "#ac9e22",
+            "name": "Lemon Ginger",
+            "id": "lemon-ginger"
+        },
+        {
+            "color": "#6b8e23",
+            "name": "Olive Drab",
+            "id": "olive-drab"
+        },
+        {
+            "color": "#9acd32",
+            "name": "Yellow Green",
+            "id": "yellow-green"
+        }
+    ],
+    "Orange": [
+        {
+            "color": "#ffbf00",
+            "name": "Amber",
+            "id": "amber"
+        },
+        {
+            "color": "#ffe135",
+            "name": "Banana Yellow",
+            "id": "banana-yellow"
+        },
+        {
+            "color": "#ff6700",
+            "name": "Blaze Orange",
+            "id": "blaze-orange"
+        },
+        {
+            "color": "#ffaa1d",
+            "name": "Bright Yellow",
+            "id": "bright-yellow"
+        },
+        {
+            "color": "#cc5500",
+            "name": "Burnt Orange",
+            "id": "burnt-orange"
+        },
+        {
+            "color": "#ffa700",
+            "name": "Chrome Yellow",
+            "id": "chrome-yellow"
+        },
+        {
+            "color": "#e96e00",
+            "name": "Clementine",
+            "id": "clementine"
+        },
+        {
+            "color": "#ffd300",
+            "name": "Cyber Yellow",
+            "id": "cyber-yellow"
+        },
+        {
+            "color": "#ff8c00",
+            "name": "Dark Orange",
+            "id": "dark-orange"
+        },
+        {
+            "color": "#ffa812",
+            "name": "Dark Tangerine",
+            "id": "dark-tangerine"
+        },
+        {
+            "color": "#ff9933",
+            "name": "Deep Saffron",
+            "id": "deep-saffron"
+        },
+        {
+            "color": "#ff7d07",
+            "name": "Flamenco",
+            "id": "flamenco"
+        },
+        {
+            "color": "#e48400",
+            "name": "Fulvous",
+            "id": "fulvous"
+        },
+        {
+            "color": "#ffdf46",
+            "name": "Gargoyle Gas",
+            "id": "gargoyle-gas"
+        },
+        {
+            "color": "#b06500",
+            "name": "Ginger",
+            "id": "ginger"
+        },
+        {
+            "color": "#f18200",
+            "name": "Gold Drop",
+            "id": "gold-drop"
+        },
+        {
+            "color": "#ffd700",
+            "name": "Golden",
+            "id": "golden"
+        },
+        {
+            "color": "#fcc200",
+            "name": "Golden Poppy",
+            "id": "golden-poppy"
+        },
+        {
+            "color": "#ffcc5c",
+            "name": "Golden Tainoi",
+            "id": "golden-tainoi"
+        },
+        {
+            "color": "#ffdf00",
+            "name": "Golden Yellow",
+            "id": "golden-yellow"
+        },
+        {
+            "color": "#d54600",
+            "name": "Grenadier",
+            "id": "grenadier"
+        },
+        {
+            "color": "#da9100",
+            "name": "Harvest Gold",
+            "id": "harvest-gold"
+        },
+        {
+            "color": "#ff7a00",
+            "name": "Heat Wave",
+            "id": "heat-wave"
+        },
+        {
+            "color": "#ffbd5f",
+            "name": "Koromiko",
+            "id": "koromiko"
+        },
+        {
+            "color": "#c04000",
+            "name": "Mahogany",
+            "id": "mahogany"
+        },
+        {
+            "color": "#ff8243",
+            "name": "Mango Tango",
+            "id": "mango-tango"
+        },
+        {
+            "color": "#ffc40c",
+            "name": "Mikado Yellow",
+            "id": "mikado-yellow"
+        },
+        {
+            "color": "#efcc00",
+            "name": "Munsell Yellow",
+            "id": "munsell-yellow"
+        },
+        {
+            "color": "#ffdb58",
+            "name": "Mustard",
+            "id": "mustard"
+        },
+        {
+            "color": "#ffb31f",
+            "name": "My Sin",
+            "id": "my-sin"
+        },
+        {
+            "color": "#ffa343",
+            "name": "Neon Carrot",
+            "id": "neon-carrot"
+        },
+        {
+            "color": "#ff7f00",
+            "name": "Orange",
+            "id": "orange"
+        },
+        {
+            "color": "#ff9f00",
+            "name": "Orange Peel",
+            "id": "orange-peel"
+        },
+        {
+            "color": "#ff5800",
+            "name": "Pantone Orange",
+            "id": "pantone-orange"
+        },
+        {
+            "color": "#fedf00",
+            "name": "Pantone Yellow",
+            "id": "pantone-yellow"
+        },
+        {
+            "color": "#ffb347",
+            "name": "Pastel Orange",
+            "id": "pastel-orange"
+        },
+        {
+            "color": "#ec5800",
+            "name": "Persimmon",
+            "id": "persimmon"
+        },
+        {
+            "color": "#ff9000",
+            "name": "Pizazz",
+            "id": "pizazz"
+        },
+        {
+            "color": "#ff7518",
+            "name": "Pumpkin",
+            "id": "pumpkin"
+        },
+        {
+            "color": "#bf5500",
+            "name": "Rose of Sharon",
+            "id": "rose-of-sharon"
+        },
+        {
+            "color": "#ff7e00",
+            "name": "SAE ECE Amber",
+            "id": "sae-ece-amber"
+        },
+        {
+            "color": "#ff7800",
+            "name": "Safety Orange",
+            "id": "safety-orange"
+        },
+        {
+            "color": "#ffd800",
+            "name": "School Bus Yellow",
+            "id": "school-bus-yellow"
+        },
+        {
+            "color": "#ffba00",
+            "name": "Selective Yellow",
+            "id": "selective-yellow"
+        },
+        {
+            "color": "#ffdb00",
+            "name": "Sizzling Sunrise",
+            "id": "sizzling-sunrise"
+        },
+        {
+            "color": "#e86100",
+            "name": "Spanish Orange",
+            "id": "spanish-orange"
+        },
+        {
+            "color": "#ffcc33",
+            "name": "Sunglow",
+            "id": "sunglow"
+        },
+        {
+            "color": "#ff9e2c",
+            "name": "Sunshade",
+            "id": "sunshade"
+        },
+        {
+            "color": "#ffc901",
+            "name": "Supernova",
+            "id": "supernova"
+        },
+        {
+            "color": "#f28500",
+            "name": "Tangerine",
+            "id": "tangerine"
+        },
+        {
+            "color": "#ffcc00",
+            "name": "Tangerine Yellow",
+            "id": "tangerine-yellow"
+        },
+        {
+            "color": "#cd5700",
+            "name": "Tenne",
+            "id": "tenne"
+        },
+        {
+            "color": "#ffb555",
+            "name": "Texas Rose",
+            "id": "texas-rose"
+        },
+        {
+            "color": "#ffb300",
+            "name": "UCLA Gold",
+            "id": "ucla-gold"
+        },
+        {
+            "color": "#f77f00",
+            "name": "University Of Tennessee Orange",
+            "id": "university-of-tennessee-orange"
+        },
+        {
+            "color": "#cc9900",
+            "name": "Vivid Amber",
+            "id": "vivid-amber"
+        },
+        {
+            "color": "#ff9900",
+            "name": "Vivid Gamboge",
+            "id": "vivid-gamboge"
+        },
+        {
+            "color": "#ff5f00",
+            "name": "Vivid Orange",
+            "id": "vivid-orange"
+        },
+        {
+            "color": "#ffa000",
+            "name": "Vivid Orange Peel",
+            "id": "vivid-orange-peel"
+        },
+        {
+            "color": "#ffa500",
+            "name": "Web Orange",
+            "id": "web-orange"
+        },
+        {
+            "color": "#ff910f",
+            "name": "West Side",
+            "id": "west-side"
+        },
+        {
+            "color": "#fd5800",
+            "name": "Willpower Orange",
+            "id": "willpower-orange"
+        },
+        {
+            "color": "#ffae42",
+            "name": "Yellow Orange",
+            "id": "yellow-orange"
+        },
+        {
+            "color": "#e3ab57",
+            "name": "Sunray",
+            "id": "sunray"
+        },
+        {
+            "color": "#fe9d04",
+            "name": "California",
+            "id": "california"
+        },
+        {
+            "color": "#fb9902",
+            "name": "RYB Orange",
+            "id": "ryb-orange"
+        },
+        {
+            "color": "#fea904",
+            "name": "Yellow Sea",
+            "id": "yellow-sea"
+        },
+        {
+            "color": "#fc9c1d",
+            "name": "Tree Poppy",
+            "id": "tree-poppy"
+        },
+        {
+            "color": "#f8b853",
+            "name": "Casablanca",
+            "id": "casablanca"
+        },
+        {
+            "color": "#fba129",
+            "name": "Sea Buckthorn",
+            "id": "sea-buckthorn"
+        },
+        {
+            "color": "#996515",
+            "name": "Golden Brown",
+            "id": "golden-brown"
+        },
+        {
+            "color": "#c26b03",
+            "name": "Indochine",
+            "id": "indochine"
+        },
+        {
+            "color": "#fed33c",
+            "name": "Bright Sun",
+            "id": "bright-sun"
+        },
+        {
+            "color": "#fbac13",
+            "name": "Sun",
+            "id": "sun"
+        },
+        {
+            "color": "#fd7c07",
+            "name": "Sorbus",
+            "id": "sorbus"
+        },
+        {
+            "color": "#9e5302",
+            "name": "Chelsea Gem",
+            "id": "chelsea-gem"
+        },
+        {
+            "color": "#e89928",
+            "name": "Fire Bush",
+            "id": "fire-bush"
+        },
+        {
+            "color": "#a75502",
+            "name": "Windsor Tan",
+            "id": "windsor-tan"
+        },
+        {
+            "color": "#ba7f03",
+            "name": "Pirate Gold",
+            "id": "pirate-gold"
+        },
+        {
+            "color": "#e29418",
+            "name": "Dixie",
+            "id": "dixie"
+        },
+        {
+            "color": "#f9bf58",
+            "name": "Saffron Mango",
+            "id": "saffron-mango"
+        },
+        {
+            "color": "#f77703",
+            "name": "Chilean Fire",
+            "id": "chilean-fire"
+        },
+        {
+            "color": "#fcc01e",
+            "name": "Lightning Yellow",
+            "id": "lightning-yellow"
+        },
+        {
+            "color": "#b06608",
+            "name": "Mai Tai",
+            "id": "mai-tai"
+        },
+        {
+            "color": "#e28913",
+            "name": "Golden Bell",
+            "id": "golden-bell"
+        },
+        {
+            "color": "#eed202",
+            "name": "Safety Yellow",
+            "id": "safety-yellow"
+        },
+        {
+            "color": "#fd7b33",
+            "name": "Crusta",
+            "id": "crusta"
+        },
+        {
+            "color": "#e97c07",
+            "name": "Tahiti Gold",
+            "id": "tahiti-gold"
+        },
+        {
+            "color": "#da6304",
+            "name": "Bamboo",
+            "id": "bamboo"
+        },
+        {
+            "color": "#fbab60",
+            "name": "Rajah",
+            "id": "rajah"
+        },
+        {
+            "color": "#9b4703",
+            "name": "Oregon",
+            "id": "oregon"
+        },
+        {
+            "color": "#d05f04",
+            "name": "Red Stage",
+            "id": "red-stage"
+        },
+        {
+            "color": "#d07d12",
+            "name": "Meteor",
+            "id": "meteor"
+        },
+        {
+            "color": "#e3a857",
+            "name": "Indian Yellow",
+            "id": "indian-yellow"
+        },
+        {
+            "color": "#fcd917",
+            "name": "Candlelight",
+            "id": "candlelight"
+        },
+        {
+            "color": "#fa7814",
+            "name": "Ecstasy",
+            "id": "ecstasy"
+        },
+        {
+            "color": "#e64e03",
+            "name": "Trinidad",
+            "id": "trinidad"
+        },
+        {
+            "color": "#e49b0f",
+            "name": "Gamboge",
+            "id": "gamboge"
+        },
+        {
+            "color": "#eaa221",
+            "name": "Marigold",
+            "id": "marigold"
+        },
+        {
+            "color": "#ed9121",
+            "name": "Carrot Orange",
+            "id": "carrot-orange"
+        },
+        {
+            "color": "#aa4203",
+            "name": "Fire",
+            "id": "fire"
+        },
+        {
+            "color": "#b38007",
+            "name": "Hot Toddy",
+            "id": "hot-toddy"
+        },
+        {
+            "color": "#f3ad16",
+            "name": "Buttercup",
+            "id": "buttercup"
+        },
+        {
+            "color": "#d18f1b",
+            "name": "Geebung",
+            "id": "geebung"
+        },
+        {
+            "color": "#885818",
+            "name": "Grizzly",
+            "id": "grizzly"
+        },
+        {
+            "color": "#c1a004",
+            "name": "Buddha Gold",
+            "id": "buddha-gold"
+        },
+        {
+            "color": "#e7bf05",
+            "name": "Corn",
+            "id": "corn"
+        },
+        {
+            "color": "#b1610b",
+            "name": "Pumpkin Skin",
+            "id": "pumpkin-skin"
+        },
+        {
+            "color": "#eca927",
+            "name": "Fuel Yellow",
+            "id": "fuel-yellow"
+        },
+        {
+            "color": "#e1a95f",
+            "name": "Earth Yellow",
+            "id": "earth-yellow"
+        },
+        {
+            "color": "#ad781b",
+            "name": "Mandalay",
+            "id": "mandalay"
+        },
+        {
+            "color": "#a85307",
+            "name": "Rich Gold",
+            "id": "rich-gold"
+        },
+        {
+            "color": "#e7730a",
+            "name": "Christine",
+            "id": "christine"
+        },
+        {
+            "color": "#fa9d5a",
+            "name": "Tan Hide",
+            "id": "tan-hide"
+        },
+        {
+            "color": "#fada5e",
+            "name": "Naples Yellow",
+            "id": "naples-yellow"
+        },
+        {
+            "color": "#886221",
+            "name": "Kumera",
+            "id": "kumera"
+        },
+        {
+            "color": "#f5c85c",
+            "name": "Cream Can",
+            "id": "cream-can"
+        },
+        {
+            "color": "#a86515",
+            "name": "Reno Sand",
+            "id": "reno-sand"
+        },
+        {
+            "color": "#b8860b",
+            "name": "Dark Goldenrod",
+            "id": "dark-goldenrod"
+        },
+        {
+            "color": "#f8d568",
+            "name": "Orange Yellow",
+            "id": "orange-yellow"
+        },
+        {
+            "color": "#f58025",
+            "name": "Princeton Orange",
+            "id": "princeton-orange"
+        },
+        {
+            "color": "#cd8429",
+            "name": "Brandy Punch",
+            "id": "brandy-punch"
+        },
+        {
+            "color": "#a1750d",
+            "name": "Buttered Rum",
+            "id": "buttered-rum"
+        },
+        {
+            "color": "#f4c430",
+            "name": "Saffron",
+            "id": "saffron"
+        },
+        {
+            "color": "#f5c71a",
+            "name": "Deep Lemon",
+            "id": "deep-lemon"
+        },
+        {
+            "color": "#eaae69",
+            "name": "Porsche",
+            "id": "porsche"
+        },
+        {
+            "color": "#e5841b",
+            "name": "Zest",
+            "id": "zest"
+        },
+        {
+            "color": "#eab33b",
+            "name": "Tulip Tree",
+            "id": "tulip-tree"
+        },
+        {
+            "color": "#f4a460",
+            "name": "Sandy Brown",
+            "id": "sandy-brown"
+        },
+        {
+            "color": "#f8dd5c",
+            "name": "Energy Yellow",
+            "id": "energy-yellow"
+        },
+        {
+            "color": "#f4ca16",
+            "name": "Jonquil",
+            "id": "jonquil"
+        },
+        {
+            "color": "#c99415",
+            "name": "Pizza",
+            "id": "pizza"
+        },
+        {
+            "color": "#f9e663",
+            "name": "Portica",
+            "id": "portica"
+        },
+        {
+            "color": "#dcb20c",
+            "name": "Galliano",
+            "id": "galliano"
+        },
+        {
+            "color": "#ed872d",
+            "name": "Cadmium Orange",
+            "id": "cadmium-orange"
+        },
+        {
+            "color": "#c46210",
+            "name": "Alloy Orange",
+            "id": "alloy-orange"
+        },
+        {
+            "color": "#ed7a1c",
+            "name": "Tango",
+            "id": "tango"
+        },
+        {
+            "color": "#ba6f1e",
+            "name": "Bourbon",
+            "id": "bourbon"
+        },
+        {
+            "color": "#8f4b0e",
+            "name": "Korma",
+            "id": "korma"
+        },
+        {
+            "color": "#b78727",
+            "name": "University Of California Gold",
+            "id": "university-of-california-gold"
+        },
+        {
+            "color": "#eac674",
+            "name": "Rob Roy",
+            "id": "rob-roy"
+        },
+        {
+            "color": "#f4d81c",
+            "name": "Ripe Lemon",
+            "id": "ripe-lemon"
+        },
+        {
+            "color": "#b14a0b",
+            "name": "Vesuvius",
+            "id": "vesuvius"
+        },
+        {
+            "color": "#f07427",
+            "name": "Vivid Tangelo",
+            "id": "vivid-tangelo"
+        },
+        {
+            "color": "#cc7722",
+            "name": "Ochre",
+            "id": "ochre"
+        },
+        {
+            "color": "#967117",
+            "name": "Sand Dune",
+            "id": "sand-dune"
+        },
+        {
+            "color": "#e08d3c",
+            "name": "Tigers Eye",
+            "id": "tigers-eye"
+        },
+        {
+            "color": "#daa520",
+            "name": "Goldenrod",
+            "id": "goldenrod"
+        },
+        {
+            "color": "#f5e050",
+            "name": "Minion Yellow",
+            "id": "minion-yellow"
+        },
+        {
+            "color": "#ecc54e",
+            "name": "Ronchi",
+            "id": "ronchi"
+        },
+        {
+            "color": "#ef863f",
+            "name": "Jaffa",
+            "id": "jaffa"
+        },
+        {
+            "color": "#e5b73b",
+            "name": "Meat Brown",
+            "id": "meat-brown"
+        },
+        {
+            "color": "#e1ad21",
+            "name": "Urobilin",
+            "id": "urobilin"
+        },
+        {
+            "color": "#9d5616",
+            "name": "Hawaiian Tan",
+            "id": "hawaiian-tan"
+        },
+        {
+            "color": "#e5aa70",
+            "name": "Fawn",
+            "id": "fawn"
+        },
+        {
+            "color": "#ba450c",
+            "name": "Rock Spray",
+            "id": "rock-spray"
+        },
+        {
+            "color": "#e1bc64",
+            "name": "Equator",
+            "id": "equator"
+        },
+        {
+            "color": "#f0d52d",
+            "name": "Golden Dream",
+            "id": "golden-dream"
+        },
+        {
+            "color": "#b5651d",
+            "name": "Light Brown",
+            "id": "light-brown"
+        },
+        {
+            "color": "#deba13",
+            "name": "Gold Tips",
+            "id": "gold-tips"
+        },
+        {
+            "color": "#e0b646",
+            "name": "Anzac",
+            "id": "anzac"
+        },
+        {
+            "color": "#cca01d",
+            "name": "Lemon Curry",
+            "id": "lemon-curry"
+        },
+        {
+            "color": "#9b870c",
+            "name": "Dark Yellow",
+            "id": "dark-yellow"
+        },
+        {
+            "color": "#c59922",
+            "name": "Nugget",
+            "id": "nugget"
+        },
+        {
+            "color": "#dfbe6f",
+            "name": "Apache",
+            "id": "apache"
+        },
+        {
+            "color": "#b35213",
+            "name": "Fiery Orange",
+            "id": "fiery-orange"
+        },
+        {
+            "color": "#cd7f32",
+            "name": "Bronze",
+            "id": "bronze"
+        },
+        {
+            "color": "#8b4513",
+            "name": "Saddle Brown",
+            "id": "saddle-brown"
+        },
+        {
+            "color": "#b86d29",
+            "name": "Dogs",
+            "id": "dogs"
+        },
+        {
+            "color": "#d2691e",
+            "name": "Cocoa Brown",
+            "id": "cocoa-brown"
+        },
+        {
+            "color": "#ae6020",
+            "name": "Desert",
+            "id": "desert"
+        },
+        {
+            "color": "#db995e",
+            "name": "Di Serria",
+            "id": "di-serria"
+        },
+        {
+            "color": "#ecd540",
+            "name": "Sandstorm",
+            "id": "sandstorm"
+        },
+        {
+            "color": "#e9692c",
+            "name": "Deep Carrot Orange",
+            "id": "deep-carrot-orange"
+        },
+        {
+            "color": "#b7a214",
+            "name": "Sahara",
+            "id": "sahara"
+        },
+        {
+            "color": "#9f821c",
+            "name": "Reef Gold",
+            "id": "reef-gold"
+        },
+        {
+            "color": "#c45719",
+            "name": "Orange Roughy",
+            "id": "orange-roughy"
+        },
+        {
+            "color": "#864d1e",
+            "name": "Bull Shot",
+            "id": "bull-shot"
+        },
+        {
+            "color": "#e88e5a",
+            "name": "Big Foot Feet",
+            "id": "big-foot-feet"
+        },
+        {
+            "color": "#d4af37",
+            "name": "Metallic Gold",
+            "id": "metallic-gold"
+        },
+        {
+            "color": "#c8a528",
+            "name": "Hokey Pokey",
+            "id": "hokey-pokey"
+        },
+        {
+            "color": "#80461b",
+            "name": "Russet",
+            "id": "russet"
+        },
+        {
+            "color": "#d99058",
+            "name": "Persian Orange",
+            "id": "persian-orange"
+        },
+        {
+            "color": "#8e4d1e",
+            "name": "Rope",
+            "id": "rope"
+        },
+        {
+            "color": "#c96323",
+            "name": "Piper",
+            "id": "piper"
+        },
+        {
+            "color": "#e9d75a",
+            "name": "Confetti",
+            "id": "confetti"
+        },
+        {
+            "color": "#e9d66b",
+            "name": "Arylide Yellow",
+            "id": "arylide-yellow"
+        },
+        {
+            "color": "#98811b",
+            "name": "Hacienda",
+            "id": "hacienda"
+        },
+        {
+            "color": "#bb6528",
+            "name": "Ruddy Brown",
+            "id": "ruddy-brown"
+        },
+        {
+            "color": "#df6124",
+            "name": "Vivid Red Tangelo",
+            "id": "vivid-red-tangelo"
+        },
+        {
+            "color": "#d68a59",
+            "name": "Raw Sienna",
+            "id": "raw-sienna"
+        },
+        {
+            "color": "#dfcd6f",
+            "name": "Chenin",
+            "id": "chenin"
+        },
+        {
+            "color": "#cfb53b",
+            "name": "Old Gold",
+            "id": "old-gold"
+        },
+        {
+            "color": "#a65529",
+            "name": "Paarl",
+            "id": "paarl"
+        }
+    ]
+}
