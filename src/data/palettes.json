@@ -1,0 +1,960 @@
+[
+	{
+		"paletteName": "Material UI Colors",
+		"id": "material-ui-colors",
+		"emoji": "🎨",
+		"colors": [
+			{
+				"name": "red",
+				"color": "#F44336",
+				"id": "red"
+			},
+			{
+				"name": "pink",
+				"color": "#E91E63",
+				"id": "pink"
+			},
+			{
+				"name": "purple",
+				"color": "#9C27B0",
+				"id": "purple"
+			},
+			{
+				"name": "deeppurple",
+				"color": "#673AB7",
+				"id": "deeppurple"
+			},
+			{
+				"name": "indigo",
+				"color": "#3F51B5",
+				"id": "indigo"
+			},
+			{
+				"name": "blue",
+				"color": "#2196F3",
+				"id": "blue"
+			},
+			{
+				"name": "lightblue",
+				"color": "#03A9F4",
+				"id": "lightblue"
+			},
+			{
+				"name": "cyan",
+				"color": "#00BCD4",
+				"id": "cyan"
+			},
+			{
+				"name": "teal",
+				"color": "#009688",
+				"id": "teal"
+			},
+			{
+				"name": "green",
+				"color": "#4CAF50",
+				"id": "green"
+			},
+			{
+				"name": "lightgreen",
+				"color": "#8BC34A",
+				"id": "lightgreen"
+			},
+			{
+				"name": "lime",
+				"color": "#CDDC39",
+				"id": "lime"
+			},
+			{
+				"name": "yellow",
+				"color": "#FFEB3B",
+				"id": "yellow"
+			},
+			{
+				"name": "amber",
+				"color": "#FFC107",
+				"id": "amber"
+			},
+			{
+				"name": "orange",
+				"color": "#FF9800",
+				"id": "orange"
+			},
+			{
+				"name": "deeporange",
+				"color": "#FF5722",
+				"id": "deeporange"
+			},
+			{
+				"name": "brown",
+				"color": "#795548",
+				"id": "brown"
+			},
+			{
+				"name": "grey",
+				"color": "#9E9E9E",
+				"id": "grey"
+			},
+			{
+				"name": "bluegrey",
+				"color": "#607D8B",
+				"id": "bluegrey"
+			}
+		]
+	},
+	{
+		"paletteName": "Flat UI Colors v1",
+		"id": "flat-ui-colors-v1",
+		"emoji": "🤙",
+		"colors": [
+			{
+				"name": "Turquoise",
+				"color": "#1abc9c",
+				"id": "turquoise"
+			},
+			{
+				"name": "Emerald",
+				"color": "#2ecc71",
+				"id": "emerald"
+			},
+			{
+				"name": "PeterRiver",
+				"color": "#3498db",
+				"id": "peterriver"
+			},
+			{
+				"name": "Amethyst",
+				"color": "#9b59b6",
+				"id": "amethyst"
+			},
+			{
+				"name": "WetAsphalt",
+				"color": "#34495e",
+				"id": "wetasphalt"
+			},
+			{
+				"name": "GreenSea",
+				"color": "#16a085",
+				"id": "greensea"
+			},
+			{
+				"name": "Nephritis",
+				"color": "#27ae60",
+				"id": "nephritis"
+			},
+			{
+				"name": "BelizeHole",
+				"color": "#2980b9",
+				"id": "belizehole"
+			},
+			{
+				"name": "Wisteria",
+				"color": "#8e44ad",
+				"id": "wisteria"
+			},
+			{
+				"name": "MidnightBlue",
+				"color": "#2c3e50",
+				"id": "midnightblue"
+			},
+			{
+				"name": "SunFlower",
+				"color": "#f1c40f",
+				"id": "sunflower"
+			},
+			{
+				"name": "Carrot",
+				"color": "#e67e22",
+				"id": "carrot"
+			},
+			{
+				"name": "Alizarin",
+				"color": "#e74c3c",
+				"id": "alizarin"
+			},
+			{
+				"name": "Clouds",
+				"color": "#ecf0f1",
+				"id": "clouds"
+			},
+			{
+				"name": "Concrete",
+				"color": "#95a5a6",
+				"id": "concrete"
+			},
+			{
+				"name": "Orange",
+				"color": "#f39c12",
+				"id": "orange"
+			},
+			{
+				"name": "Pumpkin",
+				"color": "#d35400",
+				"id": "pumpkin"
+			},
+			{
+				"name": "Pomegranate",
+				"color": "#c0392b",
+				"id": "pomegranate"
+			},
+			{
+				"name": "Silver",
+				"color": "#bdc3c7",
+				"id": "silver"
+			},
+			{
+				"name": "Asbestos",
+				"color": "#7f8c8d",
+				"id": "asbestos"
+			}
+		]
+	},
+	{
+		"paletteName": "Flat UI Colors Dutch",
+		"id": "flat-ui-colors-dutch",
+		"emoji": "🇳🇱",
+		"colors": [
+			{
+				"name": "Sunflower",
+				"color": "#FFC312",
+				"id": "sunflower"
+			},
+			{
+				"name": "Energos",
+				"color": "#C4E538",
+				"id": "energos"
+			},
+			{
+				"name": "BlueMartina",
+				"color": "#12CBC4",
+				"id": "bluemartina"
+			},
+			{
+				"name": "LavenderRose",
+				"color": "#FDA7DF",
+				"id": "lavenderrose"
+			},
+			{
+				"name": "BaraRose",
+				"color": "#ED4C67",
+				"id": "bararose"
+			},
+			{
+				"name": "RadiantYellow",
+				"color": "#F79F1F",
+				"id": "radiantyellow"
+			},
+			{
+				"name": "AndroidGreen",
+				"color": "#A3CB38",
+				"id": "androidgreen"
+			},
+			{
+				"name": "MediterraneanSea",
+				"color": "#1289A7",
+				"id": "mediterraneansea"
+			},
+			{
+				"name": "LavenderTea",
+				"color": "#D980FA",
+				"id": "lavendertea"
+			},
+			{
+				"name": "VerryBerry",
+				"color": "#B53471",
+				"id": "verryberry"
+			},
+			{
+				"name": "PuffinsBill",
+				"color": "#EE5A24",
+				"id": "puffinsbill"
+			},
+			{
+				"name": "PixelatedGrass",
+				"color": "#009432",
+				"id": "pixelatedgrass"
+			},
+			{
+				"name": "MerchantMarineBlue",
+				"color": "#0652DD",
+				"id": "merchantmarineblue"
+			},
+			{
+				"name": "ForgottenPurple",
+				"color": "#9980FA",
+				"id": "forgottenpurple"
+			},
+			{
+				"name": "HollyHock",
+				"color": "#833471",
+				"id": "hollyhock"
+			},
+			{
+				"name": "RedPigment",
+				"color": "#EA2027",
+				"id": "redpigment"
+			},
+			{
+				"name": "TurkishAqua",
+				"color": "#006266",
+				"id": "turkishaqua"
+			},
+			{
+				"name": "20000LeaguesUnderTheSea",
+				"color": "#1B1464",
+				"id": "20000leaguesunderthesea"
+			},
+			{
+				"name": "CircumorbitalRing",
+				"color": "#5758BB",
+				"id": "circumorbitalring"
+			},
+			{
+				"name": "MagentaPurple",
+				"color": "#6F1E51",
+				"id": "magentapurple"
+			}
+		]
+	},
+	{
+		"paletteName": "Flat UI Colors American",
+		"id": "flat-ui-colors-american",
+		"emoji": "🇺🇸",
+		"colors": [
+			{
+				"name": "LightGreenishBlue",
+				"color": "#55efc4",
+				"id": "lightgreenishblue"
+			},
+			{
+				"name": "FadedPoster",
+				"color": "#81ecec",
+				"id": "fadedposter"
+			},
+			{
+				"name": "GreenDarnerTail",
+				"color": "#74b9ff",
+				"id": "greendarnertail"
+			},
+			{
+				"name": "ShyMoment",
+				"color": "#a29bfe",
+				"id": "shymoment"
+			},
+			{
+				"name": "CityLights",
+				"color": "#dfe6e9",
+				"id": "citylights"
+			},
+			{
+				"name": "MintLeaf",
+				"color": "#00b894",
+				"id": "mintleaf"
+			},
+			{
+				"name": "RobinsEggBlue",
+				"color": "#00cec9",
+				"id": "robinseggblue"
+			},
+			{
+				"name": "ElectronBlue",
+				"color": "#0984e3",
+				"id": "electronblue"
+			},
+			{
+				"name": "ExodusFruit",
+				"color": "#6c5ce7",
+				"id": "exodusfruit"
+			},
+			{
+				"name": "SoothingBreeze",
+				"color": "#b2bec3",
+				"id": "soothingbreeze"
+			},
+			{
+				"name": "SourLemon",
+				"color": "#ffeaa7",
+				"id": "sourlemon"
+			},
+			{
+				"name": "FirstDate",
+				"color": "#fab1a0",
+				"id": "firstdate"
+			},
+			{
+				"name": "PinkGlamour",
+				"color": "#ff7675",
+				"id": "pinkglamour"
+			},
+			{
+				"name": "Pico8Pink",
+				"color": "#fd79a8",
+				"id": "pico8pink"
+			},
+			{
+				"name": "AmericanRiver",
+				"color": "#636e72",
+				"id": "americanriver"
+			},
+			{
+				"name": "BrightYarrow",
+				"color": "#fdcb6e",
+				"id": "brightyarrow"
+			},
+			{
+				"name": "OrangeVille",
+				"color": "#e17055",
+				"id": "orangeville"
+			},
+			{
+				"name": "Chi-Gong",
+				"color": "#d63031",
+				"id": "chi-gong"
+			},
+			{
+				"name": "PrunusAvium",
+				"color": "#e84393",
+				"id": "prunusavium"
+			},
+			{
+				"name": "DraculaOrchid",
+				"color": "#2d3436",
+				"id": "draculaorchid"
+			}
+		]
+	},
+	{
+		"paletteName": "Flat UI Colors Aussie",
+		"id": "flat-ui-colors-aussie",
+		"emoji": "🇦🇺",
+		"colors": [
+			{
+				"name": "Beekeeper",
+				"color": "#f6e58d",
+				"id": "beekeeper"
+			},
+			{
+				"name": "SpicedNectarine",
+				"color": "#ffbe76",
+				"id": "spicednectarine"
+			},
+			{
+				"name": "PinkGlamour",
+				"color": "#ff7979",
+				"id": "pinkglamour"
+			},
+			{
+				"name": "JuneBud",
+				"color": "#badc58",
+				"id": "junebud"
+			},
+			{
+				"name": "CoastalBreeze",
+				"color": "#dff9fb",
+				"id": "coastalbreeze"
+			},
+			{
+				"name": "Turbo",
+				"color": "#f9ca24",
+				"id": "turbo"
+			},
+			{
+				"name": "QuinceJelly",
+				"color": "#f0932b",
+				"id": "quincejelly"
+			},
+			{
+				"name": "CarminePink",
+				"color": "#eb4d4b",
+				"id": "carminepink"
+			},
+			{
+				"name": "PureApple",
+				"color": "#6ab04c",
+				"id": "pureapple"
+			},
+			{
+				"name": "HintOfIcePack",
+				"color": "#c7ecee",
+				"id": "hintoficepack"
+			},
+			{
+				"name": "MiddleBlue",
+				"color": "#7ed6df",
+				"id": "middleblue"
+			},
+			{
+				"name": "Heliotrope",
+				"color": "#e056fd",
+				"id": "heliotrope"
+			},
+			{
+				"name": "ExodusFruit",
+				"color": "#686de0",
+				"id": "exodusfruit"
+			},
+			{
+				"name": "DeepKoamaru",
+				"color": "#30336b",
+				"id": "deepkoamaru"
+			},
+			{
+				"name": "SoaringEagle",
+				"color": "#95afc0",
+				"id": "soaringeagle"
+			},
+			{
+				"name": "GreenlandGreen",
+				"color": "#22a6b3",
+				"id": "greenlandgreen"
+			},
+			{
+				"name": "SteelPink",
+				"color": "#be2edd",
+				"id": "steelpink"
+			},
+			{
+				"name": "Blurple",
+				"color": "#4834d4",
+				"id": "blurple"
+			},
+			{
+				"name": "DeepCove",
+				"color": "#130f40",
+				"id": "deepcove"
+			},
+			{
+				"name": "WizardGrey",
+				"color": "#535c68",
+				"id": "wizardgrey"
+			}
+		]
+	},
+	{
+		"paletteName": "Flat UI Colors British",
+		"id": "flat-ui-colors-british",
+		"emoji": "🇬🇧",
+		"colors": [
+			{
+				"name": "ProtossPylon",
+				"color": "#00a8ff",
+				"id": "protosspylon"
+			},
+			{
+				"name": "Periwinkle",
+				"color": "#9c88ff",
+				"id": "periwinkle"
+			},
+			{
+				"name": "Rise-N-Shine",
+				"color": "#fbc531",
+				"id": "rise-n-shine"
+			},
+			{
+				"name": "DownloadProgress",
+				"color": "#4cd137",
+				"id": "downloadprogress"
+			},
+			{
+				"name": "Seabrook",
+				"color": "#487eb0",
+				"id": "seabrook"
+			},
+			{
+				"name": "VanaDylBlue",
+				"color": "#0097e6",
+				"id": "vanadylblue"
+			},
+			{
+				"name": "MattPurple",
+				"color": "#8c7ae6",
+				"id": "mattpurple"
+			},
+			{
+				"name": "NanohanachaGold",
+				"color": "#e1b12c",
+				"id": "nanohanachagold"
+			},
+			{
+				"name": "SkirretGreen",
+				"color": "#44bd32",
+				"id": "skirretgreen"
+			},
+			{
+				"name": "Naval",
+				"color": "#40739e",
+				"id": "naval"
+			},
+			{
+				"name": "NasturcianFlower",
+				"color": "#e84118",
+				"id": "nasturcianflower"
+			},
+			{
+				"name": "LynxWhite",
+				"color": "#f5f6fa",
+				"id": "lynxwhite"
+			},
+			{
+				"name": "BlueberrySoda",
+				"color": "#7f8fa6",
+				"id": "blueberrysoda"
+			},
+			{
+				"name": "MazarineBlue",
+				"color": "#273c75",
+				"id": "mazarineblue"
+			},
+			{
+				"name": "BlueNights",
+				"color": "#353b48",
+				"id": "bluenights"
+			},
+			{
+				"name": "HarleyOrange",
+				"color": "#c23616",
+				"id": "harleyorange"
+			},
+			{
+				"name": "HintOfPensive",
+				"color": "#dcdde1",
+				"id": "hintofpensive"
+			},
+			{
+				"name": "ChainGangGrey",
+				"color": "#718093",
+				"id": "chainganggrey"
+			},
+			{
+				"name": "PicoVoid",
+				"color": "#192a56",
+				"id": "picovoid"
+			},
+			{
+				"name": "ElectroMagnetic",
+				"color": "#2f3640",
+				"id": "electromagnetic"
+			}
+		]
+	},
+	{
+		"paletteName": "Flat UI Colors Spanish",
+		"id": "flat-ui-colors-spanish",
+		"emoji": "🇪🇸",
+		"colors": [
+			{
+				"name": "JacksonsPurple",
+				"color": "#40407a",
+				"id": "jacksonspurple"
+			},
+			{
+				"name": "C64Purple",
+				"color": "#706fd3",
+				"id": "c64purple"
+			},
+			{
+				"name": "SwanWhite",
+				"color": "#f7f1e3",
+				"id": "swanwhite"
+			},
+			{
+				"name": "SummerSky",
+				"color": "#34ace0",
+				"id": "summersky"
+			},
+			{
+				"name": "CelestialGreen",
+				"color": "#33d9b2",
+				"id": "celestialgreen"
+			},
+			{
+				"name": "LuckyPoint",
+				"color": "#2c2c54",
+				"id": "luckypoint"
+			},
+			{
+				"name": "Liberty",
+				"color": "#474787",
+				"id": "liberty"
+			},
+			{
+				"name": "HotStone",
+				"color": "#aaa69d",
+				"id": "hotstone"
+			},
+			{
+				"name": "DevilBlue",
+				"color": "#227093",
+				"id": "devilblue"
+			},
+			{
+				"name": "PalmSpringsSplash",
+				"color": "#218c74",
+				"id": "palmspringssplash"
+			},
+			{
+				"name": "FlourescentRed",
+				"color": "#ff5252",
+				"id": "flourescentred"
+			},
+			{
+				"name": "SyntheticPumpkin",
+				"color": "#ff793f",
+				"id": "syntheticpumpkin"
+			},
+			{
+				"name": "CrocodileTooth",
+				"color": "#d1ccc0",
+				"id": "crocodiletooth"
+			},
+			{
+				"name": "MandarinSorbet",
+				"color": "#ffb142",
+				"id": "mandarinsorbet"
+			},
+			{
+				"name": "SpicedButterNut",
+				"color": "#ffda79",
+				"id": "spicedbutternut"
+			},
+			{
+				"name": "EyeOfNewt",
+				"color": "#b33939",
+				"id": "eyeofnewt"
+			},
+			{
+				"name": "ChileanFire",
+				"color": "#cd6133",
+				"id": "chileanfire"
+			},
+			{
+				"name": "GreyPorcelain",
+				"color": "#84817a",
+				"id": "greyporcelain"
+			},
+			{
+				"name": "AlamedaOchre",
+				"color": "#cc8e35",
+				"id": "alamedaochre"
+			},
+			{
+				"name": "Desert",
+				"color": "#ccae62",
+				"id": "desert"
+			}
+		]
+	},
+	{
+		"paletteName": "Flat UI Colors Indian",
+		"id": "flat-ui-colors-indian",
+		"emoji": "🇮🇳",
+		"colors": [
+			{
+				"name": "OrchidOrange",
+				"color": "#FEA47F",
+				"id": "orchidorange"
+			},
+			{
+				"name": "SpiroDiscoBall",
+				"color": "#25CCF7",
+				"id": "spirodiscoball"
+			},
+			{
+				"name": "HoneyGlow",
+				"color": "#EAB543",
+				"id": "honeyglow"
+			},
+			{
+				"name": "SweetGarden",
+				"color": "#55E6C1",
+				"id": "sweetgarden"
+			},
+			{
+				"name": "FallingStar",
+				"color": "#CAD3C8",
+				"id": "fallingstar"
+			},
+			{
+				"name": "RichGardenia",
+				"color": "#F97F51",
+				"id": "richgardenia"
+			},
+			{
+				"name": "ClearChill",
+				"color": "#1B9CFC",
+				"id": "clearchill"
+			},
+			{
+				"name": "WhitePepper",
+				"color": "#F8EFBA",
+				"id": "whitepepper"
+			},
+			{
+				"name": "Keppel",
+				"color": "#58B19F",
+				"id": "keppel"
+			},
+			{
+				"name": "ShipsOfficer",
+				"color": "#2C3A47",
+				"id": "shipsofficer"
+			},
+			{
+				"name": "FieryFuchsia",
+				"color": "#B33771",
+				"id": "fieryfuchsia"
+			},
+			{
+				"name": "BlueBell",
+				"color": "#3B3B98",
+				"id": "bluebell"
+			},
+			{
+				"name": "GeorgiaPeach",
+				"color": "#FD7272",
+				"id": "georgiapeach"
+			},
+			{
+				"name": "OasisStream",
+				"color": "#9AECDB",
+				"id": "oasisstream"
+			},
+			{
+				"name": "BrightUbe",
+				"color": "#D6A2E8",
+				"id": "brightube"
+			},
+			{
+				"name": "MagentaPurple",
+				"color": "#6D214F",
+				"id": "magentapurple"
+			},
+			{
+				"name": "EndingNavyBlue",
+				"color": "#182C61",
+				"id": "endingnavyblue"
+			},
+			{
+				"name": "SasquatchSocks",
+				"color": "#FC427B",
+				"id": "sasquatchsocks"
+			},
+			{
+				"name": "PineGlade",
+				"color": "#BDC581",
+				"id": "pineglade"
+			},
+			{
+				"name": "HighlighterLavender",
+				"color": "#82589F",
+				"id": "highlighterlavender"
+			}
+		]
+	},
+	{
+		"paletteName": "Flat UI Colors French",
+		"id": "flat-ui-colors-french",
+		"emoji": "🇫🇷",
+		"colors": [
+			{
+				"name": "FlatFlesh",
+				"color": "#fad390",
+				"id": "flatflesh"
+			},
+			{
+				"name": "MelonMelody",
+				"color": "#f8c291",
+				"id": "melonmelody"
+			},
+			{
+				"name": "Livid",
+				"color": "#6a89cc",
+				"id": "livid"
+			},
+			{
+				"name": "Spray",
+				"color": "#82ccdd",
+				"id": "spray"
+			},
+			{
+				"name": "ParadiseGreen",
+				"color": "#b8e994",
+				"id": "paradisegreen"
+			},
+			{
+				"name": "SquashBlossom",
+				"color": "#f6b93b",
+				"id": "squashblossom"
+			},
+			{
+				"name": "MandarinRed",
+				"color": "#e55039",
+				"id": "mandarinred"
+			},
+			{
+				"name": "AzraqBlue",
+				"color": "#4a69bd",
+				"id": "azraqblue"
+			},
+			{
+				"name": "Dupain",
+				"color": "#60a3bc",
+				"id": "dupain"
+			},
+			{
+				"name": "AuroraGreen",
+				"color": "#78e08f",
+				"id": "auroragreen"
+			},
+			{
+				"name": "IcelandPoppy",
+				"color": "#fa983a",
+				"id": "icelandpoppy"
+			},
+			{
+				"name": "TomatoRed",
+				"color": "#eb2f06",
+				"id": "tomatored"
+			},
+			{
+				"name": "YueGuangBlue",
+				"color": "#1e3799",
+				"id": "yueguangblue"
+			},
+			{
+				"name": "GoodSamaritan",
+				"color": "#3c6382",
+				"id": "goodsamaritan"
+			},
+			{
+				"name": "Waterfall",
+				"color": "#38ada9",
+				"id": "waterfall"
+			},
+			{
+				"name": "CarrotOrange",
+				"color": "#e58e26",
+				"id": "carrotorange"
+			},
+			{
+				"name": "JalapenoRed",
+				"color": "#b71540",
+				"id": "jalapenored"
+			},
+			{
+				"name": "DarkSapphire",
+				"color": "#0c2461",
+				"id": "darksapphire"
+			},
+			{
+				"name": "ForestBlues",
+				"color": "#0a3d62",
+				"id": "forestblues"
+			},
+			{
+				"name": "ReefEncounter",
+				"color": "#079992",
+				"id": "reefencounter"
+			}
+		]
+	}
+]

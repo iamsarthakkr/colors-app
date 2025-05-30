@@ -1,5 +1,5 @@
+import seedPalettes from "@/data/palettes.json";
 import { IBasePalette } from "@/types/palette";
-import seedPalettes from "@/data/seedPalettes.json";
 import { getId } from "../common";
 import fs from "fs";
 
@@ -19,5 +19,5 @@ export const generatePalettes = () => {
 		return palette;
 	});
 
-	fs.writeFileSync("src/data/.seedPalettes.json", JSON.stringify(formatted, null, 4), { encoding: "utf-8" });
+	fs.writeFileSync("src/data/seedPalettes.json", JSON.stringify(formatted, null, 4), { encoding: "utf-8" });
 };

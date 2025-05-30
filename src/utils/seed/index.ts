@@ -1,2 +1,2 @@
 export { generatePalettes } from "./seedPalettes";
-export { generateSeedColors } from "./seedColors";
+export { generateSeedColors, generateFamily } from "./seedColors";
