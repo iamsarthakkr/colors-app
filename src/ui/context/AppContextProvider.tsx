@@ -11,9 +11,23 @@ interface IProps {
 	children: React.ReactElement;
 }
 
+const savePalettes = (palettes: IBasePalette[]) => {
+	if (typeof window !== "undefined") {
+		window.localStorage.setItem("savedPalettes", JSON.stringify(palettes));
+	}
+};
+
+const getPalettes = () => {
+	if (typeof window !== "undefined") {
+		const savedStr = window.localStorage.getItem("savedPalettes");
+		return savedStr ? (JSON.parse(savedStr) as IBasePalette[]) : seedPalettes;
+	}
+	return [];
+};
+
+
 export const AppContextProvider: React.FC<IProps> = (props) => {
 	const [palettes, setPalettes] = React.useState<IBasePalette[]>([]);
-	const [loaded, setLoaded] = React.useState(false);
 
 	const getPalette: IAppContextActions["getPalette"] = React.useCallback(
 		(id) => {
@@ -58,23 +72,21 @@ export const AppContextProvider: React.FC<IProps> = (props) => {
 		setPalettes((prev) => {
 			return prev.concat(newPalette);
 		});
-
-		if (typeof window !== "undefined") {
-			const savedStr = window.localStorage.getItem("savedPalettes") || "[]";
-			const savedPalettes = JSON.parse(savedStr) as IBasePalette[];
-			savedPalettes.push(newPalette);
-			window.localStorage.setItem("savedPalettes", JSON.stringify(savedPalettes));
-		}
+	}, []);
+	
+	const removePalette: IAppContextActions["removePalette"] = React.useCallback((paletteId: string) => {
+		setPalettes((prev) => {
+			return prev.filter((palette) => palette.id !== paletteId);
+		});
 	}, []);
 
 	React.useEffect(() => {
-		  if (typeof window !== "undefined") {
-				const savedStr = window.localStorage.getItem("savedPalettes") || "[]";
-				const savedPalettes = JSON.parse(savedStr) as IBasePalette[];
-				setPalettes(seedPalettes.concat(savedPalettes));
-				setLoaded(true);
-			}
+		setPalettes(getPalettes());
 	}, []);
+	
+	React.useEffect(() => {
+		savePalettes(palettes);
+	}, [palettes]);
 
 	const context: IAppContext = React.useMemo(() => {
 		return {
@@ -89,12 +101,13 @@ export const AppContextProvider: React.FC<IProps> = (props) => {
 			getColor,
 			getEnrichedColor,
 			addPalette,
+			removePalette,
 		};
-	}, [getPalette, getEnrichedPalette, getColor, getEnrichedColor, addPalette]);
+	}, [getPalette, getEnrichedPalette, getColor, getEnrichedColor, addPalette, removePalette]);
 
 	return (
 		<AppContext.Provider value={context}>
-			<AppContextActions.Provider value={contextActions}>{loaded ? props.children : null}</AppContextActions.Provider>
+			<AppContextActions.Provider value={contextActions}>{props.children}</AppContextActions.Provider>
 		</AppContext.Provider>
 	);
 };

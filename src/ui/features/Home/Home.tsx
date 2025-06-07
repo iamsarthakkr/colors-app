@@ -1,22 +1,36 @@
 "use client";
 
+import React from "react";
 import Link from "next/link";
-import { useAppContext } from "../../context/useContext";
 import { IBasePalette } from "@/types/palette";
+import { ContextMenu } from "@/ui/components/ContextMenu";
+import { useAppContext, useAppContextActions } from "../../context/useContext";
+import { useMiniPaletteContextItems } from "./miniPaletteContext";
 
 const MiniPalette = (palette: IBasePalette) => {
+	const ref = React.useRef(null);
+	const actions = useAppContextActions();
+	const actionsRef = React.useRef(actions); 
+
+	const contextItemsProvider = useMiniPaletteContextItems({ palette, contextActionRef: actionsRef });
+
 	return (
-		<div className="h-full w-full flex flex-col">
-			<section className="flex-[80%] grid grid-cols-5 auto-cols-fr auto-rows-[25%] bg-gray-900">
-				{palette.colors.map((color) => {
-					return <div className="" style={{ backgroundColor: color.color }} key={color.id} />;
-				})}
-			</section>
-			<section className="flex-[20%] flex justify-between items-center">
-				<span className="font-semibold text-cyan-600 hover:text-cyan-700">{palette.paletteName}</span>
-				<span>{palette.emoji}</span>
-			</section>
-		</div>
+		<>
+			<ContextMenu ref={ref} contextItemsProvider={contextItemsProvider} />
+			<Link href={`/palette/${palette.id}`}>
+				<div className="h-full w-full flex flex-col cursor-pointer" ref={ref}>
+					<section className="flex-[80%] grid grid-cols-5 auto-cols-fr auto-rows-[25%] bg-gray-900">
+						{palette.colors.map((color) => {
+							return <div className="" style={{ backgroundColor: color.color }} key={color.id} />;
+						})}
+					</section>
+					<section className="flex-[20%] flex justify-between items-center">
+						<span className="font-semibold text-cyan-600 hover:text-cyan-700">{palette.paletteName}</span>
+						<span>{palette.emoji}</span>
+					</section>
+				</div>
+			</Link>
+		</>
 	);
 };
 
@@ -36,13 +50,8 @@ export const Home = () => {
 				<ul className="w-[60%] grid grid-cols-1 md:grid-cols-3 auto-cols-fr auto-rows-[200px] gap-[40px]">
 					{palettes.map((palette) => {
 						return (
-							<li
-								key={palette.id}
-								className="px-[15px] pt-[10px] pb-0 bg-white rounded-sm"
-							>
-								<Link href={`/palette/${palette.id}`}>
-									<MiniPalette {...palette} />
-								</Link>
+							<li key={palette.id} className="px-[15px] pt-[10px] pb-0 bg-white rounded-sm">
+								<MiniPalette {...palette} />
 							</li>
 						);
 					})}

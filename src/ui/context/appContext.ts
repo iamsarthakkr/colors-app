@@ -11,6 +11,7 @@ export type IAppContextActions = {
 	getColor: (paletteId: string, colorId: string) => IBaseColor | null;
 	getEnrichedColor: (paletteId: string, colorId: string) => IColor | null;
 	addPalette: (paletteName: string, paletteEmoji: string, color: IBaseColor[]) => void;
+	removePalette: (paletteId: string) => void;
 };
 
 export const AppContext = React.createContext<IAppContext>(null as unknown as IAppContext);
