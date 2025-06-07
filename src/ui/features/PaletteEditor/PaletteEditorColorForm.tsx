@@ -16,7 +16,7 @@ type Props = {
 	colorValidator: (color: string) => string;
 };
 
-export const NewPaletteColorForm = (props: Props) => {
+export const PaletteEditorColorForm = (props: Props) => {
 	const [color, setColor] = React.useState("#ff0000");
 	const [name, setName] = React.useState("");
 	const [nameError, setNameError] = React.useState("");
@@ -84,7 +84,6 @@ export const NewPaletteColorForm = (props: Props) => {
 		setName(color.name);
 		setShowPresets(false);
 	}, []);
-
 
 	return (
 		<>

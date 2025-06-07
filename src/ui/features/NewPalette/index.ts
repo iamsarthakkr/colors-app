@@ -1,1 +1,0 @@
-export { NewPalette } from "./NewPalette";

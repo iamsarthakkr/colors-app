@@ -2,17 +2,17 @@
 
 import React from "react";
 import { Drawer } from "../../components";
-import { NewPaletteColorForm } from "./NewPaletteColorForm";
+import { PaletteEditorColorForm } from "./PaletteEditorColorForm";
 import { getId } from "@/utils/common";
 import { IBaseColor } from "@/types/palette";
 import { Palette } from "./Palette";
 import { Modal } from "../../components/Modal";
-import { NewPaletteForm } from "./NewPaletteForm";
+import { PaletteEditorForm } from "./PaletteEditorForm";
 import { useAppContext, useAppContextActions } from "../../context/useContext";
 import { toast } from "react-toastify";
 import { useRouter } from "next/navigation";
 
-export const NewPalette = () => {
+export const PaletteEditor = () => {
 	const [colors, setColors] = React.useState<IBaseColor[]>([]);
 	const [showNewPaletteForm, setShowNewPaletteForm] = React.useState(false);
 
@@ -107,11 +107,11 @@ export const NewPalette = () => {
 	return (
 		<main className="h-full w-full">
 			<Modal open={showNewPaletteForm} onClose={handleHideNewPaletteForm}>
-				<NewPaletteForm paletteNameValidator={paletteNameValidator} onCancel={handleHideNewPaletteForm} onSave={handleSaveNewPalette} />
+				<PaletteEditorForm paletteNameValidator={paletteNameValidator} onCancel={handleHideNewPaletteForm} onSave={handleSaveNewPalette} />
 			</Modal>
 			<Drawer>
 				<Drawer.Drawer className="h-full">
-					<NewPaletteColorForm onAddColor={handleAddColor} colorNameValidator={colorNameValidator} colorValidator={colorValidator} />
+					<PaletteEditorColorForm onAddColor={handleAddColor} colorNameValidator={colorNameValidator} colorValidator={colorValidator} />
 				</Drawer.Drawer>
 				<Drawer.Header>
 					<div className="w-full flex justify-end gap-2 px-5">

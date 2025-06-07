@@ -93,12 +93,12 @@ const EmojiPickerFrom = (props: EmojiPickerFromProps) => {
 	);
 };
 
-export const NewPaletteForm = (props: NewPaletteFormProps) => {
+export const PaletteEditorForm = (props: NewPaletteFormProps) => {
 	const [paletteName, setPaletteName] = React.useState("");
 	const [paletteEmoji, setPaletteEmoji] = React.useState("🎨");
 	const [showEmojiPicker, setShowEmojiPicker] = React.useState(false);
 
-	const { onCancel, onSave, paletteNameValidator} = props;
+	const { onCancel, onSave, paletteNameValidator } = props;
 
 	const handleShowEmojiPicker = React.useCallback(() => {
 		setShowEmojiPicker(true);

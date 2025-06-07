@@ -1,7 +1,7 @@
-import { NewPalette } from "@/ui/features/NewPalette";
+import { PaletteEditor } from "@/ui/features/PaletteEditor";
 
 const NewPalettePage = () => {
-	return <NewPalette />;
+	return <PaletteEditor />;
 };
 
 export default NewPalettePage;

@@ -1,0 +1,1 @@
+export { PaletteEditor } from "./PaletteEditor";
