@@ -117,12 +117,13 @@ export const ColorBox = (props: Props) => {
 	} = props;
 	const ref = React.useRef<HTMLDivElement>(null);
 
-	const { setNodeRef, transform, transition } = useSortable({ id: props.color.id });
+	const { setNodeRef, transform, transition, isDragging } = useSortable({ id: props.color.id });
 
 	const draggableStyle = draggable
 		? {
 				transform: CSS.Transform.toString(transform),
 				transition,
+				zIndex: isDragging ? 1000 : 0
 		  }
 		: {};
 
