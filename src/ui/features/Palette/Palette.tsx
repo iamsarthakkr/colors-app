@@ -23,7 +23,7 @@ export const Palette = (props: Props) => {
 
 	const handleShowPalette = React.useCallback(
 		(color: IBaseColor) => {
-			router.push(`/palette/${paletteId}/${color.id}`);
+			router.push(`/palette/${paletteId}/colors/${color.id}`);
 		},
 		[paletteId, router]
 	);
