@@ -1,10 +1,11 @@
 import React from "react";
 import EmojiPicker, { EmojiClickData } from "emoji-picker-react";
+import { IPaletteValidators } from "./useValidators";
 
 interface NewPaletteFormProps {
 	onCancel: () => void;
 	onSave: (name: string, emoji: string) => void;
-	paletteNameValidator: (paletteName: string) => string;
+	validators: IPaletteValidators;
 }
 
 interface PaletteNameFormProps extends NewPaletteFormProps {
@@ -21,26 +22,26 @@ interface EmojiPickerFromProps {
 
 const PaletteNameForm = (props: PaletteNameFormProps) => {
 	const [nameError, setNameError] = React.useState("");
-	const { onCancel, onSave, paletteName, emoji, onPaletteNameChange, onChooseEmoji, paletteNameValidator } = props;
+	const { onCancel, onSave, paletteName, emoji, onPaletteNameChange, onChooseEmoji, validators } = props;
 
 	const handlePaletteNameChange = React.useCallback(
 		(e: React.ChangeEvent<HTMLInputElement>) => {
 			const val = e.target.value;
-			const err = paletteNameValidator(val);
+			const err = validators.paletteNameValidator(val);
 			setNameError(err);
 			onPaletteNameChange(e.target.value);
 		},
-		[onPaletteNameChange, paletteNameValidator]
+		[onPaletteNameChange, validators]
 	);
 
 	const handleSavePalette = React.useCallback(() => {
-		const err = paletteNameValidator(paletteName);
+		const err = validators.paletteNameValidator(paletteName);
 		setNameError(err);
 		if(err) {
 			return;
 		}
 		onSave();
-	}, [onSave, paletteName, paletteNameValidator]);
+	}, [onSave, paletteName, validators]);
 
 	return (
 		<div>
@@ -98,7 +99,7 @@ export const PaletteEditorForm = (props: NewPaletteFormProps) => {
 	const [paletteEmoji, setPaletteEmoji] = React.useState("🎨");
 	const [showEmojiPicker, setShowEmojiPicker] = React.useState(false);
 
-	const { onCancel, onSave, paletteNameValidator } = props;
+	const { onCancel, onSave, validators } = props;
 
 	const handleShowEmojiPicker = React.useCallback(() => {
 		setShowEmojiPicker(true);
@@ -123,7 +124,7 @@ export const PaletteEditorForm = (props: NewPaletteFormProps) => {
 			onChooseEmoji={handleShowEmojiPicker}
 			onCancel={onCancel}
 			onSave={handleSavePalette}
-			paletteNameValidator={paletteNameValidator}
+			validators={validators}
 		/>
 	);
 };

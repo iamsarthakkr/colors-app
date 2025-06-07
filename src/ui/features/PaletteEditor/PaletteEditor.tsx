@@ -8,56 +8,19 @@ import { IBaseColor } from "@/types/palette";
 import { Palette } from "./Palette";
 import { Modal } from "../../components/Modal";
 import { PaletteEditorForm } from "./PaletteEditorForm";
-import { useAppContext, useAppContextActions } from "../../context/useContext";
+import { useAppContextActions } from "../../context/useContext";
 import { toast } from "react-toastify";
 import { useRouter } from "next/navigation";
+import { useValidators } from "./useValidators";
 
 export const PaletteEditor = () => {
 	const [colors, setColors] = React.useState<IBaseColor[]>([]);
 	const [showNewPaletteForm, setShowNewPaletteForm] = React.useState(false);
 
-	const { palettes } = useAppContext();
 	const actions = useAppContextActions();
 	const router = useRouter();
+	const validators = useValidators(colors);
 
-	const colorNameValidator = React.useCallback(
-		(name: string) => {
-			if (name.trim() === "") {
-				return "Name can't be empty!";
-			}
-			if (colors.some((color) => getId(name) === color.id)) {
-				return "Color already in palette";
-			}
-			return "";
-		},
-		[colors]
-	);
-
-	const colorValidator = React.useCallback(
-		(colorStr: string) => {
-			if (colorStr.trim() === "") {
-				return "Color has to be valid!";
-			}
-			if (colors.some((color) => color.color === colorStr)) {
-				return "Color already in palette";
-			}
-			return "";
-		},
-		[colors]
-	);
-
-	const paletteNameValidator = React.useCallback(
-		(paletteName: string) => {
-			if (paletteName.trim() === "") {
-				return "Palette name is required!";
-			}
-			if (palettes.some((palette) => getId(paletteName) === palette.id)) {
-				return "Palette with same name already present!";
-			}
-			return "";
-		},
-		[palettes]
-	);
 
 	const handleAddColor = React.useCallback((color: string, name: string) => {
 		setColors((prev) => {
@@ -107,11 +70,11 @@ export const PaletteEditor = () => {
 	return (
 		<main className="h-full w-full">
 			<Modal open={showNewPaletteForm} onClose={handleHideNewPaletteForm}>
-				<PaletteEditorForm paletteNameValidator={paletteNameValidator} onCancel={handleHideNewPaletteForm} onSave={handleSaveNewPalette} />
+				<PaletteEditorForm validators={validators} onCancel={handleHideNewPaletteForm} onSave={handleSaveNewPalette} />
 			</Modal>
 			<Drawer>
 				<Drawer.Drawer className="h-full">
-					<PaletteEditorColorForm onAddColor={handleAddColor} colorNameValidator={colorNameValidator} colorValidator={colorValidator} />
+					<PaletteEditorColorForm onAddColor={handleAddColor} validators={validators} />
 				</Drawer.Drawer>
 				<Drawer.Header>
 					<div className="w-full flex justify-end gap-2 px-5">

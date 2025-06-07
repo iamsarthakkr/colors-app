@@ -8,12 +8,12 @@ import { isDark } from "@/utils/colors";
 import { Modal } from "@/ui/components";
 import { ColorsPreset } from "./ColorsPreset";
 import { IBaseColor } from "@/types/palette";
+import { IPaletteValidators } from "./useValidators";
 
 
 type Props = {
 	onAddColor: (color: string, name: string) => void;
-	colorNameValidator: (name: string) => string;
-	colorValidator: (color: string) => string;
+	validators: IPaletteValidators;
 };
 
 export const PaletteEditorColorForm = (props: Props) => {
@@ -25,7 +25,7 @@ export const PaletteEditorColorForm = (props: Props) => {
 	const [showPresets, setShowPresets] = React.useState(false);
 
 	const [buttonStyles, setButtonStyles] = React.useState<React.CSSProperties>({});
-	const { onAddColor, colorNameValidator, colorValidator } = props;
+	const { onAddColor, validators } = props;
 
 	React.useEffect(() => {
 		const dark = isDark(color);
@@ -37,9 +37,9 @@ export const PaletteEditorColorForm = (props: Props) => {
 
 	const handleValidateColor: ColorChangeHandler = React.useCallback(
 		(color) => {
-			setColorError(colorValidator(color.hex));
+			setColorError(validators.colorValidator(color.hex));
 		},
-		[colorValidator]
+		[validators]
 	);
 
 	const handleColorChange: ColorChangeHandler = React.useCallback((color) => {
@@ -50,17 +50,17 @@ export const PaletteEditorColorForm = (props: Props) => {
 		(event: React.ChangeEvent<HTMLInputElement>) => {
 			const value = event.target.value;
 			setName(value);
-			const err = colorNameValidator(value);
+			const err = validators.colorNameValidator(value);
 			setNameError(err);
 		},
-		[colorNameValidator]
+		[validators]
 	);
 
 	const handleAddColor = React.useCallback(
 		(event: React.MouseEvent<HTMLButtonElement>) => {
 			event.preventDefault();
-			const colorErr = colorValidator(color),
-				nameErr = colorNameValidator(name);
+			const colorErr = validators.colorValidator(color),
+				nameErr = validators.colorNameValidator(name);
 			setNameError(nameErr);
 			setColorError(colorErr);
 			if (colorErr || nameErr) {
@@ -68,7 +68,7 @@ export const PaletteEditorColorForm = (props: Props) => {
 			}
 			onAddColor(color, name);
 		},
-		[color, name, colorValidator, colorNameValidator, onAddColor]
+		[validators, color, name, onAddColor]
 	);
 
 	const handleShowPresets = React.useCallback(() => {
