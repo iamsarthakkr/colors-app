@@ -74,6 +74,18 @@ export const AppContextProvider: React.FC<IProps> = (props) => {
 			return prev.concat(newPalette);
 		});
 	}, []);
+
+	const updatePalette: IAppContextActions["updatePalette"] = React.useCallback((paletteId, paletteName, emoji, colors) => {
+		const newPalette: IBasePalette = {
+			paletteName,
+			emoji,
+			colors,
+			id: getId(paletteName),
+		};
+		setPalettes((prev) => {
+			return prev.map((palette) => (palette.id === paletteId ? newPalette : palette));
+		});
+	}, []);
 	
 	const removePalette: IAppContextActions["removePalette"] = React.useCallback((paletteId: string) => {
 		setPalettes((prev) => {
@@ -103,9 +115,10 @@ export const AppContextProvider: React.FC<IProps> = (props) => {
 			getColor,
 			getEnrichedColor,
 			addPalette,
+			updatePalette,
 			removePalette,
 		};
-	}, [getPalette, getEnrichedPalette, getColor, getEnrichedColor, addPalette, removePalette]);
+	}, [getPalette, getEnrichedPalette, getColor, getEnrichedColor, addPalette, updatePalette, removePalette]);
 
 	return (
 		<AppContext.Provider value={context}>

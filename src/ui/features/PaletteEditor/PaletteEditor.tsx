@@ -13,14 +13,36 @@ import { toast } from "react-toastify";
 import { useRouter } from "next/navigation";
 import { useValidators } from "./useValidators";
 
-export const PaletteEditor = () => {
+type Props = {
+	paletteId?: string;
+}
+
+export const PaletteEditor = (props: Props) => {
+	const { paletteId } = props;
+
+	const [paletteName, setPaletteName] = React.useState("");
+	const [paletteEmoji, setPaletteEmoji] = React.useState("🎨");
 	const [colors, setColors] = React.useState<IBaseColor[]>([]);
+	const [editing, setEditing] = React.useState(false);
+
 	const [showNewPaletteForm, setShowNewPaletteForm] = React.useState(false);
 
 	const actions = useAppContextActions();
 	const router = useRouter();
-	const validators = useValidators(colors);
+	const validators = useValidators(colors, paletteId);
+	
+	React.useEffect(() => {
+		const palette = actions.getPalette(paletteId || '');
+		if(!palette) {
+			return;
+		}
 
+		// set the initial
+		setPaletteName(palette.paletteName);
+		setPaletteEmoji(palette.emoji);
+		setColors(palette.colors);
+		setEditing(true);
+	}, [actions, paletteId]);
 
 	const handleAddColor = React.useCallback((color: string, name: string) => {
 		setColors((prev) => {
@@ -57,20 +79,32 @@ export const PaletteEditor = () => {
 	const handleSaveNewPalette = React.useCallback(
 		(paletteName: string, emoji: string) => {
 			setShowNewPaletteForm(false);
-			actions.addPalette(paletteName, emoji, colors);
-			toast("Palette saved successfully!", {
+
+			if (editing && paletteId) {
+				actions.updatePalette(paletteId, paletteName, emoji, colors);
+			} else {
+				actions.addPalette(paletteName, emoji, colors);
+			}
+			
+			toast(`Palette ${editing ? "updated" : "added"} successfully!`, {
 				position: "bottom-left",
 				autoClose: 3000,
 			});
 			router.push("/");
 		},
-		[actions, colors, router]
+		[actions, colors, editing, paletteId, router]
 	);
 
 	return (
 		<main className="h-full w-full">
 			<Modal open={showNewPaletteForm} onClose={handleHideNewPaletteForm}>
-				<PaletteEditorForm validators={validators} onCancel={handleHideNewPaletteForm} onSave={handleSaveNewPalette} />
+				<PaletteEditorForm
+					defaultPaletteName={paletteName}
+					defaultEmoji={paletteEmoji}
+					validators={validators}
+					onCancel={handleHideNewPaletteForm}
+					onSave={handleSaveNewPalette}
+				/>
 			</Modal>
 			<Drawer>
 				<Drawer.Drawer className="h-full">

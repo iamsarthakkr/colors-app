@@ -3,20 +3,23 @@ import EmojiPicker, { EmojiClickData } from "emoji-picker-react";
 import { IPaletteValidators } from "./useValidators";
 
 interface NewPaletteFormProps {
+	defaultPaletteName?: string;
+	defaultEmoji?: string;
 	onCancel: () => void;
 	onSave: (name: string, emoji: string) => void;
 	validators: IPaletteValidators;
 }
 
 interface PaletteNameFormProps extends NewPaletteFormProps {
-	onSave: () => void;
-	onChooseEmoji: () => void;
 	paletteName: string;
 	emoji: string;
 	onPaletteNameChange: (paletteName: string) => void;
+	onSave: () => void;
+	onChooseEmoji: () => void;
 }
 
 interface EmojiPickerFromProps {
+	emoji: string;
 	onEmojiChange: (emoji: string) => void;
 }
 
@@ -95,11 +98,12 @@ const EmojiPickerFrom = (props: EmojiPickerFromProps) => {
 };
 
 export const PaletteEditorForm = (props: NewPaletteFormProps) => {
-	const [paletteName, setPaletteName] = React.useState("");
-	const [paletteEmoji, setPaletteEmoji] = React.useState("🎨");
+	const { defaultPaletteName, defaultEmoji, onCancel, onSave, validators } = props;
+	
+	const [paletteName, setPaletteName] = React.useState(defaultPaletteName || "");
+	const [paletteEmoji, setPaletteEmoji] = React.useState(defaultEmoji || "🎨");
 	const [showEmojiPicker, setShowEmojiPicker] = React.useState(false);
 
-	const { onCancel, onSave, validators } = props;
 
 	const handleShowEmojiPicker = React.useCallback(() => {
 		setShowEmojiPicker(true);
@@ -115,7 +119,7 @@ export const PaletteEditorForm = (props: NewPaletteFormProps) => {
 	}, [onSave, paletteEmoji, paletteName]);
 
 	return showEmojiPicker ? (
-		<EmojiPickerFrom onEmojiChange={handleChooseEmoji} />
+		<EmojiPickerFrom emoji={paletteEmoji} onEmojiChange={handleChooseEmoji} />
 	) : (
 		<PaletteNameForm
 			paletteName={paletteName}

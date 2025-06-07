@@ -13,7 +13,7 @@ export type IPaletteValidators = {
 	paletteNameValidator: IValidator;
 };
 
-export const useValidators = (colors: IBaseColor[]): IPaletteValidators => {
+export const useValidators = (colors: IBaseColor[], paletteId?: string): IPaletteValidators => {
 	const { palettes } = useAppContext();
 
 	const colorNameValidator = React.useCallback(
@@ -47,12 +47,12 @@ export const useValidators = (colors: IBaseColor[]): IPaletteValidators => {
 			if (paletteName.trim() === "") {
 				return "Palette name is required!";
 			}
-			if (palettes.some((palette) => getId(paletteName) === palette.id)) {
+			if (palettes.some((palette) => getId(paletteName) === palette.id && paletteId !== palette.id)) {
 				return "Palette with same name already present!";
 			}
 			return "";
 		},
-		[palettes]
+		[paletteId, palettes]
 	);
 
 	return { colorNameValidator, colorValidator, paletteNameValidator };
