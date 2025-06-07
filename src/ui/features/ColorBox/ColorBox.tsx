@@ -95,7 +95,7 @@ const DragHandle = ({ color }: { color: IBaseColor }) => {
 			{...attributes}
 			{...listeners}
 		>
-			<MoveIcon size="small"/>
+			<MoveIcon size="small" />
 		</span>
 	);
 };
@@ -115,16 +115,20 @@ export const ColorBox = (props: Props) => {
 		draggable,
 		format = "hex",
 	} = props;
+	const ref = React.useRef<HTMLDivElement>(null);
+
 	const { setNodeRef, transform, transition } = useSortable({ id: props.color.id });
 
-	const draggableStyle = draggable ? {
-		transform: CSS.Transform.toString(transform),
-		transition, 
-	} : {};
+	const draggableStyle = draggable
+		? {
+				transform: CSS.Transform.toString(transform),
+				transition,
+		  }
+		: {};
 
 	const baseStyles = {
-		background: color.color
-	}
+		background: color.color,
+	};
 
 	const handleClick = React.useCallback(() => {
 		if (onClick) {
@@ -133,21 +137,33 @@ export const ColorBox = (props: Props) => {
 	}, [color, onClick]);
 
 	const { copy } = useCopy(color);
-	
-	const handleCopy = React.useCallback((color: IBaseColor) => {
-		copy(format);
-		if(onCopy) {
-			onCopy(color);
-		}
-	}, [copy, onCopy, format]);
+
+	const handleCopy = React.useCallback(
+		(color: IBaseColor) => {
+			copy(format);
+			if (onCopy) {
+				onCopy(color);
+			}
+		},
+		[copy, onCopy, format]
+	);
+
+	const setRef = React.useCallback(
+		(node: HTMLDivElement | null) => {
+			ref.current = node;
+			setNodeRef(node);
+		},
+		[setNodeRef]
+	);
 
 	return (
 		<div
-			ref={draggable ? setNodeRef : null}
+			ref={setRef}
 			style={{ ...baseStyles, ...draggableStyle }}
 			className={`group/box relative flex w-full h-full ${className}`}
 			onClick={handleClick}
 		>
+			{/* <ContextMenu ref={ref} /> */}
 			{showCopy && <Copy color={color} onCopy={handleCopy} />}
 			{draggable && <DragHandle color={color} />}
 			<div className="pl-1 pr-0 pt-0.5 pb-0 w-full self-end justify-self-end flex justify-between">
