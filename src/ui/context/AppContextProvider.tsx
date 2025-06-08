@@ -5,7 +5,7 @@ import seedPalettes from "@/data/seedPalettes.json";
 import { IBasePalette } from "@/types/palette";
 import { colorEnricher, paletteEnricher } from "@/utils/colors";
 import { AppContext, AppContextActions, IAppContext, IAppContextActions } from "./appContext";
-
+import { EventServiceProvider } from "../components/EventService";
 interface IProps {
 	children: React.ReactElement;
 }
@@ -109,7 +109,9 @@ export const AppContextProvider: React.FC<IProps> = (props) => {
 
 	return (
 		<AppContext.Provider value={context}>
-			<AppContextActions.Provider value={contextActions}>{loaded ? props.children : null}</AppContextActions.Provider>
+			<AppContextActions.Provider value={contextActions}>
+				<EventServiceProvider>{loaded ? props.children : null}</EventServiceProvider>
+			</AppContextActions.Provider>
 		</AppContext.Provider>
 	);
 };
