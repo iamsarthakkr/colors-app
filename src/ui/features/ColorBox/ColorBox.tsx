@@ -60,7 +60,7 @@ const More = ({ onShowMore, color }: { onShowMore: Props["onShowMore"]; color: P
 	return (
 		<span
 			onClick={handleClick}
-			className="hidden group-hover/box:grid text-sm w-[60px] h-[30px] font-semibold items-center justify-center bg-white/40 hover:bg-white/50 hover:cursor-pointer"
+			className="opacity-0 group-hover/box:opacity-100 text-sm w-[60px] h-[30px] font-semibold grid items-center justify-center bg-white/40 hover:bg-white/50 hover:cursor-pointer"
 		>
 			MORE
 		</span>
@@ -167,7 +167,7 @@ export const ColorBox = (props: Props) => {
 			{/* <ContextMenu ref={ref} /> */}
 			{showCopy && <Copy color={color} onCopy={handleCopy} />}
 			{draggable && <DragHandle color={color} />}
-			<div className="px-1.5 pt-0.5 pb-1 w-full self-end justify-self-end flex justify-between items-center">
+			<div className="px-1.5 pt-0.5 pb-1 w-full self-end justify-self-end flex justify-between items-end">
 				{showName && <Name color={color} />}
 				{showMore && <More color={color} onShowMore={onShowMore} />}
 				{showDelete && <Delete color={color} onDelete={onDelete} />}
