@@ -7,3 +7,10 @@ export type MenuItem = {
 	name: string;
 	action: () => void;
 };
+
+export type ContextItemsProvider = () => MenuItem[];
+
+export type ContextMenuEvent = {
+	contextItems: MenuItem[];
+	position: Coord;
+};

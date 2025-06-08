@@ -3,6 +3,7 @@ import { Geist_Mono, Montserrat } from "next/font/google";
 import "./globals.css";
 import { ToastContainer } from "react-toastify";
 import { AppContextProvider } from "@/ui/context/AppContextProvider";
+import { ContextMenu } from "@/ui/components/ContextMenu";
 
 const geistMono = Geist_Mono({
 	variable: "--font-geist-mono",
@@ -29,6 +30,7 @@ export default function RootLayout({
 			<body className={`${montserrat.variable} ${geistMono.variable} antialiased`}>
 				<AppContextProvider>
 					<>
+						<ContextMenu />
 						<ToastContainer />
 						{children}
 					</>

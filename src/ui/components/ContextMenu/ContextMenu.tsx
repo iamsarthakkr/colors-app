@@ -1,30 +1,65 @@
+"use client";
+
 import React from "react";
-import { Coord, MenuItem } from "./types";
+import { ContextMenuEvent, Coord, MenuItem } from "./types";
 import { withinNode } from "./utils";
+import { useEventService } from "../EventService";
+import { SHOW_CONTEXT_MENU } from "@/events";
 
 type Props = {
-	ref: React.RefObject<HTMLElement | null>;
+	children?: React.ReactNode;
 	contextItemsProvider: () => MenuItem[];
-};
+}
 
-export const ContextMenu = (props: Props) => {
-	const [pos, setPos] = React.useState<Coord | null>(null);
-	const menuRef = React.useRef<HTMLDivElement>(null);
 
-	const { ref, contextItemsProvider } = props;
+const ContextMenuProvider = (props: Props) => {
+	const { children, contextItemsProvider } = props;
+
+	const ref = React.useRef<HTMLDivElement>(null);
+	const contextItemsProviderRef = React.useRef(contextItemsProvider);
+
+	const eventService = useEventService();
+
+	React.useEffect(() => {
+		contextItemsProviderRef.current = contextItemsProvider;
+	}, [contextItemsProvider]);
 
 	const handleShowContextMenuRef = React.useCallback(
 		(e: MouseEvent) => {
 			const node = ref.current;
 			const coord: Coord = { x: e.clientX, y: e.clientY };
 
-			if (!node || !withinNode(coord, node.getBoundingClientRect())) return setPos(null);
+			if (!node || !withinNode(coord, node.getBoundingClientRect())) return;
 
 			e.preventDefault();
-			setPos(coord);
+			// emit event
+			eventService.emit<ContextMenuEvent>(SHOW_CONTEXT_MENU, { contextItems: contextItemsProviderRef.current(), position: coord });
 		},
-		[ref]
+		[eventService]
 	);
+
+	React.useEffect(() => {
+		document.addEventListener("contextmenu", handleShowContextMenuRef);
+
+		return () => {
+			document.removeEventListener("contextmenu", handleShowContextMenuRef);
+		};
+	}, [handleShowContextMenuRef]);
+
+	return (
+		<div className="w-full h-full" ref={ref}>
+			{children}
+		</div>
+	);
+};
+
+
+export const ContextMenu = () => {
+	const [pos, setPos] = React.useState<Coord | null>(null);
+	const [contextItems, setContextItems] = React.useState<MenuItem[]>([]);
+	const menuRef = React.useRef<HTMLDivElement>(null);
+
+	const eventService = useEventService();
 
 	const handleHideContextMenuRef = React.useCallback((e: MouseEvent) => {
 		const menuNode = menuRef.current;
@@ -38,29 +73,36 @@ export const ContextMenu = (props: Props) => {
 		e.preventDefault();
 		e.stopPropagation();
 	}, []);
+	
+	React.useEffect(() => {
+		eventService.subscribe<ContextMenuEvent>(SHOW_CONTEXT_MENU, (e) => {
+			const { contextItems, position } = e.message;
+			setContextItems(contextItems);
+			setPos(position);
+		});
+	}, [eventService]);
 
 	React.useEffect(() => {
-		const menuNode = menuRef.current;
-		if(!menuNode) return;
-
-		// menuNode.addEventListener("click", handleClickContextMenu);
-		document.addEventListener("contextmenu", handleShowContextMenuRef);
 		document.addEventListener("click", handleHideContextMenuRef);
 
 		return () => {
-			// menuNode.removeEventListener("click", handleClickContextMenu);
-			document.removeEventListener("contextmenu", handleShowContextMenuRef);
 			document.removeEventListener("click", handleHideContextMenuRef);
 		};
-	}, [handleClickContextMenu, handleHideContextMenuRef, handleShowContextMenuRef]);
+	}, [handleClickContextMenu, handleHideContextMenuRef]);
 
-	const menuItems = contextItemsProvider().map((item, id) => {
-		return (
-			<div className="cursor-pointer text-white text-sm mb-0 px-3 py-2 font-semibold hover:bg-gray-200/8" onClick={item.action} key={id}>
-				{item.name}
-			</div>
-		);
-	}); 
+	const menuItems = React.useMemo(() => {
+		return contextItems.map((item, id) => {
+			const onClick = () => {
+				item.action();
+				setPos(null);
+			};
+			return (
+				<div className="cursor-pointer text-white text-sm mb-0 px-3 py-2 font-semibold hover:bg-gray-200/8" onClick={onClick} key={id}>
+					{item.name}
+				</div>
+			);
+		}); 
+	}, [contextItems]); 
 
 	const styles: React.CSSProperties = pos ? { top: pos.y, left: pos.x, display: "block" } : { display: "none" };
 	const overlayStyles: React.CSSProperties = pos ? { display: "block" } : { display: "none" };
@@ -79,3 +121,5 @@ export const ContextMenu = (props: Props) => {
 		</>
 	);
 };
+
+ContextMenu.Provider = ContextMenuProvider;

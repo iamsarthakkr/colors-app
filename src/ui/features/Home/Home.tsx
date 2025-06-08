@@ -15,9 +15,8 @@ const MiniPalette = (palette: IBasePalette) => {
 	const contextItemsProvider = useMiniPaletteContextItems({ palette, contextActionRef: actionsRef });
 
 	return (
-		<>
-			<ContextMenu ref={ref} contextItemsProvider={contextItemsProvider} />
-			<Link href={`/palette/${palette.id}`}>
+		<Link href={`/palette/${palette.id}`}>
+			<ContextMenu.Provider contextItemsProvider={contextItemsProvider}>
 				<div className="h-full w-full flex flex-col cursor-pointer" ref={ref}>
 					<section className="flex-[80%] grid grid-cols-5 auto-cols-fr auto-rows-[25%] bg-gray-900">
 						{palette.colors.map((color) => {
@@ -29,8 +28,8 @@ const MiniPalette = (palette: IBasePalette) => {
 						<span>{palette.emoji}</span>
 					</section>
 				</div>
-			</Link>
-		</>
+			</ContextMenu.Provider>
+		</Link>
 	);
 };
 

@@ -21,7 +21,7 @@ const getPalettes = () => {
 		const savedStr = window.localStorage.getItem("savedPalettes");
 		return savedStr ? (JSON.parse(savedStr) as IBasePalette[]) : seedPalettes;
 	}
-	return [];
+	return seedPalettes;
 };
 
 
