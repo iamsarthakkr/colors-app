@@ -4,7 +4,7 @@ import React from "react";
 import { Drawer } from "../../components";
 import { PaletteEditorColorForm } from "./PaletteEditorColorForm";
 import { getId } from "@/utils/common";
-import { IBaseColor } from "@/types/palette";
+import { IBaseColor, IBasePalette } from "@/types/palette";
 import { Palette } from "./Palette";
 import { Modal } from "../../components/Modal";
 import { PaletteEditorForm } from "./PaletteEditorForm";
@@ -19,17 +19,20 @@ type Props = {
 
 export const PaletteEditor = (props: Props) => {
 	const { paletteId } = props;
-
-	const [paletteName, setPaletteName] = React.useState("");
-	const [paletteEmoji, setPaletteEmoji] = React.useState("🎨");
-	const [colors, setColors] = React.useState<IBaseColor[]>([]);
+	
+	const [palette, setPalette] = React.useState<IBasePalette>({
+		paletteName: "",
+		emoji: "🎨",
+		colors: [],
+		id: ''
+	});
 	const [editing, setEditing] = React.useState(false);
 
 	const [showNewPaletteForm, setShowNewPaletteForm] = React.useState(false);
 
 	const actions = useAppContextActions();
 	const router = useRouter();
-	const validators = useValidators(colors, paletteId);
+	const validators = useValidators(palette.colors, paletteId);
 	
 	React.useEffect(() => {
 		const palette = actions.getPalette(paletteId || '');
@@ -38,30 +41,34 @@ export const PaletteEditor = (props: Props) => {
 		}
 
 		// set the initial
-		setPaletteName(palette.paletteName);
-		setPaletteEmoji(palette.emoji);
-		setColors(palette.colors);
+		setPalette({ ...palette });
 		setEditing(true);
 	}, [actions, paletteId]);
 
 	const handleAddColor = React.useCallback((color: string, name: string) => {
-		setColors((prev) => {
-			return prev.map((c) => ({ ...c })).concat({ color, name, id: getId(name) });
+		setPalette((prev) => {
+			return {
+				...prev,
+				colors: prev.colors.map((c) => ({ ...c })).concat({ color, name, id: getId(name) })
+			}
 		});
 	}, []);
 
 	const handleDeleteColor = React.useCallback((color: IBaseColor) => {
-		setColors((prev) => {
-			return prev.filter((c) => c.id !== color.id).map((c) => ({ ...c }));
+		setPalette((prev) => {
+			return {
+				...prev,
+				colors: prev.colors.filter((c) => c.id !== color.id).map((c) => ({ ...c })),
+			};
 		});
 	}, []);
 
 	const handleColorSort = React.useCallback((colors: IBaseColor[]) => {
-		setColors(colors);
+		setPalette((prev) => ({ ...prev, colors }));
 	}, []);
 
 	const handleClearPalette = React.useCallback(() => {
-		setColors([]);
+		setPalette((prev) => ({ ...prev, colors: [] }));
 		toast("Palette cleared!", {
 			position: "bottom-left",
 			autoClose: 3000,
@@ -79,11 +86,17 @@ export const PaletteEditor = (props: Props) => {
 	const handleSaveNewPalette = React.useCallback(
 		(paletteName: string, emoji: string) => {
 			setShowNewPaletteForm(false);
+			const toSave: IBasePalette = {
+				...palette,
+				paletteName,
+				emoji,
+				id: getId(paletteName),
+			};
 
 			if (editing && paletteId) {
-				actions.updatePalette(paletteId, paletteName, emoji, colors);
+				actions.updatePalette(toSave, paletteId);
 			} else {
-				actions.addPalette(paletteName, emoji, colors);
+				actions.addPalette(toSave);
 			}
 			
 			toast(`Palette ${editing ? "updated" : "added"} successfully!`, {
@@ -92,15 +105,15 @@ export const PaletteEditor = (props: Props) => {
 			});
 			router.push("/");
 		},
-		[actions, colors, editing, paletteId, router]
+		[actions, editing, palette, paletteId, router]
 	);
 
 	return (
 		<main className="h-full w-full">
 			<Modal open={showNewPaletteForm} onClose={handleHideNewPaletteForm}>
 				<PaletteEditorForm
-					defaultPaletteName={paletteName}
-					defaultEmoji={paletteEmoji}
+					defaultPaletteName={palette.paletteName}
+					defaultEmoji={palette.emoji}
 					validators={validators}
 					onCancel={handleHideNewPaletteForm}
 					onSave={handleSaveNewPalette}
@@ -112,16 +125,16 @@ export const PaletteEditor = (props: Props) => {
 				</Drawer.Drawer>
 				<Drawer.Header>
 					<div className="w-full flex justify-end gap-2 px-5">
-						<button className="d-btn d-btn-primary" onClick={handleClearPalette}>
+						<button className="d-btn d-btn-primary text-xs" onClick={handleClearPalette}>
 							Clear Palette
 						</button>
-						<button className="d-btn d-btn-secondary" onClick={handleShowNewPaletteForm}>
+						<button className="d-btn d-btn-secondary text-xs" onClick={handleShowNewPaletteForm}>
 							Save Palette
 						</button>
 					</div>
 				</Drawer.Header>
 				<Drawer.Main>
-					<Palette colors={colors} onDeleteColor={handleDeleteColor} onColorSort={handleColorSort} />
+					<Palette colors={palette.colors} onDeleteColor={handleDeleteColor} onColorSort={handleColorSort} />
 				</Drawer.Main>
 			</Drawer>
 		</main>

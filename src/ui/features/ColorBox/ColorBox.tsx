@@ -44,7 +44,7 @@ const Copy = ({ onCopy, color }: { onCopy: Props["onCopy"]; color: Props["color"
 const Name = ({ color }: { color: Props["color"] }) => {
 	const dark = isDark(color.color);
 	return (
-		<span className={`uppercase text-sm min-w-[60px] h-[30px] font-semibold grid items-center ${dark ? "text-white" : "text-black"}`}>
+		<span className={`uppercase text-sm min-w-[60px] font-semibold  ${dark ? "text-white" : "text-black"}`}>
 			{color.name}
 		</span>
 	);
@@ -167,7 +167,7 @@ export const ColorBox = (props: Props) => {
 			{/* <ContextMenu ref={ref} /> */}
 			{showCopy && <Copy color={color} onCopy={handleCopy} />}
 			{draggable && <DragHandle color={color} />}
-			<div className="pl-1 pr-0 pt-0.5 pb-0 w-full self-end justify-self-end flex justify-between">
+			<div className="px-1.5 pt-0.5 pb-1 w-full self-end justify-self-end flex justify-between items-center">
 				{showName && <Name color={color} />}
 				{showMore && <More color={color} onShowMore={onShowMore} />}
 				{showDelete && <Delete color={color} onDelete={onDelete} />}

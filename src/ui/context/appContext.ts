@@ -10,8 +10,8 @@ export type IAppContextActions = {
 	getEnrichedPalette: (paletteId: string) => IPalette | null;
 	getColor: (paletteId: string, colorId: string) => IBaseColor | null;
 	getEnrichedColor: (paletteId: string, colorId: string) => IColor | null;
-	addPalette: (paletteName: string, paletteEmoji: string, color: IBaseColor[]) => void;
-	updatePalette: (paletteId: string, paletteName: string, paletteEmoji: string, color: IBaseColor[]) => void;
+	addPalette: (newPalette: IBasePalette) => void;
+	updatePalette: (updatedPalette: IBasePalette, paletteId: string) => void;
 	removePalette: (paletteId: string) => void;
 };
 

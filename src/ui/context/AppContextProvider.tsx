@@ -5,7 +5,6 @@ import seedPalettes from "@/data/seedPalettes.json";
 import { IBasePalette } from "@/types/palette";
 import { colorEnricher, paletteEnricher } from "@/utils/colors";
 import { AppContext, AppContextActions, IAppContext, IAppContextActions } from "./appContext";
-import { getId } from "@/utils/common";
 
 interface IProps {
 	children: React.ReactElement;
@@ -63,27 +62,15 @@ export const AppContextProvider: React.FC<IProps> = (props) => {
 		[getColor]
 	);
 
-	const addPalette: IAppContextActions["addPalette"] = React.useCallback((paletteName, emoji, colors) => {
-		const newPalette: IBasePalette = {
-			paletteName,
-			emoji,
-			colors,
-			id: getId(paletteName),
-		};
+	const addPalette: IAppContextActions["addPalette"] = React.useCallback((newPalette) => {
 		setPalettes((prev) => {
 			return prev.concat(newPalette);
 		});
 	}, []);
 
-	const updatePalette: IAppContextActions["updatePalette"] = React.useCallback((paletteId, paletteName, emoji, colors) => {
-		const newPalette: IBasePalette = {
-			paletteName,
-			emoji,
-			colors,
-			id: getId(paletteName),
-		};
+	const updatePalette: IAppContextActions["updatePalette"] = React.useCallback((updatedPalette, paletteId) => {
 		setPalettes((prev) => {
-			return prev.map((palette) => (palette.id === paletteId ? newPalette : palette));
+			return prev.map((palette) => (palette.id === paletteId ? updatedPalette : palette));
 		});
 	}, []);
 	

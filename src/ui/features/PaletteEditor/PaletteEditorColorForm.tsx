@@ -93,7 +93,7 @@ export const PaletteEditorColorForm = (props: Props) => {
 			<div className="h-full w-full flex flex-col justify-center items-center">
 				<h1 className="text-xl tracking-wider uppercase text-center mb-10 font-semibold text-cyan-700">Choose Color for your Palette</h1>
 				<div className="flex gap-3">
-					<button className="d-btn d-btn-secondary" onClick={handleShowPresets}>
+					<button className="d-btn d-btn-secondary text-xs" onClick={handleShowPresets}>
 						Choose from preset
 					</button>
 				</div>
@@ -122,7 +122,7 @@ export const PaletteEditorColorForm = (props: Props) => {
 							nameError ? "border-rose-700" : ""
 						}`}
 					/>
-					<button className="d-btn border-0 d-btn-xl mt-4 rounded-lg" style={buttonStyles} onClick={handleAddColor}>
+					<button className="d-btn border-0 d-btn-lg mt-4 rounded-lg" style={buttonStyles} onClick={handleAddColor}>
 						Add Color
 					</button>
 				</form>
