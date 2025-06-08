@@ -11,7 +11,6 @@ type Props = {
 	contextItemsProvider: () => MenuItem[];
 }
 
-
 const ContextMenuProvider = (props: Props) => {
 	const { children, contextItemsProvider } = props;
 
@@ -24,7 +23,7 @@ const ContextMenuProvider = (props: Props) => {
 		contextItemsProviderRef.current = contextItemsProvider;
 	}, [contextItemsProvider]);
 
-	const handleShowContextMenuRef = React.useCallback(
+	const handleShowContextMenu = React.useCallback(
 		(e: MouseEvent) => {
 			const node = ref.current;
 			const coord: Coord = { x: e.clientX, y: e.clientY };
@@ -39,12 +38,12 @@ const ContextMenuProvider = (props: Props) => {
 	);
 
 	React.useEffect(() => {
-		document.addEventListener("contextmenu", handleShowContextMenuRef);
+		document.addEventListener("contextmenu", handleShowContextMenu);
 
 		return () => {
-			document.removeEventListener("contextmenu", handleShowContextMenuRef);
+			document.removeEventListener("contextmenu", handleShowContextMenu);
 		};
-	}, [handleShowContextMenuRef]);
+	}, [handleShowContextMenu]);
 
 	return (
 		<div className="w-full h-full" ref={ref}>
@@ -61,7 +60,7 @@ export const ContextMenu = () => {
 
 	const eventService = useEventService();
 
-	const handleHideContextMenuRef = React.useCallback((e: MouseEvent) => {
+	const handleHideContextMenu = React.useCallback((e: MouseEvent) => {
 		const menuNode = menuRef.current;
 		const coord: Coord = { x: e.clientX, y: e.clientY };
 
@@ -83,12 +82,12 @@ export const ContextMenu = () => {
 	}, [eventService]);
 
 	React.useEffect(() => {
-		document.addEventListener("click", handleHideContextMenuRef);
+		document.addEventListener("click", handleHideContextMenu);
 
 		return () => {
-			document.removeEventListener("click", handleHideContextMenuRef);
+			document.removeEventListener("click", handleHideContextMenu);
 		};
-	}, [handleClickContextMenu, handleHideContextMenuRef]);
+	}, [handleClickContextMenu, handleHideContextMenu]);
 
 	const menuItems = React.useMemo(() => {
 		return contextItems.map((item, id) => {
