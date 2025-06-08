@@ -2,7 +2,6 @@ import React from "react";
 import { Coord, MenuItem } from "./types";
 import { withinNode } from "./utils";
 
-
 type Props = {
 	ref: React.RefObject<HTMLElement | null>;
 	contextItemsProvider: () => MenuItem[];
@@ -57,7 +56,7 @@ export const ContextMenu = (props: Props) => {
 
 	const menuItems = contextItemsProvider().map((item, id) => {
 		return (
-			<div className="cursor-pointer text-white text-sm mb-1 font-semibold" onClick={item.action} key={id}>
+			<div className="cursor-pointer text-white text-sm mb-0 px-3 py-2 font-semibold hover:bg-gray-200/8" onClick={item.action} key={id}>
 				{item.name}
 			</div>
 		);
@@ -71,7 +70,7 @@ export const ContextMenu = (props: Props) => {
 			<div className="fixed inset-0 z-9998 pointer-events-none bg-transparent perspective-origin-center" style={overlayStyles} />
 			<div
 				ref={menuRef}
-				className="fixed z-9999 cursor-auto overflow-hidden bg-[#383838]/98 h-[250px] w-[200px] px-4 py-3 rounded-sm shadow-2xl border-solid"
+				className="fixed z-9999 cursor-auto overflow-hidden bg-gray-700/98 h-[250px] w-[220px] py-3 rounded-sm shadow-2xl border-solid"
 				style={styles}
 				onClick={handleClickContextMenu}
 			>
