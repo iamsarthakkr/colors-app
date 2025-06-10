@@ -53,13 +53,13 @@ export const Navbar = (props: Props) => {
 				<Link
 					href={"/"}
 					className="font-semibold rounded-r-full text-[34px] text-cyan-800 bg-gray-200 hover:bg-gray-300
-					 self-stretch tracking-[2px] px-4 mr-5 flex justify-center items-center"
+					 self-stretch tracking-[2px] px-4 mr-3 flex justify-center items-center"
 				>
 					COLORSUI
 				</Link>
 				{props.showShadeControls && (
 					<>
-						<span className="flex min-w-[120px] font-semibold text-xl">Level : {props.colorLevel}</span>
+						<span className="flex min-w-[120px] font-semibold text-md">Level : {props.colorLevel}</span>
 						<input
 							onChange={handleColorLevelChange}
 							type="range"
@@ -67,7 +67,7 @@ export const Navbar = (props: Props) => {
 							max={900}
 							step={100}
 							value={props.colorLevel}
-							className="d-range text-cyan-700 d-range-primary min-w-[300px] d-range-sm"
+							className="d-range text-cyan-700 d-range-primary w-[200px] d-range-xs"
 						/>
 					</>
 				)}
@@ -75,7 +75,7 @@ export const Navbar = (props: Props) => {
 			<select
 				onChange={handleColorFormatChange}
 				value={props.colorFormat}
-				className="d-select text-cyan-100 text-lg w-[250px] h-[60px] cursor-pointer"
+				className="d-select d-select-sm text-cyan-100 text-lg w-[180px] h-[40px] cursor-pointer"
 			>
 				<option value={"hex"}>Hex : #ffffff</option>
 				<option value={"rgb"}>RGB: rgb(0 0 0)</option>
