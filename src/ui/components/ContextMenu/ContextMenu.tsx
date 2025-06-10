@@ -8,7 +8,7 @@ import { SHOW_CONTEXT_MENU } from "@/events";
 
 type Props = {
 	children?: React.ReactNode;
-	contextItemsProvider: () => MenuItem[];
+	contextItemsProvider?: () => MenuItem[];
 }
 
 const ContextMenuProvider = (props: Props) => {
@@ -28,11 +28,12 @@ const ContextMenuProvider = (props: Props) => {
 			const node = ref.current;
 			const coord: Coord = { x: e.clientX, y: e.clientY };
 
-			if (!node || !withinNode(coord, node.getBoundingClientRect())) return;
+			if (!node || !withinNode(coord, node.getBoundingClientRect()) || !contextItemsProviderRef.current) return;
 
 			e.preventDefault();
 			// emit event
-			eventService.emit<ContextMenuEvent>(SHOW_CONTEXT_MENU, { contextItems: contextItemsProviderRef.current(), position: coord });
+			const contextItems = contextItemsProviderRef.current();
+			eventService.emit<ContextMenuEvent>(SHOW_CONTEXT_MENU, { contextItems, position: coord });
 		},
 		[eventService]
 	);

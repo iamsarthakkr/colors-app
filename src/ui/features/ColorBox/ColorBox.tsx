@@ -7,6 +7,8 @@ import { isDark } from "@/utils/colors";
 import { IBaseColor } from "@/types/palette";
 import { useCopy } from "./useCopy";
 import { DeleteIcon, MoveIcon } from "../../icons";
+import { ContextItemsProvider } from "@/ui/components/ContextMenu/types";
+import { ContextMenu } from "@/ui/components/ContextMenu";
 
 export type Props = {
 	children?: React.ReactNode;
@@ -22,6 +24,7 @@ export type Props = {
 	onDelete?: (color: IBaseColor) => void;
 	draggable?: boolean;
 	format?: string;
+	contextItemsProvider?: ContextItemsProvider;
 };
 
 const Copy = ({ onCopy, color }: { onCopy: Props["onCopy"]; color: Props["color"] }) => {
@@ -43,11 +46,7 @@ const Copy = ({ onCopy, color }: { onCopy: Props["onCopy"]; color: Props["color"
 
 const Name = ({ color }: { color: Props["color"] }) => {
 	const dark = isDark(color.color);
-	return (
-		<span className={`uppercase text-sm min-w-[60px] font-semibold  ${dark ? "text-white" : "text-black"}`}>
-			{color.name}
-		</span>
-	);
+	return <span className={`uppercase text-sm min-w-[60px] font-semibold  ${dark ? "text-white" : "text-black"}`}>{color.name}</span>;
 };
 
 const More = ({ onShowMore, color }: { onShowMore: Props["onShowMore"]; color: Props["color"] }) => {
@@ -114,6 +113,7 @@ export const ColorBox = (props: Props) => {
 		onDelete,
 		draggable,
 		format = "hex",
+		contextItemsProvider,
 	} = props;
 	const ref = React.useRef<HTMLDivElement>(null);
 
@@ -123,7 +123,7 @@ export const ColorBox = (props: Props) => {
 		? {
 				transform: CSS.Transform.toString(transform),
 				transition,
-				zIndex: isDragging ? 1000 : 0
+				zIndex: isDragging ? 1000 : 0,
 		  }
 		: {};
 
@@ -158,20 +158,22 @@ export const ColorBox = (props: Props) => {
 	);
 
 	return (
-		<div
-			ref={setRef}
-			style={{ ...baseStyles, ...draggableStyle }}
-			className={`group/box relative flex w-full h-full ${className}`}
-			onClick={handleClick}
-		>
-			{/* <ContextMenu ref={ref} /> */}
-			{showCopy && <Copy color={color} onCopy={handleCopy} />}
-			{draggable && <DragHandle color={color} />}
-			<div className="px-1.5 pt-0.5 pb-1 w-full self-end justify-self-end flex justify-between items-end">
-				{showName && <Name color={color} />}
-				{showMore && <More color={color} onShowMore={onShowMore} />}
-				{showDelete && <Delete color={color} onDelete={onDelete} />}
+		<ContextMenu.Provider contextItemsProvider={contextItemsProvider}>
+			<div
+				ref={setRef}
+				style={{ ...baseStyles, ...draggableStyle }}
+				className={`group/box relative flex w-full h-full ${className}`}
+				onClick={handleClick}
+			>
+				{/* <ContextMenu ref={ref} /> */}
+				{showCopy && <Copy color={color} onCopy={handleCopy} />}
+				{draggable && <DragHandle color={color} />}
+				<div className="px-1.5 pt-0.5 pb-1 w-full self-end justify-self-end flex justify-between items-end">
+					{showName && <Name color={color} />}
+					{showMore && <More color={color} onShowMore={onShowMore} />}
+					{showDelete && <Delete color={color} onDelete={onDelete} />}
+				</div>
 			</div>
-		</div>
+		</ContextMenu.Provider>
 	);
 };
