@@ -34,7 +34,7 @@ export const useValidators = (colors: IBaseColor[], paletteId?: string): IPalett
 			if (colorStr.trim() === "") {
 				return "Color has to be valid!";
 			}
-			if (colors.some((color) => color.color === colorStr)) {
+			if (colors.some((color) => color.color.toLocaleLowerCase() === colorStr.toLocaleLowerCase())) {
 				return "Color already in palette";
 			}
 			return "";
