@@ -6,33 +6,35 @@ import { withinNode } from "./utils";
 import { useEventService } from "../EventService";
 import { SHOW_CONTEXT_MENU } from "@/events";
 
-type Props = {
+type Props<T = unknown> = {
 	children?: React.ReactNode;
-	contextItemsProvider?: () => MenuItem[];
-}
+	contextItemsProvider?: (arg?: T) => MenuItem[];
+	contextItemsProviderArgs?: T;
+};
 
-const ContextMenuProvider = (props: Props) => {
-	const { children, contextItemsProvider } = props;
+const ContextMenuProvider = <T, >(props: Props<T>) => {
+	const { children, contextItemsProvider, contextItemsProviderArgs } = props;
 
 	const ref = React.useRef<HTMLDivElement>(null);
-	const contextItemsProviderRef = React.useRef(contextItemsProvider);
+	const contextItemsRef = React.useRef({ contextItemsProvider, contextItemsProviderArgs });
 
 	const eventService = useEventService();
 
 	React.useEffect(() => {
-		contextItemsProviderRef.current = contextItemsProvider;
-	}, [contextItemsProvider]);
+		contextItemsRef.current.contextItemsProvider = contextItemsProvider;
+		contextItemsRef.current.contextItemsProviderArgs = contextItemsProviderArgs;
+	}, [contextItemsProvider, contextItemsProviderArgs]);
 
 	const handleShowContextMenu = React.useCallback(
 		(e: MouseEvent) => {
 			const node = ref.current;
 			const coord: Coord = { x: e.clientX, y: e.clientY };
 
-			if (!node || !withinNode(coord, node.getBoundingClientRect()) || !contextItemsProviderRef.current) return;
+			if (!node || !withinNode(coord, node.getBoundingClientRect()) || !contextItemsRef.current.contextItemsProvider) return;
 
 			e.preventDefault();
 			// emit event
-			const contextItems = contextItemsProviderRef.current();
+			const contextItems = contextItemsRef.current.contextItemsProvider(contextItemsRef.current.contextItemsProviderArgs);
 			eventService.emit<ContextMenuEvent>(SHOW_CONTEXT_MENU, { contextItems, position: coord });
 		},
 		[eventService]

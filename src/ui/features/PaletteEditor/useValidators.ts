@@ -13,7 +13,7 @@ export type IPaletteValidators = {
 	paletteNameValidator: IValidator;
 };
 
-export const useValidators = (colors: IBaseColor[], paletteId?: string): IPaletteValidators => {
+export const useValidators = (colors: IBaseColor[], editingColor?: IBaseColor, paletteId?: string): IPaletteValidators => {
 	const { palettes } = useAppContext();
 
 	const colorNameValidator = React.useCallback(
@@ -21,12 +21,19 @@ export const useValidators = (colors: IBaseColor[], paletteId?: string): IPalett
 			if (name.trim() === "") {
 				return "Name can't be empty!";
 			}
-			if (colors.some((color) => getId(name) === color.id)) {
+			const hasColor = colors.some(color => {
+				const nameId = getId(name),
+					colorId = getId(color.name),
+					editingId = getId(editingColor?.name || '');
+				if (editingId === colorId) return false;
+				return colorId == nameId;
+			});
+			if (hasColor) {
 				return "Color already in palette";
 			}
 			return "";
 		},
-		[colors]
+		[colors, editingColor?.name]
 	);
 
 	const colorValidator = React.useCallback(
@@ -34,12 +41,19 @@ export const useValidators = (colors: IBaseColor[], paletteId?: string): IPalett
 			if (colorStr.trim() === "") {
 				return "Color has to be valid!";
 			}
-			if (colors.some((color) => color.color.toLocaleLowerCase() === colorStr.toLocaleLowerCase())) {
+			const hasColor = colors.some((color) => {
+				const nameId = getId(colorStr),
+					colorId = getId(color.color),
+					editingId = getId(editingColor?.color || "");
+				if (editingId === colorId) return false;
+				return colorId == nameId;
+			});
+			if (hasColor) {
 				return "Color already in palette";
 			}
 			return "";
 		},
-		[colors]
+		[colors, editingColor?.color]
 	);
 
 	const paletteNameValidator = React.useCallback(

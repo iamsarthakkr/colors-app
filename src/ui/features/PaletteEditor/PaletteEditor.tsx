@@ -15,28 +15,29 @@ import { useValidators } from "./useValidators";
 
 type Props = {
 	paletteId?: string;
-}
+};
 
 export const PaletteEditor = (props: Props) => {
 	const { paletteId } = props;
-	
+
 	const [palette, setPalette] = React.useState<IBasePalette>({
 		paletteName: "",
 		emoji: "🎨",
 		colors: [],
-		id: ''
+		id: "",
 	});
 	const [editing, setEditing] = React.useState(false);
+	const [editingColor, setEditingColor] = React.useState<IBaseColor | undefined>();
 
 	const [showNewPaletteForm, setShowNewPaletteForm] = React.useState(false);
 
 	const actions = useAppContextActions();
 	const router = useRouter();
-	const validators = useValidators(palette.colors, paletteId);
-	
+	const validators = useValidators(palette.colors, editingColor, paletteId);
+
 	React.useEffect(() => {
-		const palette = actions.getPalette(paletteId || '');
-		if(!palette) {
+		const palette = actions.getPalette(paletteId || "");
+		if (!palette) {
 			return;
 		}
 
@@ -45,14 +46,29 @@ export const PaletteEditor = (props: Props) => {
 		setEditing(true);
 	}, [actions, paletteId]);
 
-	const handleAddColor = React.useCallback((color: string, name: string) => {
-		setPalette((prev) => {
-			return {
-				...prev,
-				colors: prev.colors.map((c) => ({ ...c })).concat({ color, name, id: getId(name) })
-			}
-		});
-	}, []);
+	const handleAddColor = React.useCallback(
+		(newColor: IBaseColor) => {
+			setPalette((prev) => {
+				let newColors: IBaseColor[] = [];
+				if (editingColor) {
+					newColors = prev.colors.map((color) => {
+						if (color.id === newColor.id) {
+							return { ...newColor };
+						}
+						return { ...color };
+					});
+					setEditingColor(undefined);
+				} else {
+					newColors = prev.colors.map((c) => ({ ...c })).concat({ ...newColor });
+				}
+				return {
+					...prev,
+					colors: newColors,
+				};
+			});
+		},
+		[editingColor]
+	);
 
 	const handleDeleteColor = React.useCallback((color: IBaseColor) => {
 		setPalette((prev) => {
@@ -61,6 +77,14 @@ export const PaletteEditor = (props: Props) => {
 				colors: prev.colors.filter((c) => c.id !== color.id).map((c) => ({ ...c })),
 			};
 		});
+	}, []);
+
+	const handleEditColor = React.useCallback((color: IBaseColor) => {
+		setEditingColor(color);
+	}, []);
+
+	const handleCancleEditColor = React.useCallback(() => {
+		setEditingColor(undefined);
 	}, []);
 
 	const handleColorSort = React.useCallback((colors: IBaseColor[]) => {
@@ -98,7 +122,7 @@ export const PaletteEditor = (props: Props) => {
 			} else {
 				actions.addPalette(toSave);
 			}
-			
+
 			toast(`Palette ${editing ? "updated" : "added"} successfully!`, {
 				position: "bottom-left",
 				autoClose: 3000,
@@ -121,7 +145,12 @@ export const PaletteEditor = (props: Props) => {
 			</Modal>
 			<Drawer>
 				<Drawer.Drawer className="h-full">
-					<PaletteEditorColorForm onAddColor={handleAddColor} validators={validators} />
+					<PaletteEditorColorForm
+						editingColor={editingColor}
+						onCancel={handleCancleEditColor}
+						onAddColor={handleAddColor}
+						validators={validators}
+					/>
 				</Drawer.Drawer>
 				<Drawer.Header>
 					<div className="w-full flex justify-end gap-2 px-5">
@@ -134,7 +163,7 @@ export const PaletteEditor = (props: Props) => {
 					</div>
 				</Drawer.Header>
 				<Drawer.Main>
-					<Palette colors={palette.colors} onDeleteColor={handleDeleteColor} onColorSort={handleColorSort} />
+					<Palette colors={palette.colors} onDeleteColor={handleDeleteColor} onColorSort={handleColorSort} onEditColor={handleEditColor} />
 				</Drawer.Main>
 			</Drawer>
 		</main>

@@ -9,23 +9,43 @@ import { Modal } from "@/ui/components";
 import { ColorsPreset } from "./ColorsPreset";
 import { IBaseColor } from "@/types/palette";
 import { IPaletteValidators } from "./useValidators";
+import { getId } from "@/utils/common";
 
 
 type Props = {
-	onAddColor: (color: string, name: string) => void;
+	editingColor?: IBaseColor;
+	onAddColor: (color: IBaseColor) => void;
+	onCancel?: () => void;
 	validators: IPaletteValidators;
 };
 
+const defaultColor: IBaseColor = {
+	color: "#ff0000",
+	name: "",
+	id: "",
+};
+
 export const PaletteEditorColorForm = (props: Props) => {
-	const [color, setColor] = React.useState("#ff0000");
-	const [name, setName] = React.useState("");
+	const { editingColor, onAddColor, onCancel, validators } = props;
+
+	const [color, setColor] = React.useState(defaultColor.color);
+	const [name, setName] = React.useState(defaultColor.name);
 	const [nameError, setNameError] = React.useState("");
 	const [colorError, setColorError] = React.useState("");
 
 	const [showPresets, setShowPresets] = React.useState(false);
 
 	const [buttonStyles, setButtonStyles] = React.useState<React.CSSProperties>({});
-	const { onAddColor, validators } = props;
+	
+	React.useEffect(() => {
+		if (!editingColor) {
+			setColor(defaultColor.color);
+			setName(defaultColor.name);
+			return;
+		}
+		setColor(editingColor.color);
+		setName(editingColor.name);
+	}, [editingColor]);
 
 	React.useEffect(() => {
 		const dark = isDark(color);
@@ -66,10 +86,23 @@ export const PaletteEditorColorForm = (props: Props) => {
 			if (colorErr || nameErr) {
 				return;
 			}
-			onAddColor(color, name);
+			const toAdd: IBaseColor = {
+				color,
+				name,
+				id: getId(name)
+			}
+			onAddColor(toAdd);
 		},
 		[validators, color, name, onAddColor]
 	);
+	
+	const handleCancel = React.useCallback(() => {
+		setColor(defaultColor.color);
+		setName(defaultColor.name);
+		if (onCancel) {
+			onCancel();
+		}
+	}, [onCancel]);
 
 	const handleShowPresets = React.useCallback(() => {
 		setShowPresets(true);
@@ -91,7 +124,9 @@ export const PaletteEditorColorForm = (props: Props) => {
 				<ColorsPreset onCancel={handleHidePresets} onSelectPreset={handleSelectPreset} />
 			</Modal>
 			<div className="h-full w-full flex flex-col justify-center items-center">
-				<h1 className="text-xl tracking-wider uppercase text-center mb-10 font-semibold text-cyan-700">Choose Color for your Palette</h1>
+				<h1 className="text-xl tracking-wider uppercase text-center mb-10 font-semibold text-cyan-700">
+					{editingColor ? `Edit color: ${editingColor.name}` : "Choose Color for your Palette"}
+				</h1>
 				<div className="flex gap-3">
 					<button className="d-btn d-btn-secondary text-xs" onClick={handleShowPresets}>
 						Choose from preset
@@ -122,9 +157,16 @@ export const PaletteEditorColorForm = (props: Props) => {
 							nameError ? "border-rose-700" : ""
 						}`}
 					/>
-					<button className="d-btn border-0 d-btn-lg mt-4 rounded-lg" style={buttonStyles} onClick={handleAddColor}>
-						Add Color
-					</button>
+					<div className="flex gap-2">
+						{editingColor && (
+							<button className="d-btn d-btn-secondary border-0 d-btn-md mt-4 rounded-lg" onClick={handleCancel}>
+								Cancle
+							</button>
+						)}
+						<button className="d-btn border-0 d-btn-md mt-4 rounded-lg" style={buttonStyles} onClick={handleAddColor}>
+							Add Color
+						</button>
+					</div>
 				</form>
 			</div>
 		</>

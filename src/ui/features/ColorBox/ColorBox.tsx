@@ -7,8 +7,8 @@ import { isDark } from "@/utils/colors";
 import { IBaseColor } from "@/types/palette";
 import { useCopy } from "./useCopy";
 import { DeleteIcon, MoveIcon } from "../../icons";
-import { ContextItemsProvider } from "@/ui/components/ContextMenu/types";
 import { ContextMenu } from "@/ui/components/ContextMenu";
+import { ColorBoxContextItemsProvider } from "./types";
 
 export type Props = {
 	children?: React.ReactNode;
@@ -24,7 +24,7 @@ export type Props = {
 	onDelete?: (color: IBaseColor) => void;
 	draggable?: boolean;
 	format?: string;
-	contextItemsProvider?: ContextItemsProvider;
+	contextItemsProvider?: ColorBoxContextItemsProvider;
 };
 
 const Copy = ({ onCopy, color }: { onCopy: Props["onCopy"]; color: Props["color"] }) => {
@@ -158,14 +158,13 @@ export const ColorBox = (props: Props) => {
 	);
 
 	return (
-		<ContextMenu.Provider contextItemsProvider={contextItemsProvider}>
+		<ContextMenu.Provider contextItemsProvider={contextItemsProvider} contextItemsProviderArgs={color}>
 			<div
 				ref={setRef}
 				style={{ ...baseStyles, ...draggableStyle }}
 				className={`group/box relative flex w-full h-full ${className}`}
 				onClick={handleClick}
 			>
-				{/* <ContextMenu ref={ref} /> */}
 				{showCopy && <Copy color={color} onCopy={handleCopy} />}
 				{draggable && <DragHandle color={color} />}
 				<div className="px-1.5 pt-0.5 pb-1 w-full self-end justify-self-end flex justify-between items-end">
